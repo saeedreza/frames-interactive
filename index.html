@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>French Frame | Interactive App</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<script type="text/javascript" src="js/touche.js"></script>
+		<script type="text/javascript" src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		
+		<div class="container">
+			<div class="row">
+				
+				<div id="select-painting" class="select-painting">
+					<h2>Painting Selection</h2>
+					<div id="paintings">
+						<div class="painting"><img src="img/image-1.png"></div>
+						<div class="painting"><img src="img/image-2.png"></div>
+						<div class="painting"><img src="img/image-3.png"></div>
+						<div class="painting"><img src="img/image-4.png"></div>
+					</div>
+				</div>
+			
+				<div id="showroom" class="showroom">
+					<h2>Start with dragging a painting on the left.</h2>
+					<div class="restart">
+						<button onClick="location.reload()">Start Over</button>
+					</div>
+					<div class="wall">
+						<img src="img/placeholder.png">
+					</div>
+					<div id="title" class="title">Some text here</div>
+				</div>
+
+				<div id="select-frame" class="select-frame">
+					<h2>Frame Selection</h2>
+					<div id="frames">
+						<div class="frame"><img src="img/frame-1.png"></div>
+						<div class="frame"><img src="img/frame-2.png"></div>
+						<div class="frame"><img src="img/frame-3.png"></div>
+						<div class="frame"><img src="img/frame-4.png"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/draggabilly.pkgd.min.js"></script>
+		<script type="text/javascript" src="js/dragdrop.js"></script>
+		<script>
+			(function() {
+				var body = document.body,
+					showroom = document.getElementById( 'showroom' ),
+					paintingSelection = document.getElementById( 'select-painting' ),
+					frameSelection = document.getElementById( 'select-frame' ),
+					frames = document.getElementById( 'frames'),
+					title = document.getElementById( 'title'),
+					dropArea = document.getElementById( 'showroom' ),
+					droppableArr = [], dropAreaTimeout;
+
+				// initialize droppables
+				[].slice.call( document.querySelectorAll( '#showroom .wall' )).forEach( function( el ) {
+					droppableArr.push( new Droppable( el, {
+						onDrop : function( instance, draggableEl ) {
+							// show checkmark inside the droppabe element
+							classie.add( instance.el, 'drop-feedback' );
+							clearTimeout( instance.checkmarkTimeout );
+							instance.checkmarkTimeout = setTimeout( function() { 
+								classie.remove( instance.el, 'drop-feedback' );
+							}, 0 );
+							// ...
+						}
+					} ) );
+				} );
+
+				// initialize draggable(s)
+				[].slice.call(document.querySelectorAll( '#select-painting .painting' )).forEach( function( el ) {
+					new Draggable( el, droppableArr, {
+						
+						draggabilly : { containment: body },
+						onStart : function() {
+							// add class 'drag-active' to showroom
+							classie.add( showroom, 'drag-active' );
+							// clear timeout: dropAreaTimeout (toggle drop area)
+							clearTimeout( dropAreaTimeout );
+							// show dropArea
+							classie.add( dropArea, 'show' );
+						},
+						onEnd : function( wasDropped ) {
+							var afterDropFn = function() {
+								// hide dropArea
+								if (!wasDropped) {
+									classie.remove( dropArea, 'show' );	
+								} else {
+									classie.add( frameSelection, 'show' );
+									classie.add( title, 'show' );
+									classie.add( frames, 'show' );
+									
+									// $('#img1').click(function() {
+									//   $("#imgmain").fadeOut(function() {
+									//     $(this).attr("src","img1.jpg").fadeIn();
+									//   });
+									// });
+
+									var src = $('img', el).attr("src");
+         							$('.wall img').attr("src", src).fadeIn('slow');
+
+								}
+								// remove class 'drag-active' from showroom
+								classie.remove( showroom, 'drag-active' );
+							};
+
+							if( !wasDropped ) {
+								afterDropFn();
+							}
+							else {
+								// after some time hide drop area and remove class 'drag-active' from body
+								clearTimeout( dropAreaTimeout );
+								dropAreaTimeout = setTimeout( afterDropFn, 0 );
+							}
+						}
+					} );
+				} );
+
+				// initialize draggable(s)
+				[].slice.call(document.querySelectorAll( '#select-frame .frame' )).forEach( function( el ) {
+					new Draggable( el, droppableArr, {
+						
+						draggabilly : { containment: body },
+						onStart : function() {
+							// add class 'drag-active' to showroom
+							// classie.add( showroom, 'drag-active' );
+							// clear timeout: dropAreaTimeout (toggle drop area)
+							clearTimeout( dropAreaTimeout );
+							// show dropArea
+							// classie.add( dropArea, 'show' );
+						},
+						onEnd : function( wasDropped ) {
+							var afterDropFn = function() {
+								// hide dropArea
+								if (!wasDropped) {
+									// classie.remove( dropArea, 'show' );	
+								} else {
+									// classie.add( frameSelection, 'show' );
+									// classie.add( title, 'show');
+									// $('.wall img').attr('src', 'img/image-1.png');
+
+								}
+								// remove class 'drag-active' from showroom
+								// classie.remove( showroom, 'drag-active' );
+							};
+
+							if( !wasDropped ) {
+								afterDropFn();
+							}
+							else {
+								// after some time hide drop area and remove class 'drag-active' from body
+								clearTimeout( dropAreaTimeout );
+								dropAreaTimeout = setTimeout( afterDropFn, 0 );
+							}
+						}
+					} );
+				} );
+			})();
+		</script>
+	</body>
+</html>
