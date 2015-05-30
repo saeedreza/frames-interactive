@@ -7,6 +7,74 @@
 	/******************* Some helper functions *******************/
 	/*************************************************************/
 
+	var data = {
+	    "title" : "painting_1",
+	    "imageUrl" : "img/painting_1.png",
+	    "frames" : {
+				"title" : "frame_1",
+				"imageUrl" : "img/frame_1.png",
+				"blur" : "some text here"
+	        },{
+	        	"title" : "frame_2",
+				"imageUrl" : "img/frame_2.png",
+				"blur" : "some text here"
+	        },{
+	        	"title" : "frame_3",
+				"imageUrl" : "img/frame_3.png",
+				"blur" : "some text here"
+	        }
+		},{
+		"title" : "painting_2",
+    	"imageUrl" : "img/painting_2.png",
+    	"frames" : {
+			"title" : "frame_4",
+			"imageUrl" : "img/frame_4.png",
+			"blur" : "some text here"
+	        },{
+	        	"title" : "frame_5",
+				"imageUrl" : "img/frame_5.png",
+				"blur" : "some text here"
+	        },{
+	        	"title" : "frame_6",
+				"imageUrl" : "img/frame_6.png",
+				"blur" : "some text here"
+	        }
+		},{
+		"title" : "painting_3",
+	    "imageUrl" : "img/painting_3.png",
+	    "frames" : {
+				"title" : "frame_7",
+				"imageUrl" : "img/frame_7.png",
+				"blur" : "some text here"
+	        },{
+	        	"title" : "frame_8",
+				"imageUrl" : "img/frame_8.png",
+				"blur" : "some text here"
+	        },{
+	           	"title" : "frame_9",
+				"imageUrl" : "img/frame_9.png",
+				"blur" : "some text here"
+	        }
+		},{
+		"title" : "painting_4",
+	    "imageUrl" : "img/painting_4.png",
+	    "frames" : {
+				"title" : "frame_10",
+				"imageUrl" : "img/frame_10.png",
+				"blur" : "some text here"
+	        },{
+	        	"title" : "frame_11",
+				"imageUrl" : "img/frame_11.png",
+				"blur" : "some text here"
+	        },{
+	        	"title" : "frame_12",
+				"imageUrl" : "img/frame_12.png",
+				"blur" : "some text here"
+	        }
+		};
+
+
+
 	var body = document.body, 
 	    docElem = window.document.documentElement,
 		transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },
