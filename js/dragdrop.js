@@ -3,80 +3,78 @@
 
 	'use strict';
 
+	var data = [{
+		"title" : "painting_1",
+		"imageUrl" : "img/painting_1.png",
+		"frames" : [{
+			"title" : "frame_1",
+			"imageUrl" : "img/frame_1.png",
+			"blur" : "some text here"
+		},{
+			"title" : "frame_2",
+			"imageUrl" : "img/frame_2.png",
+			"blur" : "some text here"
+		},{
+			"title" : "frame_3",
+			"imageUrl" : "img/frame_3.png",
+			"blur" : "some text here"
+		}]
+	},{
+		"title" : "painting_2",
+		"imageUrl" : "img/painting_2.png",
+		"frames" : [{
+			"title" : "frame_4",
+			"imageUrl" : "img/frame_4.png",
+			"blur" : "some text here"
+		},{
+			"title" : "frame_5",
+			"imageUrl" : "img/frame_5.png",
+			"blur" : "some text here"
+		},{
+			"title" : "frame_6",
+			"imageUrl" : "img/frame_6.png",
+			"blur" : "some text here"
+		}]
+	},{
+		"title" : "painting_3",
+		"imageUrl" : "img/painting_3.png",
+		"frames" : [{
+			"title" : "frame_7",
+			"imageUrl" : "img/frame_7.png",
+			"blur" : "some text here"
+		},{
+			"title" : "frame_8",
+			"imageUrl" : "img/frame_8.png",
+			"blur" : "some text here"
+		},{
+			"title" : "frame_9",
+			"imageUrl" : "img/frame_9.png",
+			"blur" : "some text here"
+		}]
+	},{
+		"title" : "painting_4",
+		"imageUrl" : "img/painting_4.png",
+		"frames" : [{
+			"title" : "frame_10",
+			"imageUrl" : "img/frame_10.png",
+			"blur" : "some text here"
+		},{
+			"title" : "frame_11",
+			"imageUrl" : "img/frame_11.png",
+			"blur" : "some text here"
+		},{
+			"title" : "frame_12",
+			"imageUrl" : "img/frame_12.png",
+			"blur" : "some text here"
+		}]
+	}];
+
 	/*************************************************************/
 	/******************* Some helper functions *******************/
 	/*************************************************************/
 
-	var data = {
-	    "title" : "painting_1",
-	    "imageUrl" : "img/painting_1.png",
-	    "frames" : {
-				"title" : "frame_1",
-				"imageUrl" : "img/frame_1.png",
-				"blur" : "some text here"
-	        },{
-	        	"title" : "frame_2",
-				"imageUrl" : "img/frame_2.png",
-				"blur" : "some text here"
-	        },{
-	        	"title" : "frame_3",
-				"imageUrl" : "img/frame_3.png",
-				"blur" : "some text here"
-	        }
-		},{
-		"title" : "painting_2",
-    	"imageUrl" : "img/painting_2.png",
-    	"frames" : {
-			"title" : "frame_4",
-			"imageUrl" : "img/frame_4.png",
-			"blur" : "some text here"
-	        },{
-	        	"title" : "frame_5",
-				"imageUrl" : "img/frame_5.png",
-				"blur" : "some text here"
-	        },{
-	        	"title" : "frame_6",
-				"imageUrl" : "img/frame_6.png",
-				"blur" : "some text here"
-	        }
-		},{
-		"title" : "painting_3",
-	    "imageUrl" : "img/painting_3.png",
-	    "frames" : {
-				"title" : "frame_7",
-				"imageUrl" : "img/frame_7.png",
-				"blur" : "some text here"
-	        },{
-	        	"title" : "frame_8",
-				"imageUrl" : "img/frame_8.png",
-				"blur" : "some text here"
-	        },{
-	           	"title" : "frame_9",
-				"imageUrl" : "img/frame_9.png",
-				"blur" : "some text here"
-	        }
-		},{
-		"title" : "painting_4",
-	    "imageUrl" : "img/painting_4.png",
-	    "frames" : {
-				"title" : "frame_10",
-				"imageUrl" : "img/frame_10.png",
-				"blur" : "some text here"
-	        },{
-	        	"title" : "frame_11",
-				"imageUrl" : "img/frame_11.png",
-				"blur" : "some text here"
-	        },{
-	        	"title" : "frame_12",
-				"imageUrl" : "img/frame_12.png",
-				"blur" : "some text here"
-	        }
-		};
-
-
-
 	var body = document.body, 
-	    docElem = window.document.documentElement,
+		docElem = window.document.documentElement,
 		transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },
 		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
 		support = { transitions : Modernizr.csstransitions };
@@ -149,13 +147,11 @@
 
 	function Droppable( droppableEl, options ) {
 		this.el = droppableEl;
-		console.log(droppableEl);
-		this.options = extend( {}, this.options );
-		extend( this.options, options );
+		this.options = options;
 	}
 
 	Droppable.prototype.options = {
-		onDrop : function(instance, draggableEl) { return false; }
+		// onDrop : function(instance, draggableEl) { return false; }
 	}
 
 	// based on http://stackoverflow.com/a/2752387 : checks if the droppable element is ready to collect the draggable: the draggable element must intersect the droppable in half of its width or height.
@@ -175,25 +171,25 @@
 			classie.add( this.el, 'highlight' );
 		} else {
 			classie.remove( this.el, 'highlight' );
-		}	
+		}
 	}
 
 	// accepts a draggable element...
 	Droppable.prototype.collect = function( draggableEl ) {
 		// remove highlight class from droppable element
 		classie.remove( this.el, 'highlight' );
-		this.options.onDrop( this, draggableEl );
+		// this.options.onDrop( this, draggableEl );
 	}
 
 	/***************/
 	/** Draggable **/
 	/***************/
 
-	function Draggable( draggableEl, droppables, options ) {
+	function Draggable( draggableEl, droppable, options ) {
 		this.el = draggableEl;
 		this.options = extend( {}, this.options );
 		extend( this.options, options );
-		this.droppables = droppables;
+		this.droppable = droppable;
 		if( this.options.helper ) {
 			this.offset = { left : getOffset( this.el ).left, top : getOffset( this.el ).top };
 		}
@@ -251,8 +247,8 @@
 		
 		// if the draggable && droppable elements intersect then "drop" and move back the draggable
 		var dropped = false;
-		for( var i = 0, len = this.droppables.length; i < len; ++i ) {
-			var droppableEl = this.droppables[i];
+		for( var i = 0, len = this.droppable.length; i < len; ++i ) {
+			var droppableEl = this.droppable[i];
 			if( droppableEl.isDroppable( instance.element ) ) {
 				dropped = true;
 				droppableEl.collect( instance.element );
@@ -289,9 +285,7 @@
 	}
 
 	Draggable.prototype.highlightDroppables = function( el ) {
-		for( var i = 0, len = this.droppables.length; i < len; ++i ) {
-			this.droppables[i].highlight( this.el );
-		}
+		this.droppable.highlight( this.el );
 	}
 
 	Draggable.prototype.createHelper = function() {
@@ -301,7 +295,7 @@
 		classie.remove( clone, 'is-dragging' );
 		this.el.parentNode.replaceChild( clone, this.el );
 		// initialize Draggabilly on the clone.. 
-		var draggable = new Draggable( clone, this.droppables, this.options );
+		var draggable = new Draggable( clone, this.droppable, this.options );
 		// the original item will be absolute on the page - need to set correct position values..
 		classie.add( this.el, 'helper' );
 		this.el.style.left = draggable.offset.left + 'px';
