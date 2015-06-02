@@ -72,7 +72,6 @@
 			}
 		} );
 	} );
-	console.log(Draggable);
 
 	// initialize draggable(s)
 	[].slice.call(document.querySelectorAll( '#select-frame .frame' )).forEach( function( el ) {

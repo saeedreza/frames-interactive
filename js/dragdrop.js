@@ -285,7 +285,9 @@
 	}
 
 	Draggable.prototype.highlightDroppables = function( el ) {
-		this.droppable.highlight( this.el );
+		for( var i = 0, len = this.droppable.length; i < len; ++i ) {
+			this.droppable[i].highlight( this.el );
+		}
 	}
 
 	Draggable.prototype.createHelper = function() {
