@@ -10,43 +10,52 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<script type="text/javascript" src="js/touche.js"></script>
 		<script type="text/javascript" src="js/modernizr.custom.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(window).load(function() {
+				// Animate loader off screen
+				$(".se-pre-con").fadeOut("slow");;
+			});
+		</script>
 	</head>
 	<body>
-		
+		<div class="se-pre-con"></div>
 		<div class="container">
-			<div class="row">
-				
-				<div id="select-painting" class="select-painting">
-					<h2>Painting Selection</h2>
-					<div id="paintings">
-						<div class="painting"><img src="img/image-1.png"></div>
-						<div class="painting"><img src="img/image-2.png"></div>
-						<div class="painting"><img src="img/image-3.png"></div>
-						<div class="painting"><img src="img/image-4.png"></div>
+			<div id="select-painting" class="select-painting">
+				<div id="paintings">
+					<div>
+						<img src="img/painting_1.png" id="painting_0" data-index="0" class="painting" />
+						<div class="painting_title">Painting No 1</div>
+					</div>
+					<div>
+						<img src="img/painting_2.png" id="painting_1" data-index="1" class="painting" />
+						<div class="painting_title">Painting No 2</div>
+					</div>
+					<div>
+						<img src="img/painting_3.png" id="painting_2" data-index="2" class="painting" />
+						<div class="painting_title">Painting No 3</div>
+					</div>
+					<div>
+						<img src="img/painting_4.png" id="painting_3" data-index="3" class="painting" />
+						<div class="painting_title">Painting No 4</div>
 					</div>
 				</div>
-			
-				<div id="showroom" class="showroom">
-					<h2>Start with dragging a painting on the left.</h2>
-					<div class="restart">
-						<button onClick="location.reload()">Start Over</button>
-					</div>
-					<div class="wall">
-						<img src="img/placeholder.png">
-					</div>
-					<div id="title" class="title">Some text here</div>
+			</div>
+		
+			<div id="showroom" class="showroom">
+				<h1>How does a frame change a painting?</h1>
+				<div class="wall">
+					<img class="frame_position" src="img/frame-null.png" />
+					<img class="painting_position" src="img/placeholder.png" />
 				</div>
+				<div id="title" class="title"><div class="selection_text"></div></div>
+			</div>
 
-				<div id="select-frame" class="select-frame">
-					<h2>Frame Selection</h2>
-					<div id="frames">
-						<div class="frame"><img src="img/frame-1.png"></div>
-						<div class="frame"><img src="img/frame-2.png"></div>
-						<div class="frame"><img src="img/frame-3.png"></div>
-						<div class="frame"><img src="img/frame-4.png"></div>
-					</div>
-				</div>
-
+			<div id="select-frame" class="select-frame">
+				<div id="frames"></div>
+				<!-- <div class="restart">
+					<button onClick="location.reload()">Start Over</button>
+				</div> -->
 			</div>
 		</div>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
