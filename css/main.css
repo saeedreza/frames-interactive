@@ -1,10 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:200,400,700);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700);
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 body {
-	color: #666;
-	font-family: 'Raleway', Arial, sans-serif;
+	color: #f1f1f1;
+	font-family: 'PT Serif', Serif;
 }
 
 h1 {
@@ -49,18 +49,18 @@ h1 {
 }
 
 .restart button {
-	background-color: #333;
+	background-color: #f1f1f1;
 	border: 1px solid #333;
 	border-radius: 5px;
 	padding: 5px 10px;
-	color: #666;
+	color: #444;
 }
 
 #select-painting {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 169px;
+	width: 125px;
 	height: 1024px;
 	min-height: 1024px;
 	background-color: #333;
@@ -73,7 +73,7 @@ h1 {
 	position: absolute;
 	left: 768px;
 	top: 0;
-	width: 169px;
+	width: 125px;
 	height: 1024px;
 	min-height: 1024px;
 	background-color: #333;
@@ -82,12 +82,12 @@ h1 {
 	transition: transform 1s;
 }
 #select-frame.show {
-	-webkit-transform: translate3d(-168px,0,0);
-	transform: translate3d(-168px,0,0);
+	-webkit-transform: translate3d(-125px,0,0);
+	transform: translate3d(-125px,0,0);
 }
 
 #paintings, #frames {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 #frames {
@@ -98,23 +98,23 @@ h1 {
 }
 
 #frames.show {
-	-webkit-transform: translate3d(-140px,0,0);
-	transform: translate3d(-140px,0,0);
+	-webkit-transform: translate3d(-125px,0,0);
+	transform: translate3d(-125px,0,0);
 }
 
 .painting, .frame {
-	margin-top: 10px;
+	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
-	height: 120px;
+	height: 150px;
 	opacity: 1;
 }
 #showroom {
 	position: absolute;
 	top: 0;
-	left: 168px;
+	left: 125px;
 	z-index: 0;
-	width: 600px;
+	width: 643px;
 	height: 1024px;
 	background-color: #444;
 	text-align: center;
@@ -123,38 +123,49 @@ h1 {
 }
 
 #showroom.show {
-	-webkit-transform: translate3d(-168px,0,0);
-	transform: translate3d(-168px,0,0);
+	-webkit-transform: translate3d(-125px,0,0);
+	transform: translate3d(-125px,0,0);
 }
 
 .wall {
 	position: relative;
 	opacity: 1;
-	margin-left: -30px;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
 .frame_position {
-	position: absolute;
-	height: 300px;
+	position: relative;
+	top: 0;
+	height: 500px;
+	width: 350px;
+	margin: 0 auto;
+	background: url() no-repeat center center #474747;
 }
 
 .painting_position {
-	position: relative;
-	top: 10px;
-	left: 10px;
-	height: 280px;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	height: 450px;
+	width: 300px;
+	background: url() no-repeat center center #3C3C3C;
+	background-size: cover;
+	-webkit-transition: background 0.1s;
+	transition: background 0.1s;
 }
 
 .painting_title, .frame_title {
-	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 .painting_position.highlight, .frame_position.highlight {
+	background-color: #4f4f4f;
+	-webkit-transition: all 0.1s;
+	transition: all 0.1s;
 	opacity: 1;
-	-webkit-transform: scale3d(1.2,1.2,1);
-	transform: scale3d(1.2,1.2,1);
+	/*-webkit-transform: scale3d(1.2,1.2,1);
+	transform: scale3d(1.2,1.2,1);*/
 }
 
 #title {
@@ -177,7 +188,7 @@ h1 {
 
 }
 
-.is-dragging img {
+.is-dragging {
 	-webkit-transform: scale3d(1.5,1.5,1);
 	transform: scale3d(1.5,1.5,1);
 }
@@ -188,8 +199,8 @@ h1 {
 
 .is-dropped {
 	opacity: 0;
-	-webkit-transition: all 0.5s;
-	transition: all 0.5s;
+	/*-webkit-transition: all 0.5s;
+	transition: all 0.5s;*/
 	-webkit-transform: scale3d(0.7,0.7,1) !important;
     transform: scale3d(0.7,0.7,1) !important;
 }

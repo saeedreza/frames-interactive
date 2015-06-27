@@ -2,7 +2,7 @@
 ( function() {
 	var data = [
 		{
-			'title' : 'Painting No 1',
+			'title' : 'Le Printemps Manet 01',
 			'id' : 'painting_1',
 			'imgUrl' : 'img/painting_1.png',
 			'frames' : [
@@ -11,7 +11,7 @@
 					'imgUrl' : 'img/frame_1_1.png',
 					'id' : 'painting_1_1',
 					'text' : 'frame 1-1'
-				},{
+				}, {
 					'title' : ' Frame No 1-2',
 					'imgUrl' : 'img/frame_1_2.png',
 					'id' : 'painting_1_2',
@@ -24,7 +24,7 @@
 				}
 			]
 		}, {
-			'title' : 'Painting No 2',
+			'title' : 'Le Printemps Manet 02',
 			'id' : 'painting_2',
 			'imgUrl' : 'img/painting_2.png',
 			'frames' : [
@@ -33,7 +33,7 @@
 					'imgUrl' : 'img/frame_2_1.png',
 					'id' : 'painting_2_1',
 					'text' : 'frame 2-1'
-				},{
+				}, {
 					'title' : ' Frame No 2-2',
 					'imgUrl' : 'img/frame_2_2.png',
 					'id' : 'painting_2_2',
@@ -46,7 +46,7 @@
 				}
 			]
 		}, {
-			'title' : 'Painting No 3',
+			'title' : 'Le Printemps Manet 03',
 			'id' : 'painting_3',
 			'imgUrl' : 'img/painting_3.png',
 			'frames' : [
@@ -55,7 +55,7 @@
 					'imgUrl' : 'img/frame_3_1.png',
 					'id' : 'painting_3_1',
 					'text' : 'frame 3-1'
-				},{
+				}, {
 					'title' : ' Frame No 3-2',
 					'imgUrl' : 'img/frame_3_2.png',
 					'id' : 'painting_3_2',
@@ -68,7 +68,7 @@
 				}
 			]
 		}, {
-			'title' : 'Painting No 4',
+			'title' : 'Le Printemps Manet 04',
 			'id' : 'painting_4',
 			'imgUrl' : 'img/painting_4.png',
 			'frames' : [
@@ -77,7 +77,7 @@
 					'imgUrl' : 'img/frame_4_1.png',
 					'id' : 'painting_4_1',
 					'text' : 'frame 4-1'
-				},{
+				}, {
 					'title' : ' Frame No 4-2',
 					'imgUrl' : 'img/frame_4_2.png',
 					'id' : 'painting_4_2',
@@ -131,7 +131,9 @@
 						var src = el.getAttribute("src"),
 							index = el.getAttribute('data-index');
 
-						$('.painting_position').attr("src", src);
+						console.log(src);
+						//$('.painting_position').attr("src", src);
+						document.querySelector('.painting_position').style.backgroundImage= "url('" + src + "')";
 						document.querySelector('.selection_text').innerHTML = "No frame has been selected";
 
 						var frame_data = data[index].frames;
@@ -164,7 +166,8 @@
 											var src = el.getAttribute('src'),
 												index = el.getAttribute('data-index');
 
-											$('.frame_position').attr("src", src);
+											// $('.frame_position').attr("src", src);
+											document.querySelector('.frame_position').style.backgroundImage= "url('" + src + "')";
 											// display the selection text
 											document.querySelector('.selection_text').innerHTML = frame_data[index].title;
 										}
