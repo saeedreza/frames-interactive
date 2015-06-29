@@ -1,16 +1,18 @@
-@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700);
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 body {
-	color: #f1f1f1;
-	font-family: 'PT Serif', Serif;
+	color: #35434E;
+	font-family: 'Lato';
+	letter-spacing: 1px;
+	font-weight: 300;
 }
-
+h1, h2, h3, h4, p, li, a {
+}
 h1 {
 	font-size: 3em;
-	font-weight: 400;
 	margin: 50px;
+	font-weight: 300;
 }
 
 .no-js #loader {
@@ -39,7 +41,7 @@ h1 {
 	height: 1024px;
 	width: 768px;
 	overflow: hidden;
-	background-color: #444;
+	background-color: #35434E;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -48,23 +50,14 @@ h1 {
 	user-select: none;
 }
 
-.restart button {
-	background-color: #f1f1f1;
-	border: 1px solid #333;
-	border-radius: 5px;
-	padding: 5px 10px;
-	color: #444;
-}
-
 #select-painting {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 125px;
+	width: 140px;
 	height: 1024px;
 	min-height: 1024px;
-	background-color: #333;
-	text-align: center;
+	padding: 0 5px;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
@@ -73,58 +66,96 @@ h1 {
 	position: absolute;
 	left: 768px;
 	top: 0;
-	width: 125px;
+	width: 140px;
 	height: 1024px;
 	min-height: 1024px;
-	background-color: #333;
-	text-align: center;
 	-webkit-transition: -webkit-transform 1s;
 	transition: transform 1s;
 }
 #select-frame.show {
-	-webkit-transform: translate3d(-125px,0,0);
-	transform: translate3d(-125px,0,0);
+	-webkit-transform: translate3d(-140px,0,0);
+	transform: translate3d(-140px,0,0);
 }
 
 #paintings, #frames {
-	margin-top: 30px;
+	margin-top: 50px;
+	text-align: center;
 }
 
 #frames {
 	position: absolute;
-	right: -120px;
+	right: -130px;
 	-webkit-transition: -webkit-transform 1.5s;
 	transition: transform 1.5s;	
 }
 
 #frames.show {
-	-webkit-transform: translate3d(-125px,0,0);
-	transform: translate3d(-125px,0,0);
+	-webkit-transform: translate3d(-140px,0,0);
+	transform: translate3d(-140px,0,0);
+}
+
+.painting_background {
+	background-size: contain;
+	width: 115px;
+	margin: auto;
+}
+
+.painting_1 {
+	//background: url(../img/painting_1_rollover.jpg) no-repeat center center;
+	height: 152px;
+}
+
+.painting_2 {
+	//background: url(../img/painting_2_rollover.jpg) no-repeat center center;
+	height: 137px;
+}
+
+.painting_3 {
+	//background: url(../img/painting_3_rollover.jpg) no-repeat center center;
+	height: 165px;
+}
+
+.painting_4 {
+	//background: url(../img/painting_4_rollover.jpg) no-repeat center center;
+	height: 141px;
 }
 
 .painting, .frame {
-	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
-	height: 150px;
+	max-width: 115px;
 	opacity: 1;
 }
+
+.painting_title, .frame_title {
+	margin: 10px 0 30px 0;
+	font-size: 13px;
+	color: #EADEB4;
+}
+
+.painting_title span {
+	font-style: italic;
+	font-size: 16px;
+}
+
 #showroom {
 	position: absolute;
 	top: 0;
-	left: 125px;
+	left: 140px;
 	z-index: 0;
-	width: 643px;
+	border-radius: 5px;
+	background-color: #BEB29A;
+	box-shadow: -3px 0 6px rgba(0,0,0,0.5), 3px 0 6px rgba(0,0,0,0.5);
+	width: 628px;
 	height: 1024px;
-	background-color: #444;
 	text-align: center;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
 #showroom.show {
-	-webkit-transform: translate3d(-125px,0,0);
-	transform: translate3d(-125px,0,0);
+	-webkit-transform: translate3d(-140px,0,0);
+	transform: translate3d(-140px,0,0);
 }
 
 .wall {
@@ -140,7 +171,7 @@ h1 {
 	height: 500px;
 	width: 350px;
 	margin: 0 auto;
-	background: url() no-repeat center center #474747;
+	background: url() no-repeat center center #c6bba6;
 }
 
 .painting_position {
@@ -149,14 +180,10 @@ h1 {
 	left: 25px;
 	height: 450px;
 	width: 300px;
-	background: url() no-repeat center center #3C3C3C;
+	background: url() no-repeat center center #c6bba6;
 	background-size: cover;
 	-webkit-transition: background 0.1s;
 	transition: background 0.1s;
-}
-
-.painting_title, .frame_title {
-	margin-top: 10px;
 }
 
 .painting_position.highlight, .frame_position.highlight {
@@ -171,17 +198,20 @@ h1 {
 #title {
 	position: absolute;
 	display: block;
-	background-color: #333;
+	background-color: #5B656E;
+	color: #EADEB4;
 	bottom: -100px;
 	width: 500px;
 	padding: 20px 0 40px 0;
 	margin: 0 50px;
+	border-radius: 5px;
+	box-shadow: 0 3px 6px #35434E, 0 3px 6px #35434E;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 #title.show {
-	-webkit-transform: translate3d(0, -100px,0);
-	transform: translate3d(0, -100px,0);
+	-webkit-transform: translate3d(0, -110px,0);
+	transform: translate3d(0, -110px,0);
 }
 
 .drag-active {

@@ -2,9 +2,8 @@
 ( function() {
 	var data = [
 		{
-			'title' : 'Le Printemps Manet 01',
 			'id' : 'painting_1',
-			'imgUrl' : 'img/painting_1.png',
+			'rollover_img' : 'img/painting_1_rollover.jpg',
 			'frames' : [
 				{
 					'title' : 'Frame No 1-1',
@@ -24,13 +23,12 @@
 				}
 			]
 		}, {
-			'title' : 'Le Printemps Manet 02',
 			'id' : 'painting_2',
-			'imgUrl' : 'img/painting_2.png',
+			'rollover_img' : 'img/painting_2_rollover.jpg',
 			'frames' : [
 				{
 					'title' : ' Frame No 2-1',
-					'imgUrl' : 'img/frame_2_1.png',
+					'imgUrl' : 'img/painting_2_frame_1_corner.png',
 					'id' : 'painting_2_1',
 					'text' : 'frame 2-1'
 				}, {
@@ -46,9 +44,8 @@
 				}
 			]
 		}, {
-			'title' : 'Le Printemps Manet 03',
 			'id' : 'painting_3',
-			'imgUrl' : 'img/painting_3.png',
+			'rollover_img' : 'img/painting_3_rollover.jpg',
 			'frames' : [
 				{
 					'title' : ' Frame No 3-1',
@@ -68,9 +65,8 @@
 				}
 			]
 		}, {
-			'title' : 'Le Printemps Manet 04',
 			'id' : 'painting_4',
-			'imgUrl' : 'img/painting_4.png',
+			'rollover_img' : 'img/painting_4_rollover.jpg',
 			'frames' : [
 				{
 					'title' : ' Frame No 4-1',
@@ -103,20 +99,40 @@
 
 	// initialize droppablePainting
 	var el = document.querySelector( '#showroom .wall .painting_position' );
+	
 	droppablePainting =  new Droppable( el , {
 		// options...
 	});
 
+
+	//sj
+    draggables = [];
+    draggablesPainting = [];
+    draggablesFrame = [];
+    var droppedFrame;
+    
+
 	// initialize draggable(s)
 	Array.prototype.slice.call(document.querySelectorAll( '#select-painting .painting' )).forEach( function( el ) {
-		new Draggable( el, droppablePainting, {
+		
+        console.log("::before poping to draggabeles::");
+        draggablesPainting.push(
+            
+        new Draggable( el, droppablePainting, {
 			
-			draggabilly : { containment: body },
+            draggabilly : { containment: body },
 			onStart : function() {
 				// add class 'drag-active' to showroom
 				classie.add( showroom, 'drag-active' );
 				// show showroom
 				classie.add( showroom, 'show' );
+                                
+                draggablesPainting.forEach( function( el2 ) {
+                    el2.draggie.isEnabled = false;
+                    
+                });
+                
+                
 			},
 			onEnd : function( wasDropped ) {
 				var afterDropFn = function() {
@@ -158,8 +174,12 @@
 
 									draggabilly : { containment: body },
 									onStart : function() {
+                                        
+                                        draggablesFrame.forEach( function( el2 ) {
+                                        el2.draggie.isEnabled = false;
+                                        });
 									},
-									onEnd : function( wasDropped ) {
+									onEnd : function(  ) {
 										// hide dropArea
 										if (!wasDropped) {
 										} else {
@@ -171,6 +191,10 @@
 											// display the selection text
 											document.querySelector('.selection_text').innerHTML = frame_data[index].title;
 										}
+                                        
+                                        draggablesFrame.forEach( function( el2 ) {
+                                        el2.draggie.isEnabled = true;
+                                        });
 									}
 								});
 							});
@@ -182,8 +206,14 @@
 					classie.remove( showroom, 'drag-active' );
 				};
 				afterDropFn();
+                
+                draggablesPainting.forEach( function( el2 ) {
+                    el2.draggie.isEnabled = true;
+                });
 			}
-		});
+		})
+            
+            ); // end of poping to draggablesPainting
 	});
-
+    
 })();
