@@ -7,13 +7,6 @@ body {
 	letter-spacing: 1px;
 	font-weight: 300;
 }
-h1, h2, h3, h4, p, li, a {
-}
-h1 {
-	font-size: 3em;
-	margin: 50px;
-	font-weight: 300;
-}
 
 .no-js #loader {
 	display: none;
@@ -21,9 +14,6 @@ h1 {
 
 .js #loader {
 	display: block;
-	position: absolute;
-	left: 100px;
-	top: 0;
 }
 
 .se-pre-con {
@@ -36,57 +26,62 @@ h1 {
 	background: url() center no-repeat #444;
 }
 
+.intro {
+	/*background: #444;
+	height: 2048px;
+	width: 1536px;
+	z-index: 100;*/
+}
+
 .container {
 	position: relative;
-	height: 1024px;
-	width: 768px;
+	height: 2048px;
+	width: 1536px;
 	overflow: hidden;
 	background-color: #35434E;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
 }
 
-#select-painting {
+#painting-menu {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 140px;
-	height: 1024px;
-	min-height: 1024px;
+	width: 280px;
+	height: 2048px;
+	min-height: 2048px;
 	padding: 0 5px;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
-#select-frame {
+#frame-menu {
 	position: absolute;
-	left: 768px;
+	left: 1536px;
 	top: 0;
-	width: 140px;
-	height: 1024px;
-	min-height: 1024px;
+	width: 280px;
+	height: 2048px;
+	min-height: 2048px;
 	-webkit-transition: -webkit-transform 1s;
 	transition: transform 1s;
 }
-#select-frame.show {
-	-webkit-transform: translate3d(-140px,0,0);
-	transform: translate3d(-140px,0,0);
-}
 
 #paintings, #frames {
-	margin-top: 50px;
+	margin-top: 100px;
 	text-align: center;
 }
 
 #frames {
 	position: absolute;
-	right: -130px;
+	right: -260px;
 	-webkit-transition: -webkit-transform 1.5s;
 	transition: transform 1.5s;	
+}
+
+#frame-menu.show {
+	-webkit-transform: translate3d(-140px,0,0);
+	transform: translate3d(-140px,0,0);
 }
 
 #frames.show {
@@ -94,96 +89,84 @@ h1 {
 	transform: translate3d(-140px,0,0);
 }
 
-.painting_background {
-	background-size: contain;
-	width: 115px;
-	margin: auto;
+#paintings .painting, #frames .frame {
+	width: 230px;
 }
-
-.painting_1 {
-	//background: url(../img/painting_1_rollover.jpg) no-repeat center center;
-	height: 152px;
-}
-
-.painting_2 {
-	//background: url(../img/painting_2_rollover.jpg) no-repeat center center;
-	height: 137px;
-}
-
-.painting_3 {
-	//background: url(../img/painting_3_rollover.jpg) no-repeat center center;
-	height: 165px;
-}
-
-.painting_4 {
-	//background: url(../img/painting_4_rollover.jpg) no-repeat center center;
-	height: 141px;
-}
-
-.painting, .frame {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 115px;
-	opacity: 1;
-}
-
-.painting_title, .frame_title {
-	margin: 10px 0 30px 0;
-	font-size: 13px;
+#paintings .painting_info, #frames .frame_info {
+	margin: 20px 0 60px 0;
 	color: #EADEB4;
 }
 
-.painting_title span {
-	font-style: italic;
-	font-size: 16px;
+#paintings .painting_info .painting_title, #frames .frame_info .frame_title {
+	font-size: 30px;
+	font-weight: 300;
+}
+
+#paintings .painting_info .painting_artist, #frames .frame_info .frame_artist {
+	font-size: 24px;
+	font-weight: 100;
 }
 
 #showroom {
 	position: absolute;
 	top: 0;
-	left: 140px;
+	left: 280px;
 	z-index: 0;
 	border-radius: 5px;
 	background-color: #BEB29A;
-	box-shadow: -3px 0 6px rgba(0,0,0,0.5), 3px 0 6px rgba(0,0,0,0.5);
-	width: 628px;
-	height: 1024px;
+	box-shadow: -6px 0 12px rgba(0,0,0,0.5), 6px 0 12px rgba(0,0,0,0.5);
+	width: 1256px;
+	height: 2048px;
 	text-align: center;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
 #showroom.show {
-	-webkit-transform: translate3d(-140px,0,0);
-	transform: translate3d(-140px,0,0);
+	-webkit-transform: translate3d(-280px,0,0);
+	transform: translate3d(-280px,0,0);
 }
 
 .wall {
 	position: relative;
 	opacity: 1;
+	top: 120px;
+	width: 1200px;
+	height: 1600px;
+	margin: auto;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
 .frame_position {
-	position: relative;
-	top: 0;
-	height: 500px;
-	width: 350px;
+	position: absolute;
+	top: 50px;
+	left: 40px;
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+	width: 1100px;
+	height: 1520px;
 	margin: 0 auto;
-	background: url() no-repeat center center #c6bba6;
+	background: url() no-repeat center center inherit;
 }
 
 .painting_position {
 	position: absolute;
-	top: 25px;
-	left: 25px;
-	height: 450px;
-	width: 300px;
+	top: 350px;
+	left: 230px;
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+	width: 740px;
+	height: 900px;
 	background: url() no-repeat center center #c6bba6;
 	background-size: cover;
 	-webkit-transition: background 0.1s;
 	transition: background 0.1s;
+}
+
+.frame_position img, .painting_position img {
 }
 
 .painting_position.highlight, .frame_position.highlight {
@@ -200,18 +183,18 @@ h1 {
 	display: block;
 	background-color: #5B656E;
 	color: #EADEB4;
-	bottom: -100px;
-	width: 500px;
-	padding: 20px 0 40px 0;
-	margin: 0 50px;
+	bottom: -200px;
+	width: 1000px;
+	padding: 40px 0 80px 0;
+	margin: 0 100px;
 	border-radius: 5px;
-	box-shadow: 0 3px 6px #35434E, 0 3px 6px #35434E;
+	box-shadow: 0 6px 12px #35434E, 0 6px 12px #35434E;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 #title.show {
-	-webkit-transform: translate3d(0, -110px,0);
-	transform: translate3d(0, -110px,0);
+	-webkit-transform: translate3d(0, -220px,0);
+	transform: translate3d(0, -220px,0);
 }
 
 .drag-active {

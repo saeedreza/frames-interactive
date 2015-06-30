@@ -90,8 +90,8 @@
 
 	var body = document.body,
 		showroom = document.getElementById( 'showroom' ),
-		paintingSelection = document.getElementById( 'select-painting' ),
-		frameSelection = document.getElementById( 'select-frame' ),
+		paintingSelection = document.getElementById( 'painting-menu' ),
+		frameSelection = document.getElementById( 'frame-menu' ),
 		frames = document.getElementById( 'frames'),
 		title = document.getElementById( 'title'),
 		droppablePainting = [],
@@ -113,11 +113,9 @@
     
 
 	// initialize draggable(s)
-	Array.prototype.slice.call(document.querySelectorAll( '#select-painting .painting' )).forEach( function( el ) {
+	Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( el ) {
 		
-        console.log("::before poping to draggabeles::");
         draggablesPainting.push(
-            
         new Draggable( el, droppablePainting, {
 			
             draggabilly : { containment: body },
@@ -127,12 +125,11 @@
 				// show showroom
 				classie.add( showroom, 'show' );
                                 
+                
                 draggablesPainting.forEach( function( el2 ) {
                     el2.draggie.isEnabled = false;
                     
                 });
-                
-                
 			},
 			onEnd : function( wasDropped ) {
 				var afterDropFn = function() {
@@ -148,8 +145,8 @@
 							index = el.getAttribute('data-index');
 
 						console.log(src);
-						//$('.painting_position').attr("src", src);
-						document.querySelector('.painting_position').style.backgroundImage= "url('" + src + "')";
+						$('.painting_position img').attr("src", src);
+						// document.querySelector('.painting_position img').attr("src", src);
 						document.querySelector('.selection_text').innerHTML = "No frame has been selected";
 
 						var frame_data = data[index].frames;
@@ -160,7 +157,7 @@
 								frame += '<div><img src="' + frame_data[i].imgUrl + '" id="frame_' + i + '" data-index="' + i + '" class="frame" /><div class="frame_title">' + frame_data[i].title + '</div></div>';
 							};
 							document.getElementById('frames').innerHTML = frame;
-							// document.getElementById('select-frame').append('Hi');
+							// document.getElementById('frame-menu').append('Hi');
 
 							// initialize droppablePainting
 							var el = document.querySelector( '#showroom .wall .frame_position' );
@@ -170,15 +167,23 @@
 
 							// initialize draggable(s)
 							[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( el ) {
-								new Draggable( el, droppableFrame, {
+								
+                                draggablesFrame.push(
+                                new Draggable( el, droppableFrame, {
 
 									draggabilly : { containment: body },
 									onStart : function() {
                                         
+                                        var frames = document.querySelectorAll('.frame.animate');
+                                        for(var i = 0; i < frames.length; i++)
+                                            classie.remove(frames[i], 'animate');
+                                        
                                         draggablesFrame.forEach( function( el2 ) {
+                                        console.log(el2.draggie.isEnabled);
                                         el2.draggie.isEnabled = false;
                                         });
-									},
+									
+                                    },
 									onEnd : function(  ) {
 										// hide dropArea
 										if (!wasDropped) {
@@ -194,10 +199,13 @@
                                         
                                         draggablesFrame.forEach( function( el2 ) {
                                         el2.draggie.isEnabled = true;
+                                            
                                         });
 									}
-								});
-							});
+								})
+							
+                                    )// end of pushing onto draggablesFRam
+                            });
 						}
 						
 						loadFrames(src, index);
