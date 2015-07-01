@@ -5,8 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>French Frame | Interactive App</title>
-
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
 		
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -22,58 +20,61 @@
 	</head>
 	<body>
 		<div class="se-pre-con"></div>
-		<div class="intro">
-			<div class="container">
-				<div id="painting-menu" class="painting-menu">
-					<div id="paintings">
-						<div>
-							<img src="img/painting_1.jpg" id="painting_0" data-index="0" class="painting" />
-						</div>
-						<div class="painting_info">
-							<div class="painting_title">Vase of Flowers</div>
-							<div class="painting_artist">Van Huysum</div>
-						</div>
-						<div>
-							<img src="img/painting_2.jpg" id="painting_1" data-index="1" class="painting" />
-						</div>
-						<div class="painting_info">
-							<div class="painting_title">Mars & Venus</div>
-							<div class="painting_artist">Lagrenee</div>
-						</div>
-						<div>
-							<img src="img/painting_3.jpg" id="painting_2" data-index="2" class="painting" />
-						</div>
-						<div class="painting_info">
-							<div class="painting_title">La Printemps</div>
-							<div class="painting_artist">Manet</div>
-						</div>
-						<div>
-							<img src="img/painting_4.jpg" id="painting_3" data-index="3" class="painting" />
-						</div>
-						<div class="painting_info">
-							<div class="painting_title">Suzanne Le Peletier</div>
-							<div class="painting_artist">David</div>
-						</div>
+		<!-- <div class="intro">
+			<h1>How does a frame change a painting?</h1>
+		</div> -->
+		<div class="container">
+			<div id="painting-menu" class="painting-menu">
+				<div id="paintings">
+					<div>
+						<img src="img/painting_1.jpg" id="painting_0" data-index="0" class="painting" />
 					</div>
-				</div>
-			
-				<div id="showroom" class="showroom">
-					<div class="wall">
-						<div class="frame_position">
-							<img src="#" />
-						</div>
-						<div class="painting_position">
-							<img src="#" />
-						</div>
+					<div class="painting_info">
+						<div class="painting_title">Vase of Flowers</div>
+						<div class="painting_artist">Van Huysum</div>
 					</div>
-					<div id="title" class="title"><div class="selection_text"></div></div>
-				</div>
-
-				<div id="frame-menu" class="frame-menu">
-					<div id="frames"></div>
+					<div>
+						<img src="img/painting_2.jpg" id="painting_1" data-index="1" class="painting" />
+					</div>
+					<div class="painting_info">
+						<div class="painting_title">Mars & Venus</div>
+						<div class="painting_artist">Lagrenee</div>
+					</div>
+					<div>
+						<img src="img/painting_3.jpg" id="painting_2" data-index="2" class="painting" />
+					</div>
+					<div class="painting_info">
+						<div class="painting_title">La Printemps</div>
+						<div class="painting_artist">Manet</div>
+					</div>
+					<div>
+						<img src="img/painting_4.jpg" id="painting_3" data-index="3" class="painting" />
+					</div>
+					<div class="painting_info">
+						<div class="painting_title">Suzanne Le Peletier</div>
+						<div class="painting_artist">David</div>
+					</div>
 				</div>
 			</div>
+		
+			<div id="showroom" class="showroom">
+				<div class="wall">
+					<div class="painting_position">
+						<img src="" />
+						
+					</div>
+					<div class="frame_position">
+						<img src="" />
+					</div>
+				</div>
+				<div id="title" class="title"><div class="selection_text"></div></div>
+			</div>
+
+			<div id="frame-menu" class="frame-menu">
+				<div id="frames"></div>
+			</div>
 		</div>
+		
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/draggabilly.pkgd.min.js"></script>
 		<script type="text/javascript" src="js/dragdrop.js"></script>

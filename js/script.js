@@ -146,7 +146,7 @@
 
 						console.log(src);
 						$('.painting_position img').attr("src", src);
-						// document.querySelector('.painting_position img').attr("src", src);
+						$('.painting_position').css('background-color', '#BEB29A');
 						document.querySelector('.selection_text').innerHTML = "No frame has been selected";
 
 						var frame_data = data[index].frames;

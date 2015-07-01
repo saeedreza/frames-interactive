@@ -1,3 +1,36 @@
+@font-face { /* Webfont: Lato-Light */
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Light.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face { /* Webfont: Lato-LightItalic */
+    font-family: 'Lato';
+    src: url('../fonts/Lato-LightItalic.woff') format('woff');
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face { /* Webfont: Lato-Thin */
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Thin.woff') format('woff');
+    font-style: normal;
+    font-weight: 100;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face { /* Webfont: Lato-ThinItalic */
+    font-family: 'Lato';
+    src: url('../fonts/Lato-ThinItalic.woff') format('woff');
+    font-style: italic;
+    font-weight: 100;
+    text-rendering: optimizeLegibility;
+}
+
+
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -5,7 +38,6 @@ body {
 	color: #35434E;
 	font-family: 'Lato';
 	letter-spacing: 1px;
-	font-weight: 300;
 }
 
 .no-js #loader {
@@ -27,16 +59,22 @@ body {
 }
 
 .intro {
-	/*background: #444;
-	height: 2048px;
-	width: 1536px;
-	z-index: 100;*/
+	background-color: rgba(0,0,0,1);
+	height: 1024px;
+	width: 768px;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+}
+
+.intro h1 {
+	color: #fff;
 }
 
 .container {
 	position: relative;
-	height: 2048px;
-	width: 1536px;
+	height: 1024px;
+	width: 768px;
 	overflow: hidden;
 	background-color: #35434E;
 	-webkit-touch-callout: none;
@@ -48,9 +86,9 @@ body {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 280px;
-	height: 2048px;
-	min-height: 2048px;
+	width: 140px;
+	height: 1024px;
+	min-height: 1024px;
 	padding: 0 5px;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -58,23 +96,23 @@ body {
 
 #frame-menu {
 	position: absolute;
-	left: 1536px;
+	left: 768px;
 	top: 0;
-	width: 280px;
-	height: 2048px;
-	min-height: 2048px;
+	width: 140px;
+	height: 1024px;
+	min-height: 1024px;
 	-webkit-transition: -webkit-transform 1s;
 	transition: transform 1s;
 }
 
 #paintings, #frames {
-	margin-top: 100px;
+	margin-top: 50px;
 	text-align: center;
 }
 
 #frames {
 	position: absolute;
-	right: -260px;
+	right: -130px;
 	-webkit-transition: -webkit-transform 1.5s;
 	transition: transform 1.5s;	
 }
@@ -90,49 +128,49 @@ body {
 }
 
 #paintings .painting, #frames .frame {
-	width: 230px;
+	width: 115px;
 }
 #paintings .painting_info, #frames .frame_info {
-	margin: 20px 0 60px 0;
+	margin: 10px 0 30px 0;
 	color: #EADEB4;
 }
 
 #paintings .painting_info .painting_title, #frames .frame_info .frame_title {
-	font-size: 30px;
-	font-weight: 300;
+	font-size: 15px;
+	font-weight: normal;
 }
 
 #paintings .painting_info .painting_artist, #frames .frame_info .frame_artist {
-	font-size: 24px;
+	font-size: 12px;
 	font-weight: 100;
 }
 
 #showroom {
 	position: absolute;
 	top: 0;
-	left: 280px;
+	left: 140px;
 	z-index: 0;
 	border-radius: 5px;
 	background-color: #BEB29A;
-	box-shadow: -6px 0 12px rgba(0,0,0,0.5), 6px 0 12px rgba(0,0,0,0.5);
-	width: 1256px;
-	height: 2048px;
+	box-shadow: -3px 0 6px rgba(0,0,0,0.5), 3px 0 6px rgba(0,0,0,0.5);
+	width: 628px;
+	height: 1024px;
 	text-align: center;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
 #showroom.show {
-	-webkit-transform: translate3d(-280px,0,0);
-	transform: translate3d(-280px,0,0);
+	-webkit-transform: translate3d(-140px,0,0);
+	transform: translate3d(-140px,0,0);
 }
 
 .wall {
 	position: relative;
 	opacity: 1;
-	top: 120px;
-	width: 1200px;
-	height: 1600px;
+	top: 60px;
+	width: 600px;
+	height: 800px;
 	margin: auto;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -140,42 +178,38 @@ body {
 
 .frame_position {
 	position: absolute;
-	top: 50px;
-	left: 40px;
+	top: 25px;
+	left: 20px;
 	display: flex;
 	align-items: center;
   	justify-content: center;
-	width: 1100px;
-	height: 1520px;
+	width: 550px;
+	height: 760px;
 	margin: 0 auto;
 	background: url() no-repeat center center inherit;
 }
 
 .painting_position {
 	position: absolute;
-	top: 350px;
-	left: 230px;
+	top: 175px;
+	left: 115px;
 	display: flex;
 	align-items: center;
   	justify-content: center;
-	width: 740px;
-	height: 900px;
-	background: url() no-repeat center center #c6bba6;
-	background-size: cover;
-	-webkit-transition: background 0.1s;
-	transition: background 0.1s;
+	width: 370px;
+	height: 450px;
+	border-radius: 5px;
+	background-color: #b4a68a;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
 }
 
 .frame_position img, .painting_position img {
 }
 
 .painting_position.highlight, .frame_position.highlight {
-	background-color: #4f4f4f;
-	-webkit-transition: all 0.1s;
-	transition: all 0.1s;
-	opacity: 1;
-	/*-webkit-transform: scale3d(1.2,1.2,1);
-	transform: scale3d(1.2,1.2,1);*/
+	-webkit-transform: scale3d(1.1,1.1,1);
+	transform: scale3d(1.1,1.1,1);
 }
 
 #title {
@@ -183,18 +217,18 @@ body {
 	display: block;
 	background-color: #5B656E;
 	color: #EADEB4;
-	bottom: -200px;
-	width: 1000px;
-	padding: 40px 0 80px 0;
-	margin: 0 100px;
-	border-radius: 5px;
-	box-shadow: 0 6px 12px #35434E, 0 6px 12px #35434E;
+	bottom: -120px;
+	width: 500px;
+	padding: 20px 0 40px 0;
+	margin: 0 50px;
+	border-radius: 2px 2px 0 0 ;
+	/*box-shadow: 0 3px 6px #35434E, 0 3px 6px #35434E;*/
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 #title.show {
-	-webkit-transform: translate3d(0, -220px,0);
-	transform: translate3d(0, -220px,0);
+	-webkit-transform: translate3d(0, -110px,0);
+	transform: translate3d(0, -110px,0);
 }
 
 .drag-active {
