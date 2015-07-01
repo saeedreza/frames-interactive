@@ -7,17 +7,17 @@
 			'frames' : [
 				{
 					'title' : 'Frame No 1-1',
-					'imgUrl' : 'img/frame_1_1.png',
+					'frame_corner_imgUrl' : 'img/frame_1_1.png',
 					'id' : 'painting_1_1',
 					'text' : 'frame 1-1'
 				}, {
 					'title' : ' Frame No 1-2',
-					'imgUrl' : 'img/frame_1_2.png',
+					'frame_corner_imgUrl' : 'img/frame_1_2.png',
 					'id' : 'painting_1_2',
 					'text' : 'frame 1-2'
 				}, {
 					'title' : ' Frame No 1-3',
-					'imgUrl' : 'img/frame_1_3.png',
+					'frame_corner_imgUrl' : 'img/frame_1_3.png',
 					'id' : 'painting_1_3',
 					'text' : 'frame 1-3'
 				}
@@ -28,17 +28,20 @@
 			'frames' : [
 				{
 					'title' : ' Frame No 2-1',
-					'imgUrl' : 'img/painting_2_frame_1_corner.png',
+					'frame_corner_imgUrl' : 'img/painting_2_frame_1_corner.png',
+					'frame_imgUrl' : 'img/painting_2_frame_1.png',
 					'id' : 'painting_2_1',
 					'text' : 'frame 2-1'
 				}, {
 					'title' : ' Frame No 2-2',
-					'imgUrl' : 'img/frame_2_2.png',
+					'frame_corner_imgUrl' : 'img/painting_2_frame_2_corner.png',
+					'frame_imgUrl' : 'img/painting_2_frame_2.png',
 					'id' : 'painting_2_2',
 					'text' : 'frame 2-2'
 				}, {
 					'title' : ' Frame No 2-3',
-					'imgUrl' : 'img/frame_2_3.png',
+					'frame_corner_imgUrl' : 'img/painting_2_frame_3_corner.png',
+					'frame_imgUrl' : 'img/painting_2_frame_3.png',
 					'id' : 'painting_2_3',
 					'text' : 'frame 2-3'
 				}
@@ -49,17 +52,17 @@
 			'frames' : [
 				{
 					'title' : ' Frame No 3-1',
-					'imgUrl' : 'img/frame_3_1.png',
+					'frame_corner_imgUrl' : 'img/frame_3_1.png',
 					'id' : 'painting_3_1',
 					'text' : 'frame 3-1'
 				}, {
 					'title' : ' Frame No 3-2',
-					'imgUrl' : 'img/frame_3_2.png',
+					'frame_corner_imgUrl' : 'img/frame_3_2.png',
 					'id' : 'painting_3_2',
 					'text' : 'frame 3-2'
 				}, {
 					'title' : ' Frame No 3-3',
-					'imgUrl' : 'img/frame_3_3.png',
+					'frame_corner_imgUrl' : 'img/frame_3_3.png',
 					'id' : 'painting_3_3',
 					'text' : 'frame 3-3'
 				}
@@ -70,17 +73,17 @@
 			'frames' : [
 				{
 					'title' : ' Frame No 4-1',
-					'imgUrl' : 'img/frame_4_1.png',
+					'frame_corner_imgUrl' : 'img/frame_4_1.png',
 					'id' : 'painting_4_1',
 					'text' : 'frame 4-1'
 				}, {
 					'title' : ' Frame No 4-2',
-					'imgUrl' : 'img/frame_4_2.png',
+					'frame_corner_imgUrl' : 'img/frame_4_2.png',
 					'id' : 'painting_4_2',
 					'text' : 'frame 4-2'
 				}, {
 					'title' : ' Frame No 4-3',
-					'imgUrl' : 'img/frame_4_3.png',
+					'frame_corner_imgUrl' : 'img/frame_4_3.png',
 					'id' : 'painting_4_3',
 					'text' : 'frame 4-3'
 				}
@@ -144,7 +147,6 @@
 						var src = el.getAttribute("src"),
 							index = el.getAttribute('data-index');
 
-						console.log(src);
 						$('.painting_position img').attr("src", src);
 						$('.painting_position').css('background-color', '#BEB29A');
 						document.querySelector('.selection_text').innerHTML = "No frame has been selected";
@@ -154,10 +156,9 @@
 						var loadFrames = function(src, index) {
 							var frame = "";
 							for (var i = 0; i < frame_data.length; i++ ) {
-								frame += '<div><img src="' + frame_data[i].imgUrl + '" id="frame_' + i + '" data-index="' + i + '" class="frame" /><div class="frame_title">' + frame_data[i].title + '</div></div>';
+								frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" id="frame_' + i + '" data-index="' + i + '" class="frame" /><div class="frame_title">' + frame_data[i].title + '</div></div>';
 							};
 							document.getElementById('frames').innerHTML = frame;
-							// document.getElementById('frame-menu').append('Hi');
 
 							// initialize droppablePainting
 							var el = document.querySelector( '#showroom .wall .frame_position' );
@@ -188,11 +189,15 @@
 										// hide dropArea
 										if (!wasDropped) {
 										} else {
-											var src = el.getAttribute('src'),
+											var i = el.getAttribute('data-index'),
+												// src = el.getAttribute('src'),
+												src = frame_data[i].frame_imgUrl,
 												index = el.getAttribute('data-index');
+												
+												
+												console.log(src);
 
-											// $('.frame_position').attr("src", src);
-											document.querySelector('.frame_position').style.backgroundImage= "url('" + src + "')";
+											$('.frame_position img').attr("src", src);
 											// display the selection text
 											document.querySelector('.selection_text').innerHTML = frame_data[index].title;
 										}
@@ -203,8 +208,9 @@
                                         });
 									}
 								})
-							
-                                    )// end of pushing onto draggablesFRam
+
+                                )// end of pushing onto draggablesFRam
+
                             });
 						}
 						

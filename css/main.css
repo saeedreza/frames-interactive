@@ -127,8 +127,13 @@ body {
 	transform: translate3d(-140px,0,0);
 }
 
-#paintings .painting, #frames .frame {
+#paintings .painting {
 	width: 115px;
+}
+
+#frames .frame {
+	width: 75px;
+	margin: 10px 0 50px 0;
 }
 #paintings .painting_info, #frames .frame_info {
 	margin: 10px 0 30px 0;
@@ -180,9 +185,11 @@ body {
 	position: absolute;
 	top: 25px;
 	left: 20px;
-	display: flex;
+	display: table;
+	text-align: center;
+	/*display: flex;
 	align-items: center;
-  	justify-content: center;
+  	justify-content: center;*/
 	width: 550px;
 	height: 760px;
 	margin: 0 auto;
@@ -203,29 +210,35 @@ body {
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
-
-.frame_position img, .painting_position img {
+.painting_position img, .frame_position img {
+	display: table-cell;
+	vertical-align: middle;
 }
 
-.painting_position.highlight, .frame_position.highlight {
+.painting_position img {
+	box-shadow: 0px 4px 4px #444;
+}
+
+.painting_position.highlight {
 	-webkit-transform: scale3d(1.1,1.1,1);
 	transform: scale3d(1.1,1.1,1);
 }
 
 #title {
-	position: absolute;
-	display: block;
+	position: relative;
 	background-color: #5B656E;
 	color: #EADEB4;
-	bottom: -120px;
+	bottom: -235px;
 	width: 500px;
-	padding: 20px 0 40px 0;
-	margin: 0 50px;
-	border-radius: 2px 2px 0 0 ;
-	/*box-shadow: 0 3px 6px #35434E, 0 3px 6px #35434E;*/
+	min-height: 100px;
+	margin: auto;
+	padding: 10px;
+	border-radius: 2px 2px 0 0;
+	/* box-shadow: 0 3px 6px #35434E, 0 3px 6px #35434E; */
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
+
 #title.show {
 	-webkit-transform: translate3d(0, -110px,0);
 	transform: translate3d(0, -110px,0);
@@ -236,8 +249,8 @@ body {
 }
 
 .is-dragging {
-	-webkit-transform: scale3d(1.5,1.5,1);
-	transform: scale3d(1.5,1.5,1);
+	/*-webkit-transform: scale3d(1.5,1.5,1);
+	transform: scale3d(1.5,1.5,1);*/
 }
 
 .is-active {
@@ -245,11 +258,11 @@ body {
 }
 
 .is-dropped {
-	opacity: 0;
-	/*-webkit-transition: all 0.5s;
-	transition: all 0.5s;*/
+	/*opacity: 0;
+	-webkit-transition: all 0.1s;
+	transition: all 0.2s;
 	-webkit-transform: scale3d(0.7,0.7,1) !important;
-    transform: scale3d(0.7,0.7,1) !important;
+    transform: scale3d(0.7,0.7,1) !important;*/
 }
 
 .is-complete {
