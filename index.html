@@ -24,6 +24,8 @@
 			<h1>How does a frame change a painting?</h1>
 		</div> -->
 		<div class="container">
+			
+			<!-- Painting menu -->
 			<div id="painting-menu" class="painting-menu">
 				<div id="paintings">
 					<div>
@@ -56,8 +58,13 @@
 					</div>
 				</div>
 			</div>
-		
+
+			<!-- Showroom -->
 			<div id="showroom" class="showroom">
+				<div class="nav">
+					<div class="leftMenu" onclick="leftMenu()">Left Menu</div>
+					<div class="rightMenu" onclick="rightMenu()">Right Menu</div>
+				</div>
 				<div class="wall">
 					<div class="painting_position">
 						<img src="" />
@@ -65,10 +72,14 @@
 					<div class="frame_position">
 						<img src="" />
 					</div>
+					<div id="label"><div class="text"></div></div>
 				</div>
-				<div id="title" class="title"><div class="selection_text"></div></div>
+				
+				<!-- matching text display -->
+				<div id="textMatch"></div>
 			</div>
 
+			<!-- Frame menu -->
 			<div id="frame-menu" class="frame-menu">
 				<div id="frames"></div>
 			</div>

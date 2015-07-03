@@ -73,8 +73,9 @@ body {
 
 .container {
 	position: relative;
-	height: 1024px;
 	width: 768px;
+	min-height: 1024px;
+	max-height: 1024px;
 	overflow: hidden;
 	background-color: #35434E;
 	-webkit-touch-callout: none;
@@ -86,9 +87,8 @@ body {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 140px;
-	height: 1024px;
-	min-height: 1024px;
+	width: 200px;
+	height: 100%;
 	padding: 0 5px;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -96,11 +96,11 @@ body {
 
 #frame-menu {
 	position: absolute;
-	left: 768px;
+	left: 568px;
 	top: 0;
-	width: 140px;
-	height: 1024px;
-	min-height: 1024px;
+	width: 200px;
+	height: 100%;
+	padding: 0 5px;
 	-webkit-transition: -webkit-transform 1s;
 	transition: transform 1s;
 }
@@ -108,23 +108,6 @@ body {
 #paintings, #frames {
 	margin-top: 50px;
 	text-align: center;
-}
-
-#frames {
-	position: absolute;
-	right: -130px;
-	-webkit-transition: -webkit-transform 1.5s;
-	transition: transform 1.5s;	
-}
-
-#frame-menu.show {
-	-webkit-transform: translate3d(-140px,0,0);
-	transform: translate3d(-140px,0,0);
-}
-
-#frames.show {
-	-webkit-transform: translate3d(-140px,0,0);
-	transform: translate3d(-140px,0,0);
 }
 
 #paintings .painting {
@@ -150,30 +133,51 @@ body {
 	font-weight: 100;
 }
 
+.nav {
+	padding: 5px 10px;
+}
+
+.nav:after, .nav:before {
+  display: table;
+  content: " ";
+}
+
+.leftMenu {
+	float: left;
+}
+
+.rightMenu {
+	float: right;
+}
+
 #showroom {
 	position: absolute;
 	top: 0;
-	left: 140px;
-	z-index: 0;
-	border-radius: 5px;
+	left: 0;
+	width: 768px;
+	height: 1024px;
+	z-index: 1;
 	background-color: #BEB29A;
 	box-shadow: -3px 0 6px rgba(0,0,0,0.5), 3px 0 6px rgba(0,0,0,0.5);
-	width: 628px;
-	height: 1024px;
 	text-align: center;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
-#showroom.show {
-	-webkit-transform: translate3d(-140px,0,0);
-	transform: translate3d(-140px,0,0);
+#showroom.showLeft {
+	-webkit-transform: translate3d(200px,0,0);
+	transform: translate3d(200px,0,0);
+}
+
+#showroom.showRight {
+	-webkit-transform: translate3d(-200px,0,0);
+	transform: translate3d(-200px,0,0);	
 }
 
 .wall {
 	position: relative;
 	opacity: 1;
-	top: 60px;
+	top: 30px;
 	width: 600px;
 	height: 800px;
 	margin: auto;
@@ -185,34 +189,34 @@ body {
 	position: absolute;
 	top: 25px;
 	left: 20px;
-	display: table;
 	text-align: center;
-	/*display: flex;
+	display: flex;
 	align-items: center;
-  	justify-content: center;*/
+  	justify-content: center;
 	width: 550px;
 	height: 760px;
 	margin: 0 auto;
-	background: url() no-repeat center center inherit;
 }
 
 .painting_position {
 	position: absolute;
 	top: 175px;
-	left: 115px;
+	left: 110px;
 	display: flex;
 	align-items: center;
   	justify-content: center;
 	width: 370px;
 	height: 450px;
 	border-radius: 5px;
+	box-shadow: 0px 4px 4px #444;
 	background-color: #b4a68a;
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
+
 .painting_position img, .frame_position img {
-	display: table-cell;
-	vertical-align: middle;
+	/*display: table-cell;
+	vertical-align: middle;*/
 }
 
 .painting_position img {
@@ -224,24 +228,28 @@ body {
 	transform: scale3d(1.1,1.1,1);
 }
 
-#title {
-	position: relative;
-	background-color: #5B656E;
-	color: #EADEB4;
-	bottom: -235px;
-	width: 500px;
-	min-height: 100px;
-	margin: auto;
-	padding: 10px;
-	border-radius: 2px 2px 0 0;
-	/* box-shadow: 0 3px 6px #35434E, 0 3px 6px #35434E; */
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
+#label {
+	display: none;
+	position: absolute;
+	color: #000;
+	background: #FFF;
+	/*text-shadow: 0px 1px 0px #666;*/
+	min-width: 150px;
+	max-width: 250px;
+	min-height: 50px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto;
+	padding: 5px 10px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	transition: all 0.5s ease-out;
 }
 
-#title.show {
-	-webkit-transform: translate3d(0, -110px,0);
-	transform: translate3d(0, -110px,0);
+#label .text {
+	font-size: 10px;
+	font-weight: normal;
 }
 
 .drag-active {

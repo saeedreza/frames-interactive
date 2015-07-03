@@ -1,4 +1,20 @@
 
+
+var leftMenu = function() {
+	$('.showroom').removeClass('showRight').toggleClass('showLeft');
+	$('.painting_position img').attr('src', '').css('box-shadow', 'none');
+	$('.frame_position img').attr('src', '');
+}
+
+var rightMenu = function() {
+	$('.showroom').removeClass('showLeft').toggleClass('showRight');
+
+}
+
+// show the left menu
+classie.add(showroom, 'showLeft');
+
+
 ( function() {
 	var data = [
 		{
@@ -96,60 +112,49 @@
 		paintingSelection = document.getElementById( 'painting-menu' ),
 		frameSelection = document.getElementById( 'frame-menu' ),
 		frames = document.getElementById( 'frames'),
-		title = document.getElementById( 'title'),
+		label = document.getElementById( 'label'),
+		matchText = document.getElementById( 'matchText' ),
 		droppablePainting = [],
 		droppableFrame = [];
 
-	// initialize droppablePainting
+	// initialize droppable for paintings
 	var el = document.querySelector( '#showroom .wall .painting_position' );
-	
 	droppablePainting =  new Droppable( el , {
 		// options...
 	});
-
-
-	//sj
-    draggables = [];
-    draggablesPainting = [];
-    draggablesFrame = [];
-    var droppedFrame;
     
 
-	// initialize draggable(s)
+	// initialize draggable paintings
 	Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( el ) {
 		
-        draggablesPainting.push(
         new Draggable( el, droppablePainting, {
 			
             draggabilly : { containment: body },
 			onStart : function() {
-				// add class 'drag-active' to showroom
-				classie.add( showroom, 'drag-active' );
-				// show showroom
-				classie.add( showroom, 'show' );
-                                
-                
-                draggablesPainting.forEach( function( el2 ) {
-                    el2.draggie.isEnabled = false;
-                    
-                });
+				// close the left menu
+				leftMenu();
 			},
 			onEnd : function( wasDropped ) {
 				var afterDropFn = function() {
 					// hide showroom
 					if (!wasDropped) {
-						classie.remove( showroom, 'show' );	
+						leftMenu();
 					} else {
-						classie.add( frameSelection, 'show' );
-						classie.add( title, 'show' );
-						classie.add( frames, 'show' );
+						// show frame menu after 1.5s
+						setTimeout(function() {
+							rightMenu();
+						}, 1500);
+						
+						// show
+						$('#label').fadeIn();
 						
 						var src = el.getAttribute("src"),
 							index = el.getAttribute('data-index');
 
 						$('.painting_position img').attr("src", src);
-						$('.painting_position').css('background-color', '#BEB29A');
-						document.querySelector('.selection_text').innerHTML = "No frame has been selected";
+						$('.painting_position').css('background-color', 'transparent').css('box-shadow', 'none');
+
+						document.querySelector('.text').innerHTML = "Mars and Venus, Allegory of Peace, 1770. Louis-Jean François Lagrenée (French, 1725–1805). Oil on canvas, 85.1 x 74.3 cm (33 1/2 x 29 1/4 in.). The J. Paul Getty Museum, 97.PA.65.On view in the exhibition";
 
 						var frame_data = data[index].frames;
 
@@ -160,74 +165,51 @@
 							};
 							document.getElementById('frames').innerHTML = frame;
 
-							// initialize droppablePainting
+							// initialize droppableFrame
 							var el = document.querySelector( '#showroom .wall .frame_position' );
 							droppableFrame =  new Droppable( el , {
 								// options...
 							});
 
-							// initialize draggable(s)
+							// initialize draggable frames
 							[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( el ) {
-								
-                                draggablesFrame.push(
-                                new Draggable( el, droppableFrame, {
+	                            new Draggable( el, droppableFrame, {
 
 									draggabilly : { containment: body },
 									onStart : function() {
-                                        
-                                        var frames = document.querySelectorAll('.frame.animate');
-                                        for(var i = 0; i < frames.length; i++)
-                                            classie.remove(frames[i], 'animate');
-                                        
-                                        draggablesFrame.forEach( function( el2 ) {
-                                        console.log(el2.draggie.isEnabled);
-                                        el2.draggie.isEnabled = false;
-                                        });
-									
-                                    },
-									onEnd : function(  ) {
-										// hide dropArea
-										if (!wasDropped) {
-										} else {
-											var i = el.getAttribute('data-index'),
-												// src = el.getAttribute('src'),
-												src = frame_data[i].frame_imgUrl,
-												index = el.getAttribute('data-index');
-												
-												
-												console.log(src);
+	                                    rightMenu();
+	                                },
+									onEnd : function( wasDropped ) {
+										var afterDropFn = function() {
+											// hide dropArea
+											if (!wasDropped) {
+												rightMenu();
+											} else {
+												var i = el.getAttribute('data-index'),
+													// src = el.getAttribute('src'),
+													src = frame_data[i].frame_imgUrl,
+													index = el.getAttribute('data-index');
 
-											$('.frame_position img').attr("src", src);
-											// display the selection text
-											document.querySelector('.selection_text').innerHTML = frame_data[index].title;
+												$('.frame_position img').attr("src", src);
+												// display the selection text
+												document.querySelector('.text').innerHTML = frame_data[index].title;
+											}
 										}
-                                        
-                                        draggablesFrame.forEach( function( el2 ) {
-                                        el2.draggie.isEnabled = true;
-                                            
-                                        });
+										// afterDropFn
+										afterDropFn();
 									}
-								})
+								});
+							});
+                        }; // load frames
 
-                                )// end of pushing onto draggablesFRam
-
-                            });
-						}
-						
-						loadFrames(src, index);
+                        loadFrames(src, index);
 					}
-					// remove class 'drag-active' from showroom
-					classie.remove( showroom, 'drag-active' );
-				};
-				afterDropFn();
-                
-                draggablesPainting.forEach( function( el2 ) {
-                    el2.draggie.isEnabled = true;
-                });
-			}
-		})
-            
-            ); // end of poping to draggablesPainting
-	});
+				} 
+			// afterDropFn
+			afterDropFn();
+			} // on End for paintings
+		}); 
+
+	}); // Draggable for paintings
     
 })();
