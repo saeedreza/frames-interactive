@@ -112,11 +112,6 @@ body {
 	width: 115px;
 }
 
-#frames .frame {
-	width: 75px;
-	margin: 10px 0 50px 0;
-}
-
 #paintings .painting_info, #frames .frame_info {
 	margin: 10px 0 30px 0;
 	color: #EADEB4;

@@ -36,92 +36,83 @@ $('#showroom').addClass('showLeft');
 ( function() {
 	var data = [
 		{
-			'id' : 'painting_1',
-			'rollover_img' : 'img/painting_1_rollover.jpg',
+			'title' : 'Painting No 1',
 			'frames' : [
 				{
 					'title' : 'Frame No 1-1',
-					'frame_corner_imgUrl' : 'img/frame_1_1.png',
-					'id' : 'painting_1_1',
-					'text' : 'frame 1-1'
+					'textMatch' : 'You selected frame No 1-1',
+					'frame_corner_imgUrl' : 'img/painting_1_frame_1_corner.png',
+					'frame_imgUrl' : 'img/painting_1_frame_1.png',
 				}, {
-					'title' : ' Frame No 1-2',
-					'frame_corner_imgUrl' : 'img/frame_1_2.png',
-					'id' : 'painting_1_2',
-					'text' : 'frame 1-2'
+					'title' : 'Frame No 1-2',
+					'textMatch' : 'You selected frame No 1-2',
+					'frame_corner_imgUrl' : 'img/painting_1_frame_2_corner.png',
+					'frame_imgUrl' : 'img/painting_1_frame_2.png',
 				}, {
-					'title' : ' Frame No 1-3',
-					'frame_corner_imgUrl' : 'img/frame_1_3.png',
-					'id' : 'painting_1_3',
-					'text' : 'frame 1-3'
+					'title' : 'Frame No 1-3',
+					'textMatch' : 'You selected frame No 1-3',
+					'frame_corner_imgUrl' : 'img/painting_1_frame_3_corner.png',
+					'frame_imgUrl' : 'img/painting_1_frame_3.png',
 				}
 			]
 		}, {
-			'id' : 'painting_2',
-			'rollover_img' : 'img/painting_2_rollover.jpg',
-			'title' : '',
+			'title' : 'Painting No 2',
 			'frames' : [
 				{
-					'id' : 'painting_2_1',
-					'title' : ' Frame No 2-1',
-					'textMatch' : 'blah blah blah',
+					'title' : 'Frame No 2-1',
+					'textMatch' : 'You selected frame No 2-1',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_1.png',
-					'frame_rollover_imgUrl' : 'img/painting_2_frame_1_rollover.png'
 				}, {
-					'title' : ' Frame No 2-2',
+					'title' : 'Frame No 2-2',
+					'textMatch' : 'You selected frame No 2-2',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_2.png',
-					'id' : 'painting_2_2',
-					'text' : 'frame 2-2'
 				}, {
-					'title' : ' Frame No 2-3',
+					'title' : 'Frame No 2-3',
+					'textMatch' : 'You selected frame No 2-3',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_3.png',
-					'id' : 'painting_2_3',
-					'text' : 'frame 2-3'
 				}
 			]
 		}, {
-			'id' : 'painting_3',
-			'rollover_img' : 'img/painting_3_rollover.jpg',
+			'title' : 'Painting No 3',
 			'frames' : [
 				{
-					'title' : ' Frame No 3-1',
-					'frame_corner_imgUrl' : 'img/frame_3_1.png',
-					'id' : 'painting_3_1',
-					'text' : 'frame 3-1'
+					'title' : 'Frame No 3-1',
+					'textMatch' : 'You selected frame No 3-1',
+					'frame_corner_imgUrl' : 'img/painting_3_frame_1_corner.png',
+					'frame_imgUrl' : 'img/painting_3_frame_1.png',
 				}, {
-					'title' : ' Frame No 3-2',
-					'frame_corner_imgUrl' : 'img/frame_3_2.png',
-					'id' : 'painting_3_2',
-					'text' : 'frame 3-2'
+					'title' : 'Frame No 3-2',
+					'textMatch' : 'You selected frame No 3-2',
+					'frame_corner_imgUrl' : 'img/painting_3_frame_2_corner.png',
+					'frame_imgUrl' : 'img/painting_3_frame_2.png',
 				}, {
-					'title' : ' Frame No 3-3',
-					'frame_corner_imgUrl' : 'img/frame_3_3.png',
-					'id' : 'painting_3_3',
-					'text' : 'frame 3-3'
+					'title' : 'Frame No 3-3',
+					'textMatch' : 'You selected frame No 3-3',
+					'frame_corner_imgUrl' : 'img/painting_3_frame_3_corner.png',
+					'frame_imgUrl' : 'img/painting_3_frame_3.png',
 				}
 			]
 		}, {
-			'id' : 'painting_4',
-			'rollover_img' : 'img/painting_4_rollover.jpg',
+			'title' : 'Painting No 4',
 			'frames' : [
 				{
-					'title' : ' Frame No 4-1',
-					'frame_corner_imgUrl' : 'img/frame_4_1.png',
-					'id' : 'painting_4_1',
-					'text' : 'frame 4-1'
+					'title' : 'Frame No 4-1',
+					'textMatch' : 'You selected frame No 4-1',
+					'frame_corner_imgUrl' : 'img/painting_4_frame_1_corner.png',
+					'frame_imgUrl' : 'img/painting_4_frame_1.png',
 				}, {
-					'title' : ' Frame No 4-2',
-					'frame_corner_imgUrl' : 'img/frame_4_2.png',
-					'id' : 'painting_4_2',
-					'text' : 'frame 4-2'
+					'title' : 'Frame No 4-2',
+					'textMatch' : 'You selected frame No 4-2',
+					'frame_corner_imgUrl' : 'img/painting_4_frame_2_corner.png',
+					'frame_imgUrl' : 'img/painting_4_frame_2.png',
 				}, {
-					'title' : ' Frame No 4-3',
-					'frame_corner_imgUrl' : 'img/frame_4_3.png',
-					'id' : 'painting_4_3',
-					'text' : 'frame 4-3'
+					'title' : 'Frame No 4-3',
+					'textMatch' : 'You selected frame No 4-3',
+					'frame_corner_imgUrl' : 'img/painting_4_frame_3_corner.png',
+					'frame_imgUrl' : 'img/painting_4_frame_3.png',
 				}
 			]
 		}
@@ -169,14 +160,14 @@ $('#showroom').addClass('showLeft');
 
 						$('.painting_position img').attr("src", src);
 
-						document.querySelector('.text').innerHTML = "Mars and Venus, Allegory of Peace, 1770. Louis-Jean François Lagrenée (French, 1725–1805). Oil on canvas, 85.1 x 74.3 cm (33 1/2 x 29 1/4 in.). The J. Paul Getty Museum, 97.PA.65.On view in the exhibition";
+						document.querySelector('.text').innerHTML = data[index].title;
 
 						var frame_data = data[index].frames;
 
 						var loadFrames = function(src, index) {
 							var frame = "";
 							for (var i = 0; i < frame_data.length; i++ ) {
-								frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" id="frame_' + i + '" data-index="' + i + '" class="frame" /><div class="frame_title">' + frame_data[i].title + '</div></div>';
+								frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" data-index="' + i + '" class="frame" /></div><div class="frame_info"><div class="frame_title">' + frame_data[i].title + '</div></div>';
 							};
 							frames.innerHTML = frame;
 
@@ -206,7 +197,7 @@ $('#showroom').addClass('showLeft');
 													index = el.getAttribute('data-index');
 												$('.frame_position img').attr("src", src);
 												// display the selection text
-												$('#textMatch').html(frame_data[index].title).addClass('show');
+												$('#textMatch').html(frame_data[index].textMatch).addClass('show');
 											}
 										}
 										afterDropFn(); // afterDropFn for frames

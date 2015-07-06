@@ -220,22 +220,29 @@
 
 	// highlight the droppable if it's ready to collect the draggable
 	Droppable.prototype.highlight = function( draggableEl ) {
-		if( this.isDroppable( draggableEl ) ) {
-			var src = draggableEl.getAttribute("src");
+		
+		var src = draggableEl.getAttribute("src");
+		
+		if( this.isDroppable( draggableEl ) ) {	
 			
 			if (src.includes(".jpg")) {
 				var rollover_src = src.replace(".jpg", "_rollover.jpg");
-				console.log(rollover_src);
 				$('.painting_position img').attr('src', rollover_src);
 			} else {
 				var rollover_src = src.replace("_corner.png", "_rollover.png");
-				console.log(rollover_src);
 				$('.frame_position img').attr('src', rollover_src);
 			}
 
 			classie.add( this.el, 'highlight' );
 
 		} else {
+			
+			if (src.includes(".jpg")) {
+				$('.painting_position img').attr('src', 'img/painting_placeholder.png');
+			} else {
+				$('.frame_position img').attr('src', 'img/frame_placeholder.png');
+			}
+
 			classie.remove( this.el, 'highlight' );
 		}
 	}
