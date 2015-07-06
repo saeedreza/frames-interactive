@@ -2,17 +2,35 @@
 
 var leftMenu = function() {
 	$('.showroom').removeClass('showRight').toggleClass('showLeft');
-	$('.painting_position img').attr('src', '').css('box-shadow', 'none');
-	$('.frame_position img').attr('src', '');
+	$('.painting_position img').attr('src', 'img/painting_placeholder.png');
+	$('.frame_position img').attr('src', 'img/frame_placeholder.png');
+	$('#label').hide();
+	$('#textMatch').removeClass('show');
 }
 
 var rightMenu = function() {
 	$('.showroom').removeClass('showLeft').toggleClass('showRight');
-
+	$('.frame_position img').attr('src', 'img/frame_placeholder.png');
+	$('#textMatch').removeClass('show');
 }
 
+$('.leftMenu').click(function(e) {
+	leftMenu();
+})
+
+$('.rightMenu').click(function(e) {
+	
+	var src = $('.painting_position img').attr('src');
+
+	if ( src.includes("placeholder") ) {
+		e.preventDefault();
+	} else {
+		rightMenu();
+	}
+})
+
 // show the left menu
-classie.add(showroom, 'showLeft');
+$('#showroom').addClass('showLeft');
 
 
 ( function() {
@@ -41,13 +59,15 @@ classie.add(showroom, 'showLeft');
 		}, {
 			'id' : 'painting_2',
 			'rollover_img' : 'img/painting_2_rollover.jpg',
+			'title' : '',
 			'frames' : [
 				{
+					'id' : 'painting_2_1',
 					'title' : ' Frame No 2-1',
+					'textMatch' : 'blah blah blah',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_1.png',
-					'id' : 'painting_2_1',
-					'text' : 'frame 2-1'
+					'frame_rollover_imgUrl' : 'img/painting_2_frame_1_rollover.png'
 				}, {
 					'title' : ' Frame No 2-2',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_2_corner.png',
@@ -108,12 +128,9 @@ classie.add(showroom, 'showLeft');
 	];
 
 	var body = document.body,
-		showroom = document.getElementById( 'showroom' ),
 		paintingSelection = document.getElementById( 'painting-menu' ),
 		frameSelection = document.getElementById( 'frame-menu' ),
 		frames = document.getElementById( 'frames'),
-		label = document.getElementById( 'label'),
-		matchText = document.getElementById( 'matchText' ),
 		droppablePainting = [],
 		droppableFrame = [];
 
@@ -122,14 +139,13 @@ classie.add(showroom, 'showLeft');
 	droppablePainting =  new Droppable( el , {
 		// options...
 	});
-    
 
 	// initialize draggable paintings
 	Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( el ) {
 		
-        new Draggable( el, droppablePainting, {
+		new Draggable( el, droppablePainting, {
 			
-            draggabilly : { containment: body },
+			draggabilly : { containment: body },
 			onStart : function() {
 				// close the left menu
 				leftMenu();
@@ -152,7 +168,6 @@ classie.add(showroom, 'showLeft');
 							index = el.getAttribute('data-index');
 
 						$('.painting_position img').attr("src", src);
-						$('.painting_position').css('background-color', 'transparent').css('box-shadow', 'none');
 
 						document.querySelector('.text').innerHTML = "Mars and Venus, Allegory of Peace, 1770. Louis-Jean François Lagrenée (French, 1725–1805). Oil on canvas, 85.1 x 74.3 cm (33 1/2 x 29 1/4 in.). The J. Paul Getty Museum, 97.PA.65.On view in the exhibition";
 
@@ -163,7 +178,7 @@ classie.add(showroom, 'showLeft');
 							for (var i = 0; i < frame_data.length; i++ ) {
 								frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" id="frame_' + i + '" data-index="' + i + '" class="frame" /><div class="frame_title">' + frame_data[i].title + '</div></div>';
 							};
-							document.getElementById('frames').innerHTML = frame;
+							frames.innerHTML = frame;
 
 							// initialize droppableFrame
 							var el = document.querySelector( '#showroom .wall .frame_position' );
@@ -173,12 +188,12 @@ classie.add(showroom, 'showLeft');
 
 							// initialize draggable frames
 							[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( el ) {
-	                            new Draggable( el, droppableFrame, {
+								new Draggable( el, droppableFrame, {
 
 									draggabilly : { containment: body },
 									onStart : function() {
-	                                    rightMenu();
-	                                },
+										rightMenu();
+									},
 									onEnd : function( wasDropped ) {
 										var afterDropFn = function() {
 											// hide dropArea
@@ -189,27 +204,21 @@ classie.add(showroom, 'showLeft');
 													// src = el.getAttribute('src'),
 													src = frame_data[i].frame_imgUrl,
 													index = el.getAttribute('data-index');
-
 												$('.frame_position img').attr("src", src);
 												// display the selection text
-												document.querySelector('.text').innerHTML = frame_data[index].title;
+												$('#textMatch').html(frame_data[index].title).addClass('show');
 											}
 										}
-										// afterDropFn
-										afterDropFn();
-									}
+										afterDropFn(); // afterDropFn for frames
+									} // on End for frames
 								});
 							});
-                        }; // load frames
-
-                        loadFrames(src, index);
+						};
+						loadFrames(src, index); // load frames
 					}
-				} 
-			// afterDropFn
-			afterDropFn();
+				}
+			afterDropFn(); // afterDropFn for paintings
 			} // on End for paintings
-		}); 
-
+		});
 	}); // Draggable for paintings
-    
 })();

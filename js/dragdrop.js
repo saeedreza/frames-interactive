@@ -17,7 +17,7 @@
 		threshhold || (threshhold = 250);
 		var last,
 			deferTimer;
-		
+
 		return function () {
 			var context = scope || this;
 			var now = +new Date,
@@ -100,25 +100,15 @@
 
 	Draggable.prototype.initEvents = function() {
 
-        this.draggie.on( 'dragStart', this.onDragStart.bind(this) );
+		this.draggie.on( 'dragStart', this.onDragStart.bind(this) );
 		this.draggie.on( 'dragMove', throttle( this.onDragMove.bind(this), 5 ) );
 		this.draggie.on( 'dragEnd', this.onDragEnd.bind(this) );
-    }
+	}
 
 	Draggable.prototype.onDragStart = function( instance, event, pointer ) {
 		//callback
 		this.options.onStart();
 		// save left & top
-        
-        var o = document.querySelector('.is-dropped.frame');
-        //console.log(o);
-        if(o != null) {
-            classie.add(o, 'animate');
-            
-            classie.remove(o, 'is-dropped');
-            classie.remove(o, 'is-complete');
-        }        
-        
 		this.position = { left : instance.position.x, top : instance.position.y };
 		// add class is-active to the draggable element (control the draggable z-index)
 		classie.add( instance.element, 'is-active' );
@@ -231,8 +221,20 @@
 	// highlight the droppable if it's ready to collect the draggable
 	Droppable.prototype.highlight = function( draggableEl ) {
 		if( this.isDroppable( draggableEl ) ) {
-			classie.add( this.el, 'highlight' );
+			var src = draggableEl.getAttribute("src");
 			
+			if (src.includes(".jpg")) {
+				var rollover_src = src.replace(".jpg", "_rollover.jpg");
+				console.log(rollover_src);
+				$('.painting_position img').attr('src', rollover_src);
+			} else {
+				var rollover_src = src.replace("_corner.png", "_rollover.png");
+				console.log(rollover_src);
+				$('.frame_position img').attr('src', rollover_src);
+			}
+
+			classie.add( this.el, 'highlight' );
+
 		} else {
 			classie.remove( this.el, 'highlight' );
 		}
