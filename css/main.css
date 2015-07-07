@@ -30,7 +30,10 @@
     text-rendering: optimizeLegibility;
 }
 
-*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+*, *:after, *:before { 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
 
 body {
 	color: #35434E;
@@ -38,25 +41,7 @@ body {
 	letter-spacing: 1px;
 }
 
-.no-js #loader {
-	display: none;
-}
-
-.js #loader {
-	display: block;
-}
-
-.se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url() center no-repeat #444;
-}
-
-.intro {
+/*.intro {
 	background-color: rgba(0,0,0,1);
 	height: 1024px;
 	width: 768px;
@@ -67,7 +52,7 @@ body {
 
 .intro h1 {
 	color: #fff;
-}
+}*/
 
 .container {
 	position: relative;
@@ -103,8 +88,13 @@ body {
 	transition: transform 1s;
 }
 
-#paintings, #frames {
+#paintings {
 	margin-top: 50px;
+	text-align: center;
+}
+
+#frames  {
+	margin-top: 220px;
 	text-align: center;
 }
 
@@ -115,6 +105,7 @@ body {
 #paintings .painting_info, #frames .frame_info {
 	margin: 10px 0 30px 0;
 	color: #EADEB4;
+	padding: 0 20px;
 }
 
 #paintings .painting_info .painting_title, #frames .frame_info .frame_title {
@@ -173,7 +164,7 @@ body {
 	opacity: 1;
 	top: 30px;
 	width: 600px;
-	height: 900px;
+	height: 800px;
 	margin: auto;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -181,24 +172,21 @@ body {
 
 .frame_position {
 	position: absolute;
-	top: 25px;
-	left: 20px;
-	text-align: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 	width: 550px;
 	height: 760px;
-	margin: 0 auto;
+	text-align: center;
 }
 
 .painting_position {
 	position: absolute;
-	top: 175px;
-	left: 110px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	top: 155px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 	width: 370px;
 	height: 450px;
 	-webkit-transition: all 0.4s;
@@ -206,18 +194,19 @@ body {
 }
 
 .painting_position img, .frame_position img {
-
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin-top: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	margin-right: auto;
 }
 
 .painting_position img {
 	box-shadow: 0px 4px 4px #444;
-	max-width: 400px;
-	max-height: 450px;
-}
-
-.frame_position img {
-	max-width: 550px;
-	max-height: 760px;
 }
 
 .painting_position.highlight {
@@ -240,6 +229,7 @@ body {
 	padding: 5px 10px;
 	border-radius: 5px;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
 
@@ -248,23 +238,43 @@ body {
 	font-weight: normal;
 }
 
+#description {
+	position: absolute;
+	bottom: -150px;
+	left: 0;
+	right: 0;
+	margin: 0 200px;
+	background-color: rgba(0,0,0,0.3);
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+#description.show {
+	-webkit-transform: translate3d(0,-160px,0);
+	transform: translate3d(0,-160px,0);
+}
+
 #textMatch {
 	position: absolute;
-	bottom: -50px;
+	bottom: -150px;
 	left: 0;
 	right: 0;
 	margin-left: 20px;
 	margin-right: 20px;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.9);
 	color: #fff;
-	padding: 5px 10px;
+	padding: 5px 10px 20px 10px;
 	border-radius: 5px 5px 0 0;
+	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
 
 #textMatch.show {
-	-webkit-transform: translate3d(0,-50px,0);
-	transform: translate3d(0,-50px,0);
+	-webkit-transform: translate3d(0,-150px,0);
+	transform: translate3d(0,-150px,0);
 }
 
 .drag-active {

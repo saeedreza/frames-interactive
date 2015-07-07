@@ -121,6 +121,7 @@
 		this.options.onDrag();
 		// highlight droppable elements if draggables intersect
 		this.highlightDroppables();
+
 	}
 
 	Draggable.prototype.onDragEnd = function( instance, event, pointer ) {
@@ -204,7 +205,7 @@
 	}
 
 	Droppable.prototype.options = {
-		onDrop : function(instance, draggableEl) { return false; }
+		onHover : function(){ return false}
 	}
 
 	// based on http://stackoverflow.com/a/2752387 : checks if the droppable element is ready to collect the draggable: the draggable element must intersect the droppable in half of its width or height.
@@ -220,24 +221,34 @@
 
 	// highlight the droppable if it's ready to collect the draggable
 	Droppable.prototype.highlight = function( draggableEl ) {
+
+		var src = draggableEl.getAttribute("src"),
+			index = draggableEl.getAttribute("data-index"),
+			margin_top = "",
+			margin_left = "";
 		
-		var src = draggableEl.getAttribute("src");
-		
+		// console.log(this.options);
+		//callback
+		// this.options.onHover();
+
+
 		if( this.isDroppable( draggableEl ) ) {	
+
 			
-			if (src.includes(".jpg")) {
+			if (src.indexOf(".jpg") > -1 ) {
 				var rollover_src = src.replace(".jpg", "_rollover.jpg");
 				$('.painting_position img').attr('src', rollover_src);
 			} else {
 				var rollover_src = src.replace("_corner.png", "_rollover.png");
 				$('.frame_position img').attr('src', rollover_src);
+				console.log(this.options.onHover());
 			}
 
 			classie.add( this.el, 'highlight' );
 
 		} else {
 			
-			if (src.includes(".jpg")) {
+			if (src.indexOf(".jpg") > -1 ) {
 				$('.painting_position img').attr('src', 'img/painting_placeholder.png');
 			} else {
 				$('.frame_position img').attr('src', 'img/frame_placeholder.png');
