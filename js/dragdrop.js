@@ -205,7 +205,6 @@
 	}
 
 	Droppable.prototype.options = {
-		onHover : function(){ return false}
 	}
 
 	// based on http://stackoverflow.com/a/2752387 : checks if the droppable element is ready to collect the draggable: the draggable element must intersect the droppable in half of its width or height.
@@ -220,41 +219,35 @@
 	}
 
 	// highlight the droppable if it's ready to collect the draggable
-	Droppable.prototype.highlight = function( draggableEl ) {
+	Droppable.prototype.highlight = function( draggableEl , index) {
+		var src = draggableEl.getAttribute("src");
 
-		var src = draggableEl.getAttribute("src"),
-			index = draggableEl.getAttribute("data-index"),
-			margin_top = "",
-			margin_left = "";
-		
-		// console.log(this.options);
-		//callback
-		// this.options.onHover();
+		if( this.isDroppable( draggableEl ) ) {
 
-
-		if( this.isDroppable( draggableEl ) ) {	
-
-			
 			if (src.indexOf(".jpg") > -1 ) {
 				var rollover_src = src.replace(".jpg", "_rollover.jpg");
 				$('.painting_position img').attr('src', rollover_src);
+				classie.add( this.el, 'highlight' );
+
 			} else {
-				var rollover_src = src.replace("_corner.png", "_rollover.png");
-				$('.frame_position img').attr('src', rollover_src);
-				console.log(this.options.onHover());
+				var rollover_src = src.replace("_corner.png", "_rollover.png"),
+					framesArr = data[index].frames,
+					i = draggableEl.getAttribute("data-index"),
+					margin_left = framesArr[i].margin_left,
+					margin_top = framesArr[i].margin_top;
+
+				$('.frame_position img').attr('src', rollover_src).css({ marginTop: margin_top, marginLeft: margin_left});;
 			}
-
-			classie.add( this.el, 'highlight' );
-
 		} else {
-			
+
 			if (src.indexOf(".jpg") > -1 ) {
 				$('.painting_position img').attr('src', 'img/painting_placeholder.png');
+				classie.remove( this.el, 'highlight' );
+
 			} else {
 				$('.frame_position img').attr('src', 'img/frame_placeholder.png');
-			}
 
-			classie.remove( this.el, 'highlight' );
+			}
 		}
 	}
 

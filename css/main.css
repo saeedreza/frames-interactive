@@ -224,7 +224,8 @@ body {
 	min-height: 50px;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	bottom: -12px;
+	z-index: -1;
 	margin: 0 auto;
 	padding: 5px 10px;
 	border-radius: 5px;
@@ -264,7 +265,7 @@ body {
 	right: 0;
 	margin-left: 20px;
 	margin-right: 20px;
-	background-color: rgba(0,0,0,0.9);
+	background-color: rgba(37,46,54,0.96);
 	color: #fff;
 	padding: 5px 10px 20px 10px;
 	border-radius: 5px 5px 0 0;

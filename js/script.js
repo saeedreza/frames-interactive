@@ -18,16 +18,16 @@ var data = [
 					'textMatch_body' : 'This 17th century Dutch frame in expensive polished fruitwood provides a plainer, darker border to the sumptuous bouquet. Preferred by some Getty curators for its simplicity, it has been used periodically to frame Van Huysum’s still life.',
 					'frame_corner_imgUrl' : 'img/painting_1_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_1_frame_2.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '101px',
+					'margin_left' : 'auto'
 				}, {
 					'title' : 'Frame No 1-3',
 					'textMatch_header' : 'Oh dear, too severe!',
 					'textMatch_body' : 'The elegant simplicity of this Louis XVI scotia frame by Chérin provides a less sympathetic surrounding for the Vase of Flowers. The frame’s linearity constrains and detracts from the dynamism of Van Huysum’s botanical forms.',
 					'frame_corner_imgUrl' : 'img/painting_1_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_1_frame_3.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '102px',
+					'margin_left' : 'auto'
 				}
 			]
 		}, {
@@ -40,24 +40,24 @@ var data = [
 					'textMatch_body' : 'You’ve selected the current Louis XVI frame, which is contemporary with the painting. The repeated pattern of the egg-and-dart motif provides a regularity that reinforces the calm mood of the scene.',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_1.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '84px',
+					'margin_left' : 'auto'
 				}, {
 					'title' : 'Frame No 2-2',
 					'textMatch_header' : 'Over-the-top revival',
 					'textMatch_body' : 'The painting arrived at the Getty in this gaudy Louis XVI revival frame that broadcasts the artist’s name at the top. Its heavy forms and brassy color clash with the subtlety of Lagrenée’s painting.',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_2.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '45px',
+					'margin_left' : 'auto'
 				}, {
 					'title' : 'Frame No 2-3',
 					'textMatch_header' : 'Oof! Overpowering!',
 					'textMatch_body' : 'As a leading exponent of restrained classicism, Lagrenée would have strongly opposed this showy Louis XV frame. Its curving edges compete with the contained composition of the central image. ',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_3.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '85px',
+					'margin_left' : 'auto'
 				}
 			]
 		}, {
@@ -70,24 +70,24 @@ var data = [
 					'textMatch_body' : 'You’ve selected a French 19th century gilded "Salon" frame, named for the annual Paris exhibition where Spring was first shown in 1882. The plain sight edge creates a window onto the composition, while the ornamentation resonates with Manet’s lively brushwork. ',					
 					'frame_corner_imgUrl' : 'img/painting_3_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_3_frame_1.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '74px',
+					'margin_left' : 'auto'
 				}, {
 					'title' : 'Frame No 3-2',
 					'textMatch_header' : 'Showstopper',
 					'textMatch_body' : 'Spring was in this Louis XV frame for many years—perhaps over a century. The boisterous curves and exuberant ornamentation call attention to the painting but also compete with its varied brushwork and bold color.',
 					'frame_corner_imgUrl' : 'img/painting_3_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_3_frame_2.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '44px',
+					'margin_left' : 'auto'
 				}, {
 					'title' : 'Frame No 3-3',
 					'textMatch_header' : 'Botanical overload',
 					'textMatch_body' : 'The richly carved botanical motifs of the Louis XIII frame may seem to further embellish the painting, but the heavy Baroque forms of this garland are at odds with Manet’s bright palette and light, energetic brushwork.',
 					'frame_corner_imgUrl' : 'img/painting_3_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_3_frame_3.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '91px',
+					'margin_left' : 'auto'
 				}
 			]
 		}, {
@@ -100,24 +100,24 @@ var data = [
 					'textMatch_body' : 'You’ve chosen the current frame in the Empire style, carved and gilded in France during the early 19th century. The elegant scrolling-leaf band and palmette corners were common during the Napoleonic Empire and fit the status of both painter and sitter.',
 					'frame_corner_imgUrl' : 'img/painting_4_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_1.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '70px',
+					'margin_left' : '-7px'
 				}, {
 					'title' : 'Frame No 4-2',
 					'textMatch_header' : 'Hmmm. It’s … a frame.',
 					'textMatch_body' : 'This plain Neoclassical frame postdates the painting by several decades. The choice of a previous owner, its simple, austere style contrasts with David’s descriptive brushwork and restrains the relaxed immediacy of the portrait.',					
 					'frame_corner_imgUrl' : 'img/painting_4_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_2.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '85px',
+					'margin_left' : 'auto'
 				}, {
 					'title' : 'Frame No 4-3',
 					'textMatch_header' : 'Too, too ...',
 					'textMatch_body' : 'You’ve selected a Louis XVI frame suitable for a portrait; however, the ribbon and flower ornaments are too ornate and crowds the head of David’s robust likeness.',					
 					'frame_corner_imgUrl' : 'img/painting_4_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_3.png',
-					'margin_top' : '',
-					'margin_left' : ''
+					'margin_top' : '1px',
+					'margin_left' : 'auto'
 				}
 			]
 		}
@@ -166,15 +166,12 @@ $('#showroom').addClass('showLeft');
 		droppableFrame = [];
 
 	// initialize droppable for paintings
-	var el = document.querySelector( '#showroom .wall .painting_position' );
-	droppablePainting =  new Droppable( el , {
-		// options...
-	});
+	var droppableEl = document.querySelector( '#showroom .wall .painting_position' );
+	droppablePainting =  new Droppable( droppableEl , {});
 
 	// initialize draggable paintings
-	Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( el ) {
-		
-		new Draggable( el, droppablePainting, {
+	Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( draggableEl ) {
+		new Draggable( draggableEl, droppablePainting, {
 			
 			draggabilly : { containment: body },
 			onStart : function() {
@@ -196,8 +193,9 @@ $('#showroom').addClass('showLeft');
 						$('#label').fadeIn();
 						$('#description').addClass('show');
 						
-						var src = el.getAttribute("src"),
-							index = el.getAttribute('data-index');
+						var src = draggableEl.getAttribute("src"),
+							index = draggableEl.getAttribute('data-index'),
+							selectedImage = draggableEl;
 
 						$('.painting_position img').attr("src", src);
 
@@ -214,23 +212,18 @@ $('#showroom').addClass('showLeft');
 							$('#frames').html(frame);
 
 							// initialize droppableFrame
-							var el = document.querySelector( '#showroom .wall .frame_position' );
-							droppableFrame =  new Droppable( el , {
-								onHover : function() {
-									return false;
-								}
-							});
-
-							console.log(droppableFrame.options.onHover());
-
-
+							var droppableEl = document.querySelector( '#showroom .wall .frame_position' );
+							droppableFrame =  new Droppable( droppableEl , {});
 
 							// initialize draggable frames
-							[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( el ) {
-								new Draggable( el, droppableFrame, {
+							[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( draggableEl ) {
+								new Draggable( draggableEl, droppableFrame, {
 									draggabilly : { containment: body },
 									onStart : function() {
 										rightMenu();
+									},
+									onDrag : function() {
+										droppableFrame.highlight(draggableEl, index);
 									},
 									onEnd : function( wasDropped ) {
 										var afterDropFn = function() {
@@ -238,7 +231,10 @@ $('#showroom').addClass('showLeft');
 											if (!wasDropped) {
 												rightMenu();
 											} else {
-												var index = el.getAttribute('data-index'),
+												// droppableFrame.highlight(draggableEl, index);
+												
+
+												var index = draggableEl.getAttribute('data-index'),
 													src = frame_data[index].frame_imgUrl,
 													margin_top = frame_data[index].margin_top,
 													margin_left = frame_data[index].margin_left;
