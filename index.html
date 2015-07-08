@@ -15,7 +15,13 @@
 	</head>
 	<body>
 		<div class="container">
-			
+			<div class="start-screen">
+				<div class="exhibition-title">Louis Style: French Frames, 1610-1792</div>
+				<div class="exhibition-date">September 15, 2015–January 3, 2016</div>
+				<div class="title">Will You Marry Me?</div>
+				<div class="description">Choose a suitable frame for the paintings</div>
+				<div id="start-btn">Touch to Start</div>
+			</div>
 			<!-- Painting menu -->
 			<div id="painting-menu" class="painting-menu">
 				<div id="paintings">
@@ -52,10 +58,20 @@
 
 			<!-- Showroom -->
 			<div id="showroom" class="showroom">
-				
+				<div class="intro">
+					<div class="intro-text">
+						Please start by dragging a painting from the menu
+					</div>
+				</div>
 				<div class="nav">
-					<div class="leftMenu">Select Paintings</div>
-					<div class="rightMenu">Select Frames</div>
+					<div id="leftMenu" >
+						<div class="navicon-button larr"><div class="navicon"></div></div>
+						<div class="nav-text nav-text-left">Painting Selection</div>	
+					</div>
+					<div id="rightMenu">
+						<div class="navicon-button rarr"><div class="navicon"></div></div>
+						<div class="nav-text nav-text-right">Frame Selection</div>	
+					</div>
 				</div>
 
 				<div class="wall">

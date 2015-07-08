@@ -230,13 +230,15 @@
 				classie.add( this.el, 'highlight' );
 
 			} else {
-				var rollover_src = src.replace("_corner.png", "_rollover.png"),
-					framesArr = data[index].frames,
-					i = draggableEl.getAttribute("data-index"),
-					margin_left = framesArr[i].margin_left,
-					margin_top = framesArr[i].margin_top;
+				if ( !(jQuery.isEmptyObject(data[index])) ) {
+					var rollover_src = src.replace("_corner.png", "_rollover.png"),
+						framesArr = data[index].frames,
+						i = draggableEl.getAttribute("data-index"),
+						margin_left = framesArr[i].margin_left,
+						margin_top = framesArr[i].margin_top;
 
-				$('.frame_position img').attr('src', rollover_src).css({ marginTop: margin_top, marginLeft: margin_left});;
+					$('.frame_position img').attr('src', rollover_src).css({ marginTop: margin_top, marginLeft: margin_left, opacity: '0.5'});;
+				}
 			}
 		} else {
 

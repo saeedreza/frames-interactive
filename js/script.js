@@ -123,142 +123,150 @@ var data = [
 		}
 	];
 
-var leftMenu = function() {
-	$('.showroom').removeClass('showRight').toggleClass('showLeft');
-	$('.painting_position img').attr('src', 'img/painting_placeholder.png');
-	$('.frame_position img').attr('src', 'img/frame_placeholder.png');
-	$('#label').hide();
-	$('#description').removeClass('show');
-	$('#textMatch').removeClass('show');
-}
-
-var rightMenu = function() {
-	$('.showroom').removeClass('showLeft').toggleClass('showRight');
-	$('.frame_position img').attr('src', 'img/frame_placeholder.png');
-	$('#textMatch').removeClass('show');
-}
-
-$('.leftMenu').on('click', function() {
-	leftMenu();
-})
-
-$('.rightMenu').on('click', function(e) {
+$('#start-btn').on('click', function() {
 	
-	var src = $('.painting_position img').attr('src');
+	$('.start-screen').fadeOut();
+	$('.intro').fadeIn();
 
-	if ( src.indexOf("placeholder") > -1 ) {
-		e.preventDefault();
-	} else {
-		rightMenu();
+	var leftMenu = function() {
+		$(".navicon-button").toggleClass("open");
+		$('.showroom').removeClass('showRight').toggleClass('showLeft');
+		$('.painting_position img').attr('src', 'img/painting_placeholder.png');
+		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
+		$('#label').hide();
+		$('#description').removeClass('show');
+		$('#textMatch').removeClass('show');
 	}
-})
 
-// show the left menu
-$('#showroom').addClass('showLeft');
+	var rightMenu = function() {
+		$(".navicon-button").toggleClass("open");
+		$('.showroom').removeClass('showLeft').toggleClass('showRight');
+		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
+		$('#textMatch').removeClass('show');
+	}
+
+	$('#leftMenu').on('click', function() {
+		leftMenu();
+	})
+
+	$('#rightMenu').on('click', function(e) {
+		
+		var src = $('.painting_position img').attr('src');
+
+		if ( src.indexOf("placeholder") > -1 ) {
+			$('.nav-text-right').html('No Painting Selected');
+			e.preventDefault();
+		} else {
+			rightMenu();
+		}
+	})
+
+	// show the left menu
+	$('#showroom').addClass('showLeft');
 
 
-( function() {
+	( function() {
 
-	var body = document.body,
-		paintingSelection = document.getElementById( 'painting-menu' ),
-		frameSelection = document.getElementById( 'frame-menu' ),
-		droppablePainting = [],
-		droppableFrame = [];
+		var body = document.body,
+			paintingSelection = document.getElementById( 'painting-menu' ),
+			frameSelection = document.getElementById( 'frame-menu' ),
+			droppablePainting = [],
+			droppableFrame = [];
 
-	// initialize droppable for paintings
-	var droppableEl = document.querySelector( '#showroom .wall .painting_position' );
-	droppablePainting =  new Droppable( droppableEl , {});
+		// initialize droppable for paintings
+		var droppableEl = document.querySelector( '#showroom .wall .painting_position' );
+		droppablePainting =  new Droppable( droppableEl , {});
 
-	// initialize draggable paintings
-	Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( draggableEl ) {
-		new Draggable( draggableEl, droppablePainting, {
-			
-			draggabilly : { containment: body },
-			onStart : function() {
-				// close the left menu
-				leftMenu();
-			},
-			onEnd : function( wasDropped ) {
-				var afterDropFn = function() {
-					// hide showroom
-					if (!wasDropped) {
-						leftMenu();
-					} else {
-						// show frame menu after 1.5s
-						setTimeout(function() {
-							rightMenu();
-						}, 1500);
-						
-						// show
-						$('#label').fadeIn();
-						$('#description').addClass('show');
-						
-						var src = draggableEl.getAttribute("src"),
-							index = draggableEl.getAttribute('data-index'),
-							selectedImage = draggableEl;
+		// initialize draggable paintings
+		Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( draggableEl ) {
+			new Draggable( draggableEl, droppablePainting, {
+				
+				draggabilly : { containment: body },
+				onStart : function() {
+					// close the left menu
+					leftMenu();
+					$('.intro').hide();
+				},
+				onEnd : function( wasDropped ) {
+					var afterDropFn = function() {
+						// hide showroom
+						if (!wasDropped) {
+							leftMenu();
+						} else {
+							// show frame menu after 1.5s
+							setTimeout(function() {
+								rightMenu();
+							}, 1500);
+							
+							$('.nav-text-right').html('Frame Selection');
+							// show
+							$('#label').fadeIn();
+							$('#description').addClass('show');
+							
+							var src = draggableEl.getAttribute("src"),
+								index = draggableEl.getAttribute('data-index'),
+								selectedImage = draggableEl;
 
-						$('.painting_position img').attr("src", src);
+							$('.painting_position img').attr("src", src);
 
-						$('#label .text').html(data[index].title);
-						$('#description').html(data[index].description);
+							$('#label .text').html(data[index].title);
+							$('#description').html(data[index].description);
 
-						var frame_data = data[index].frames;
+							var frame_data = data[index].frames;
 
-						var loadFrames = function(src, index) {
-							var frame = "";
-							for (var i = 0; i < frame_data.length; i++ ) {
-								frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" data-index="' + i + '" class="frame" /></div><div class="frame_info"><div class="frame_title">' + frame_data[i].title + '</div></div>';
-							};
-							$('#frames').html(frame);
+							var loadFrames = function(src, index) {
+								var frame = "";
+								for (var i = 0; i < frame_data.length; i++ ) {
+									frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" data-index="' + i + '" class="frame" /></div><div class="frame_info"><div class="frame_title">' + frame_data[i].title + '</div></div>';
+								};
+								$('#frames').html(frame);
 
-							// initialize droppableFrame
-							var droppableEl = document.querySelector( '#showroom .wall .frame_position' );
-							droppableFrame =  new Droppable( droppableEl , {});
+								// initialize droppableFrame
+								var droppableEl = document.querySelector( '#showroom .wall .frame_position' );
+								droppableFrame =  new Droppable( droppableEl , {});
 
-							// initialize draggable frames
-							[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( draggableEl ) {
-								new Draggable( draggableEl, droppableFrame, {
-									draggabilly : { containment: body },
-									onStart : function() {
-										rightMenu();
-									},
-									onDrag : function() {
-										droppableFrame.highlight(draggableEl, index);
-									},
-									onEnd : function( wasDropped ) {
-										var afterDropFn = function() {
-											// hide dropArea
-											if (!wasDropped) {
-												rightMenu();
-											} else {
-												// droppableFrame.highlight(draggableEl, index);
-												
+								// initialize draggable frames
+								[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( draggableEl ) {
+									new Draggable( draggableEl, droppableFrame, {
+										draggabilly : { containment: body },
+										onStart : function() {
+											rightMenu();
+										},
+										onDrag : function() {
+											droppableFrame.highlight(draggableEl, index);
+										},
+										onEnd : function( wasDropped ) {
+											var afterDropFn = function() {
+												// hide dropArea
+												if (!wasDropped) {
+													rightMenu();
+												} else {
+													var index = draggableEl.getAttribute('data-index'),
+														src = frame_data[index].frame_imgUrl,
+														margin_top = frame_data[index].margin_top,
+														margin_left = frame_data[index].margin_left;
 
-												var index = draggableEl.getAttribute('data-index'),
-													src = frame_data[index].frame_imgUrl,
-													margin_top = frame_data[index].margin_top,
-													margin_left = frame_data[index].margin_left;
-
-												$('.frame_position img').attr("src", src).css({ marginTop: margin_top, marginLeft: margin_left});
-												
-												// display the selection text
-												var textMatch_header = '<h2>' + frame_data[index].textMatch_header + '</h2>',
-													textMatch_body = frame_data[index].textMatch_body;
-												
-												$('#textMatch').html( textMatch_header + textMatch_body );
-												$('#textMatch').addClass('show');
+													$('.frame_position img').attr("src", src).css({ marginTop: margin_top, marginLeft: margin_left, opacity: '1'});
+													
+													// display the selection text
+													var textMatch_header = '<h2>' + frame_data[index].textMatch_header + '</h2>',
+														textMatch_body = frame_data[index].textMatch_body;
+													
+													$('#textMatch').html( textMatch_header + textMatch_body );
+													$('#textMatch').addClass('show');
+												}
 											}
-										}
-										afterDropFn(); // afterDropFn for frames
-									} // on End for frames
+											afterDropFn(); // afterDropFn for frames
+										} // on End for frames
+									});
 								});
-							});
-						};
-						loadFrames(src, index); // load frames
+							};
+							loadFrames(src, index); // load frames
+						}
 					}
-				}
-			afterDropFn(); // afterDropFn for paintings
-			} // on End for paintings
-		});
-	}); // Draggable for paintings
-})();
+				afterDropFn(); // afterDropFn for paintings
+				} // on End for paintings
+			});
+		}); // Draggable for paintings
+	})();
+})
