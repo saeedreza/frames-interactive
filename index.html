@@ -16,11 +16,10 @@
 	<body>
 		<div class="container">
 			<div class="start-screen">
-				<div class="exhibition-title">Louis Style: French Frames, 1610-1792</div>
-				<div class="exhibition-date">September 15, 2015–January 3, 2016</div>
-				<div class="title">Will You Marry Me?</div>
-				<div class="description">Choose a suitable frame for the paintings</div>
+				<h1>Will You Marry Me?</h1>
+				<div class="title"><span>Pair</span><br>Paintings<br><span>with their ideal</span><br>Frames</div>
 				<div id="start-btn">Touch to Start</div>
+				
 			</div>
 			<!-- Painting menu -->
 			<div id="painting-menu" class="painting-menu">
@@ -58,19 +57,22 @@
 
 			<!-- Showroom -->
 			<div id="showroom" class="showroom">
-				<div class="intro">
-					<div class="intro-text">
-						Please start by dragging a painting from the menu
-					</div>
+				<div class="left-guide">
+					<div class="">Drag a painting to the right!</div>
+					<img src="img/left_arrow.png">
 				</div>
 				<div class="nav">
 					<div id="leftMenu" >
 						<div class="navicon-button larr"><div class="navicon"></div></div>
-						<div class="nav-text nav-text-left">Painting Selection</div>	
+						<div class="nav-text nav-text-left">Painting Menu</div>	
+					</div>
+					<div id="label">
+						<div class="text"></div>
+						<div class="tooltip">Close</div>
 					</div>
 					<div id="rightMenu">
 						<div class="navicon-button rarr"><div class="navicon"></div></div>
-						<div class="nav-text nav-text-right">Frame Selection</div>	
+						<div class="nav-text nav-text-right">Frame Menu</div>	
 					</div>
 				</div>
 
@@ -81,7 +83,6 @@
 					<div class="frame_position">
 						<img src="img/frame_placeholder.png" />
 					</div>
-					<div id="label"><div class="text"></div></div>
 				</div>
 				<!-- painting description -->
 				<div id="description"></div>
@@ -91,6 +92,10 @@
 
 			<!-- Frame menu -->
 			<div id="frame-menu" class="frame-menu">
+				<div class="frame-menu-guide">
+					<div>Drag a frame to the left!</div>
+					<img src="img/left_arrow_white.png">
+				</div>
 				<div id="frames"></div>
 			</div>
 		</div>

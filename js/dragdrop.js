@@ -226,7 +226,7 @@
 
 			if (src.indexOf(".jpg") > -1 ) {
 				var rollover_src = src.replace(".jpg", "_rollover.jpg");
-				$('.painting_position img').attr('src', rollover_src);
+				$('.painting_position img').attr('src', rollover_src).css({ opacity: '0.5'});
 				classie.add( this.el, 'highlight' );
 
 			} else {

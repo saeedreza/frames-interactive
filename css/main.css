@@ -1,3 +1,4 @@
+
 @font-face { /* Webfont: Lato-Light */
     font-family: 'Lato';
     src: url('../fonts/Lato-Light.woff') format('woff');
@@ -30,6 +31,13 @@
     text-rendering: optimizeLegibility;
 }
 
+@font-face {
+	font-family: 'Handwriting';
+	src: url('../fonts/AxureHandwriting.ttf');
+	font-style: normal;
+	font-weight: normal;
+}
+
 *, *:after, *:before { 
 	-webkit-box-sizing: border-box; 
 	box-sizing: border-box; 
@@ -42,77 +50,43 @@ body {
 }
 
 .start-screen {
-	background-color: #252e36;
+	background-color: #2a4b5a;
   	height: 1024px;
   	width: 768px;
   	position: absolute;
   	top: 0;
   	z-index: 100;
-  	color: #EADEB4;
+  	color: #FFFFFF;
   	text-align: center;
   	padding: 100px 50px;
 }
 
-.exhibition-title {
-	font-size: 26px;
-}
-
-.exhibition-date {
-	font-style: italic;
+.start-screen h1 {
+	font-size: 3em;
+	font-weight: 100;
 }
 
 .start-screen .title {
-	margin-top: 250px;
-  	font-weight: bold;
-  	font-size: 42px;
+	margin-top: 120px;
+  	font-size: 48px;
+  	line-height: 044px;
+}
+
+.start-screen .title span {
+	font-size: 20px;
+	font-style: italic;
+}
+.start-screen-img img {
+	width: 100%;
 }
 
 #start-btn {
-	border: 1px solid #EADEB4;
+	border: 1px solid #FFFFFF;
 	border-radius: 3px;
   	max-width: 250px;
-  	margin: 50px auto;
+  	margin: 0 auto;
+  	margin-top: 150px;
   	padding: 20px;
-}
-
-.intro {
-	display: none;
-	background-color: rgba(0,0,0,0.7);
-  	position: absolute;
-  	z-index: 99;
-  	top: 0;
-  	left: 0;
-  	height: 1024px;
-  	width: 768px;
-  	background: -webkit-radial-gradient(left,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
-}
-
-.intro-text {
-	position: absolute;
-	width: 350px;
-	margin-top: 60%;
-  	margin-left: 20px;
-  	background-color: #fff;
-  	border-radius: 3px;
-  	padding: 10px 20px;
-	color: #000;
-	font-weight: bold;
-  	font-size: 24px;
-}
-
-.intro-text:after {
-	right: 100%;
-	top: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: rgba(255, 255, 255, 0);
-	border-right-color: #fff;
-	border-width: 10px;
-	margin-top: -10px;
 }
 
 .container {
@@ -121,7 +95,7 @@ body {
 	min-height: 1024px;
 	max-height: 1024px;
 	overflow: hidden;
-	background-color: #35434E;
+	background-color: #2a4b5a;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -134,19 +108,27 @@ body {
 	width: 200px;
 	height: 100%;
 	padding: 0 5px;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
 }
 
 #frame-menu {
 	position: absolute;
-	left: 568px;
+	left: 618px;
 	top: 0;
-	width: 200px;
+	width: 150px;
 	height: 100%;
 	padding: 0 5px;
-	-webkit-transition: -webkit-transform 1s;
-	transition: transform 1s;
+}
+
+.frame-menu-guide {
+	text-align: center;
+	color: #fff;
+	margin-top: 50px;
+	font-family: 'Handwriting';
+}
+
+.frame-menu-guide img {
+	height: 40px;
+  	margin-top: 10px;
 }
 
 #paintings {
@@ -155,26 +137,27 @@ body {
 }
 
 #frames  {
-	margin-top: 220px;
+	margin-top: 90px;
 	text-align: center;
 }
 
 #paintings .painting {
 	width: 115px;
+	box-shadow: 3px 3px 10px #000;
 }
 
 #paintings .painting_info, #frames .frame_info {
 	margin: 10px 0 30px 0;
 	color: #EADEB4;
-	padding: 0 20px;
+	padding: 0 25px;
 }
 
-#paintings .painting_info .painting_title, #frames .frame_info .frame_title {
+#paintings .painting_info .painting_title {
 	font-size: 15px;
 	font-weight: normal;
 }
 
-#paintings .painting_info .painting_artist, #frames .frame_info .frame_artist {
+#paintings .painting_info .painting_artist {
 	font-size: 12px;
 	font-weight: 100;
 }
@@ -295,6 +278,20 @@ end of nav btn
 	right: 83px;
 }
 
+.left-guide {
+	font-family: 'Handwriting';
+	position: absolute;
+	top: 150px;
+	left: 20px;
+	color: #444;
+}
+
+.left-guide img {
+	position: absolute;
+	left: 0;
+	height: 40px;
+}
+
 #showroom {
 	position: absolute;
 	top: 0;
@@ -315,8 +312,8 @@ end of nav btn
 }
 
 #showroom.showRight {
-	-webkit-transform: translate3d(-200px,0,0);
-	transform: translate3d(-200px,0,0);	
+	-webkit-transform: translate3d(-150px,0,0);
+	transform: translate3d(-150px,0,0);	
 }
 
 .wall {
@@ -326,8 +323,6 @@ end of nav btn
 	width: 600px;
 	height: 800px;
 	margin: auto;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
 }
 
 .frame_position {
@@ -353,6 +348,11 @@ end of nav btn
 	transition: all 0.4s;
 }
 
+.painting_position.highlight {
+	-webkit-transform: scale3d(1.1,1.1,1);
+	transform: scale3d(1.1,1.1,1);
+}
+
 .painting_position img, .frame_position img {
 	position: absolute;
 	left: 0;
@@ -369,44 +369,52 @@ end of nav btn
 	box-shadow: 0px 4px 4px #444;
 }
 
-.painting_position.highlight {
-	-webkit-transform: scale3d(1.1,1.1,1);
-	transform: scale3d(1.1,1.1,1);
-}
-
 #label {
-	display: none;
 	position: absolute;
-	color: #000;
-	background: #FFF;
-	min-width: 150px;
-	max-width: 250px;
-	min-height: 50px;
+	top: -100px;
 	left: 0;
 	right: 0;
-	bottom: -12px;
-	z-index: -1;
-	margin: 0 auto;
-	padding: 5px 10px;
-	border-radius: 5px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-	-webkit-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
+	margin: 0 200px;
+	background-color: #444;
+	color: #fff;
+	border-radius: 0 0 5px 5px;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: 100;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+#label.show {
+	-webkit-transform: translate3d(0,100px,0);
+	transform: translate3d(0,100px,0);
 }
 
 #label .text {
 	font-size: 10px;
-	font-weight: normal;
+	//font-style: italic;
+}
+
+#label .tooltip {
+	top: 100%;
+	left: 80%;
+	background-color: #666;
+	height: 30px;
+	width: 60px;
+	position: absolute;
+	border-radius: 0 0 5px 5px;
+	padding: 4px 0;
 }
 
 #description {
 	position: absolute;
-	bottom: -150px;
+	bottom: -250px;
 	left: 0;
 	right: 0;
 	margin: 0 200px;
-	background-color: rgba(0,0,0,0.3);
-	color: #fff;
+	background-color: #444444;
+	color: #FFFFFF;
+	font-size: 1.4em;
 	padding: 10px;
 	border-radius: 5px;
 	-webkit-transition: all 0.5s ease-out;
@@ -414,28 +422,34 @@ end of nav btn
 }
 
 #description.show {
-	-webkit-transform: translate3d(0,-160px,0);
-	transform: translate3d(0,-160px,0);
+	-webkit-transform: translate3d(0,-270px,0);
+	transform: translate3d(0,-270px,0);
 }
 
 #textMatch {
 	position: absolute;
-	bottom: -150px;
+	bottom: -275px;
 	left: 0;
 	right: 0;
-	margin-left: 20px;
-	margin-right: 20px;
-	background-color: rgba(37,46,54,0.96);
+	margin: 0 10px;
+	background-color: #2a4b5a;
 	color: #fff;
-	padding: 5px 10px 20px 10px;
+	font-size: 1.35em;
+  	font-weight: 100;
+	padding: 20px 15px 60px 15px;
 	border-radius: 5px 5px 0 0;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
 
 #textMatch.show {
-	-webkit-transform: translate3d(0,-150px,0);
-	transform: translate3d(0,-150px,0);
+	-webkit-transform: translate3d(0,-275px,0);
+	transform: translate3d(0,-275px,0);
+}
+
+#textMatch h2 {
+	margin: 0.4em 0;
+	font-size: 1.8em;
 }
 
 .animate {
@@ -449,9 +463,10 @@ end of nav btn
 
 .is-dragging {}
 
+.is-active {}
+
 .is-dropped {}
 
 .is-complete {}
 
-.drag-active {}
 
