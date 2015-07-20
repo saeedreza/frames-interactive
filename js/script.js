@@ -133,7 +133,7 @@ $('#start-btn').on('click', function() {
 		$('.painting_position img').attr('src', 'img/painting_placeholder.png');
 		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
 		$('.left-guide').toggle();
-		$('#label').removeClass('show');
+		$('#credit-btn').removeClass('show');
 		$('#description').removeClass('show');
 		$('#textMatch').removeClass('show');
 	}
@@ -143,6 +143,10 @@ $('#start-btn').on('click', function() {
 		$('.showroom').removeClass('showLeft').toggleClass('showRight');
 		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
 		$('#textMatch').removeClass('show');
+	}
+
+	var credit = function() {
+		$('#credit').toggle();
 	}
 
 	$('#leftMenu').on('click', function() {
@@ -161,7 +165,15 @@ $('#start-btn').on('click', function() {
 		}
 	})
 
-	// show the left menu at the start of the app
+	$('#credit-btn').on('click', function() {
+		credit();
+	})
+
+	$('#credit .close').on('click', function() {
+		credit();
+	})
+
+	// open the left menu first time app runs
 	$('#showroom').addClass('showLeft');
 
 
@@ -198,9 +210,8 @@ $('#start-btn').on('click', function() {
 							}, 2000);
 							
 							$('.nav-text-right').html('Frame Menu');
-							// show
-							$('#label').addClass('show');
 							$('#description').addClass('show');
+							$('#credit-btn').addClass('show');
 							
 							var src = draggableEl.getAttribute("src"),
 								index = draggableEl.getAttribute('data-index'),
@@ -208,7 +219,7 @@ $('#start-btn').on('click', function() {
 
 							$('.painting_position img').attr("src", src).css({ opacity: '1'});
 
-							$('#label .text').html(data[index].title);
+							$('#credit .text').html(data[index].title);
 							$('#description').html(data[index].description);
 
 							var frame_data = data[index].frames;

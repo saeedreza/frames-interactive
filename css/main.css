@@ -110,11 +110,37 @@ body {
 	padding: 0 5px;
 }
 
+#paintings {
+	margin-top: 50px;
+	text-align: center;
+}
+
+#paintings .painting {
+	width: 115px;
+	box-shadow: 3px 3px 10px #000;
+}
+
+#paintings .painting_info {
+	margin: 10px 0 30px 0;
+	color: #EADEB4;
+	padding: 0 25px;
+}
+
+#paintings .painting_info .painting_title {
+	font-size: 15px;
+	font-weight: normal;
+}
+
+#paintings .painting_info .painting_artist {
+	font-size: 12px;
+	font-weight: 100;
+}
+
 #frame-menu {
 	position: absolute;
-	left: 618px;
+	left: 568px;
 	top: 0;
-	width: 150px;
+	width: 200px;
 	height: 100%;
 	padding: 0 5px;
 }
@@ -131,35 +157,20 @@ body {
   	margin-top: 10px;
 }
 
-#paintings {
-	margin-top: 50px;
-	text-align: center;
-}
-
 #frames  {
-	margin-top: 90px;
+	margin-top: 40px;
 	text-align: center;
 }
 
-#paintings .painting {
-	width: 115px;
-	box-shadow: 3px 3px 10px #000;
+#frames .frame {
+	height: 130px;
 }
 
-#paintings .painting_info, #frames .frame_info {
-	margin: 10px 0 30px 0;
+#frames .frame_info {
+	margin: 15px 0 50px 0;
 	color: #EADEB4;
 	padding: 0 25px;
-}
-
-#paintings .painting_info .painting_title {
-	font-size: 15px;
-	font-weight: normal;
-}
-
-#paintings .painting_info .painting_artist {
-	font-size: 12px;
-	font-weight: 100;
+	opacity: 0.5;
 }
 
 .nav {
@@ -263,10 +274,10 @@ end of nav btn
 
 .nav-text {
 	position: absolute;
-  	top: 26px;
-  	width: 77px;
-  	line-height: 16px;
-  	font-size: 14px;
+  	top: 25px;
+  	width: 80px;
+  	line-height: 15px;
+  	font-size: 13px;
   	font-weight: bold;
 }
 
@@ -312,8 +323,8 @@ end of nav btn
 }
 
 #showroom.showRight {
-	-webkit-transform: translate3d(-150px,0,0);
-	transform: translate3d(-150px,0,0);	
+	-webkit-transform: translate3d(-200px,0,0);
+	transform: translate3d(-200px,0,0);	
 }
 
 .wall {
@@ -369,41 +380,56 @@ end of nav btn
 	box-shadow: 0px 4px 4px #444;
 }
 
-#label {
+#credit {
+	display: none;
 	position: absolute;
+	z-index: 1000;
+	width: 768px;
+	height: 1024px;
+	background-color: rgba(0,0,0,0.7);
+	text-align: center;
+}
+
+#credit .close {
+	position: absolute;
+	top: 375px;
+	left: 610px;
+	width: 50px;
+}
+
+#credit .close img {
+	height: 40px;
+}
+
+#credit .text {
+	background-color: #fff;
+  	width: 500px;
+	margin: 400px auto;
+	padding: 15px 5px;
+	border-radius: 5px;
+	font-size: 15px;
+	line-height: 22px;
+}
+
+#credit-btn {
+	position:absolute;
 	top: -100px;
 	left: 0;
 	right: 0;
-	margin: 0 200px;
-	background-color: #444;
-	color: #fff;
-	border-radius: 0 0 5px 5px;
-	padding: 5px;
-	font-size: 12px;
-	font-weight: 100;
-	-webkit-transition: all 0.4s;
-	transition: all 0.4s;
+	margin: 0 auto;
+	background-color: #2a4b5a;
+	color: #EADEB4;
+	width: 100px;
+	padding: 7px 0;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 1px 1px 2px #1a2e37;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
 }
 
-#label.show {
+#credit-btn.show {
 	-webkit-transform: translate3d(0,100px,0);
 	transform: translate3d(0,100px,0);
-}
-
-#label .text {
-	font-size: 10px;
-	//font-style: italic;
-}
-
-#label .tooltip {
-	top: 100%;
-	left: 80%;
-	background-color: #666;
-	height: 30px;
-	width: 60px;
-	position: absolute;
-	border-radius: 0 0 5px 5px;
-	padding: 4px 0;
 }
 
 #description {
@@ -411,19 +437,21 @@ end of nav btn
 	bottom: -250px;
 	left: 0;
 	right: 0;
-	margin: 0 200px;
-	background-color: #444444;
-	color: #FFFFFF;
-	font-size: 1.4em;
+	margin: 0 210px;
+	background-color: #aa9a7b;
+	color: #35434E;
+	font-size: 1.3em;
 	padding: 10px;
+	font-weight: 100;
+  	box-shadow: 1px 2px 3px #847455, -1px 2px 3px #847455;
 	border-radius: 5px;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
 
 #description.show {
-	-webkit-transform: translate3d(0,-270px,0);
-	transform: translate3d(0,-270px,0);
+	-webkit-transform: translate3d(0,-290px,0);
+	transform: translate3d(0,-290px,0);
 }
 
 #textMatch {
@@ -438,6 +466,7 @@ end of nav btn
   	font-weight: 100;
 	padding: 20px 15px 60px 15px;
 	border-radius: 5px 5px 0 0;
+	box-shadow: 2px 3px 3px #1a2e37, -2px 3px 3px #1a2e37;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
