@@ -40,13 +40,18 @@
 
 *, *:after, *:before { 
 	-webkit-box-sizing: border-box; 
-	box-sizing: border-box; 
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
 	color: #35434E;
 	font-family: 'Lato';
+	font-weight: normal;
 	letter-spacing: 1px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 .start-screen {
@@ -96,9 +101,6 @@ body {
 	max-height: 1024px;
 	overflow: hidden;
 	background-color: #2a4b5a;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	user-select: none;
 }
 
 #painting-menu {
@@ -128,7 +130,6 @@ body {
 
 #paintings .painting_info .painting_title {
 	font-size: 15px;
-	font-weight: normal;
 }
 
 #paintings .painting_info .painting_artist {
@@ -303,6 +304,22 @@ end of nav btn
 	height: 40px;
 }
 
+.right-guide {
+	font-family: 'Handwriting';
+	display: none;
+	position: absolute;
+	top: 90px;
+	right: 100px;
+	color: #444;
+	width: 150px;
+}
+
+.right-guide img {
+	position: absolute;
+	right: -36px;
+	height: 40px;
+}
+
 #showroom {
 	position: absolute;
 	top: 0;
@@ -442,7 +459,6 @@ end of nav btn
 	color: #35434E;
 	font-size: 1.3em;
 	padding: 10px;
-	font-weight: 100;
   	box-shadow: 1px 2px 3px #847455, -1px 2px 3px #847455;
 	border-radius: 5px;
 	-webkit-transition: all 0.5s ease-out;
@@ -463,7 +479,6 @@ end of nav btn
 	background-color: #2a4b5a;
 	color: #fff;
 	font-size: 1.35em;
-  	font-weight: 100;
 	padding: 20px 15px 60px 15px;
 	border-radius: 5px 5px 0 0;
 	box-shadow: 2px 3px 3px #1a2e37, -2px 3px 3px #1a2e37;

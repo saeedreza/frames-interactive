@@ -155,13 +155,18 @@ $('#start-btn').on('click', function() {
 
 	$('#rightMenu').on('click', function(e) {
 		
-		var src = $('.painting_position img').attr('src');
+		var painting = $('.painting_position img').attr('src'),
+			frame = $('.frame_position img').attr('src');
 
-		if ( src.indexOf("placeholder") > -1 ) {
-			$('.nav-text-right').html('No Painting Selected');
+		if ( painting.indexOf("placeholder") > -1 ) {
+			$('.nav-text-right').html('No Painting Selected').css('color', '#e74c3c');
 			e.preventDefault();
 		} else {
+			if (frame.indexOf("placeholder") > -1 ) {
+				$('.right-guide').toggle();
+			}
 			rightMenu();
+
 		}
 	})
 
@@ -204,12 +209,8 @@ $('#start-btn').on('click', function() {
 						if (!wasDropped) {
 							leftMenu();
 						} else {
-							// show frame menu after 2s
-							setTimeout(function() {
-								  rightMenu();
-							}, 2000);
 							
-							$('.nav-text-right').html('Frame Menu');
+							$('.nav-text-right').html('Frame Menu').css('color', 'inherit');
 							$('#description').addClass('show');
 							$('#credit-btn').addClass('show');
 							
@@ -221,6 +222,7 @@ $('#start-btn').on('click', function() {
 
 							$('#credit .text').html(data[index].title);
 							$('#description').html(data[index].description);
+							$('.right-guide').show();
 
 							var frame_data = data[index].frames;
 
