@@ -185,90 +185,104 @@ body {
 
 #leftMenu {
 	float: left;
+	width: 120px;
+  	height: 50px;
 }
 
 #rightMenu {
 	float: right;
+	width: 120px;
+  	height: 50px;
 }
 
 /* *******************
 nav btn - todo
 ***************** */
 .navicon-button {
-    display: inline-block;
-    position: relative;
-    padding: 2.0625rem 1.5rem;
-    -webkit-transition: 0.25s;
+  display: inline-block;
+  position: relative;
+  transition: 0.25s;
 }
-.navicon-button .navicon:before, .navicon-button .navicon:after {
-    -webkit-transition: 0.25s;
+
+.navicon-button .navicon:before,
+.navicon-button .navicon:after {
+  transition: 0.25s;
+}
+
+.larr {
+	float: left;
+  	padding-top: 34px;
+  	padding-left: 14px;
+}
+
+.rarr {
+	float: right;
+  	padding-top: 34px;
+  	padding-right: 38px;
 }
 .navicon {
-    position: relative;
-    width: 2.5em;
-    height: .3125rem;
-    background: #35434E;
+   	position: relative;
     -webkit-transition: 0.5s;
-    border-radius: 2.5rem;
 }
-.navicon:before, .navicon:after {
-    display: block;
-    content:"";
-    height: .3125rem;
-    width: 2.5rem;
-    background: #35434E;
-    position: absolute;
-    z-index: -1;
-    -webkit-transition: 0.5s 0.25s;
-    border-radius: 1rem;
-}
-.navicon:before {
-    top: .625rem;
-}
+
+.navicon:before,
 .navicon:after {
-    top: -.625rem;
+  display: block;
+  content: "";
+  height: .3125rem;
+  width: 1.5rem;
+  background: #35434E;
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: 0.5s 0.25s;
+  border-radius: 1rem;
+  
 }
-.open:not(.steps) .navicon:before, .open:not(.steps) .navicon:after {
-    top: 0 !important;
+
+.larr .navicon:before {
+  top: .625rem;
+  -webkit-transform: translate3d(0, -0.65rem, 0) rotate(35deg) ;
+  -webkit-transform-origin: left top;
 }
-.open .navicon:before, .open .navicon:after {
-    -webkit-transition: 0.5s;
+
+.larr .navicon:after {
+  top: -.625rem;
+  -webkit-transform: translate3d(0, 0.65rem, 0) rotate(-35deg);
+  -webkit-transform-origin: left bottom;
 }
-/* Minus */
- .open {
-    -webkit-transform: scale(0.75);
+
+.rarr .navicon:before {
+  top: .625rem;
+  -webkit-transform: translate3d(0, -0.65rem, 0) rotate(-35deg) ;
+  -webkit-transform-origin: right top;
 }
-/* Arrows */
-.open.larr .navicon:before, .open.larr .navicon:after, .open.rarr .navicon:before, .open.rarr .navicon:after {
-    width: 1.5rem;
+
+.rarr .navicon:after {
+  top: -.625rem;
+  -webkit-transform: translate3d(0, 0.65rem, 0) rotate(35deg);
+  -webkit-transform-origin: right bottom;
 }
-.open.larr .navicon:before, .open.rarr .navicon:before {
-    -webkit-transform: rotate(35deg);
-    -webkit-transform-origin: left top;
+
+.open.larr .navicon:before {
+  width: 1.5rem;
+  -webkit-transform: translate3d(0, -0.05rem, 0) rotate(-45deg);
 }
-.open.larr .navicon:after, .open.rarr .navicon:after {
-    -webkit-transform: rotate(-35deg);
-    -webkit-transform-origin: left bottom;
+
+.open.larr .navicon:after {
+  width: 1.5rem;
+  -webkit-transform: translate3d(0, 0.05rem, 0) rotate(45deg);
 }
-/* Arrows */
+
 .open.rarr .navicon:before {
-    -webkit-transform: translate3d(1em, 0, 0) rotate(-35deg);
-    -webkit-transform-origin: right top;
+  width: 1.5rem;
+  -webkit-transform: translate3d(0, -0.05rem, 0) rotate(45deg);
 }
+
 .open.rarr .navicon:after {
-    -webkit-transform: translate3d(1em, 0, 0) rotate(35deg);
-    -webkit-transform-origin: right bottom;
+  width: 1.5rem;
+  -webkit-transform: translate3d(0, 0.05rem, 0) rotate(-45deg);
 }
-/* × */
-.open.x .navicon {
-    background: transparent;
-}
-.open.x .navicon:before {
-    -webkit-transform: rotate(-45deg);
-}
-.open.x .navicon:after {
-    -webkit-transform: rotate(45deg);
-}
+
 /* *******************
 end of nav btn
 ***************** */
@@ -283,11 +297,11 @@ end of nav btn
 }
 
 .nav-text.nav-text-left {
-	left: 83px;
+	left: 50px;
 }
 
 .nav-text.nav-text-right {
-	right: 83px;
+	right: 50px;
 }
 
 .left-guide {
@@ -306,7 +320,6 @@ end of nav btn
 
 .right-guide {
 	font-family: 'Handwriting';
-	display: none;
 	position: absolute;
 	top: 90px;
 	right: 100px;
@@ -400,32 +413,14 @@ end of nav btn
 #credit {
 	display: none;
 	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 	z-index: 1000;
 	width: 768px;
 	height: 1024px;
-	background-color: rgba(0,0,0,0.7);
-	text-align: center;
-}
-
-#credit .close {
-	position: absolute;
-	top: 375px;
-	left: 610px;
-	width: 50px;
-}
-
-#credit .close img {
-	height: 40px;
-}
-
-#credit .text {
-	background-color: #fff;
-  	width: 500px;
-	margin: 400px auto;
-	padding: 15px 5px;
-	border-radius: 5px;
-	font-size: 15px;
-	line-height: 22px;
+	background-color: rgba(0,0,0,0.5);
 }
 
 #credit-btn {
@@ -447,6 +442,47 @@ end of nav btn
 #credit-btn.show {
 	-webkit-transform: translate3d(0,100px,0);
 	transform: translate3d(0,100px,0);
+}
+
+#credit .close {
+	position: absolute;
+	top: 80px;
+	right: 55px;
+	z-index: 1;
+	width: 50px;
+
+}
+
+#credit .close img {
+	height: 40px;
+}
+
+#credit .text {
+	position: relative;
+	background-color: #fff;
+  	width: 80%;
+  	height: 80%;
+	margin: 0 auto;
+	padding: 30px;
+	border-radius: 5px;
+	font-size: 13px;
+	margin-top: 100px;
+}
+
+.credit {
+	margin: 20px 0;
+	display: table;
+}
+
+.credit img {
+	width: 120px;
+	float: left;
+}
+
+.credit p {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 20px;
 }
 
 #description {

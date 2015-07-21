@@ -1,8 +1,9 @@
 
 var data = [
 		{
-			'title' : 'Vase of Flowers, 1722. Jan van Huysum (Dutch, 1682–1749)<br>Oil on panel, 99.1 x 81 (39 x 31 7/8 in.)<br>On view in gallery E203',
+			'title' : '<span style="font-weight: bold">Vase of Flowers, 1722. Jan van Huysum (Dutch, 1682–1749)</span><br><span>Oil on panel, 99.1 x 81 (39 x 31 7/8 in.)</span><br><span>On view in gallery E203</span>',
 			'description' : 'Jan van Huysum’s exquisite bouquets of flowers from different seasons were prized for their loose, asymmetrical arrangements that reflect the period’s emerging taste for freer, graceful forms.',
+			'imgUrl' : 'img/painting_1.jpg',
 			'frames' : [
 				{
 					'title' : 'Option 1',
@@ -31,8 +32,9 @@ var data = [
 				}
 			]
 		}, {
-			'title' : 'Mars and Venus, Allegory of Peace, 1770. Louis-Jean François Lagrenée (French, 1725–1805)<br>Oil on canvas, 85.1 x 74.3 cm (33 1/2 x 29 1/4 in.)<br>On view in the exhibition',
+			'title' : '<span style="font-weight: bold">Mars and Venus, Allegory of Peace, 1770. Louis-Jean François Lagrenée (French, 1725–1805)</span><br><span>Oil on canvas, 85.1 x 74.3 cm (33 1/2 x 29 1/4 in.)</span><br><span>On view in the exhibition</span>',
 			'description' : 'Lagrenée’s polished style and contrasts of rich color create a quiet and sensual portrayal of the god of war observing his sleeping lover, the goddess Venus. ',
+			'imgUrl' : 'img/painting_2.jpg',
 			'frames' : [
 				{
 					'title' : 'Option 1',
@@ -61,8 +63,9 @@ var data = [
 				}
 			]
 		}, {
-			'title' : 'Spring (Jeanne Demarsy), 1881. Édouard Manet (French, 1832–1883)<br>Oil on canvas, 98.7 x 75.9 cm (38 7/8 x 29 7/8 in.)<br>On view in Gallery W204',
+			'title' : '<span style="font-weight: bold">Spring (Jeanne Demarsy), 1881. Édouard Manet (French, 1832–1883)</span><br><span>Oil on canvas, 98.7 x 75.9 cm (38 7/8 x 29 7/8 in.)</span><br><span>On view in Gallery W204</span>',
 			'description' : 'Manet portrayed the young actress Jean Demarsy in a floral-patterned gown against a leafy backdrop as an allegory of Spring. His forthright technique and colorful palette give the painting immediacy and freshness.',
+			'imgUrl' : 'img/painting_3.jpg',
 			'frames' : [
 				{
 					'title' : 'Option 1',
@@ -91,8 +94,9 @@ var data = [
 				}
 			]
 		}, {
-			'title' : 'Suzanne Le Peletier de Saint –Fargeau, 1804. Jacques-Louis David (French, 1748–1825)<br>Oil on canvas, 83.2 x 73 cm (32 3/4 x 28 3/4 in.)<br>On view in Gallery S204',
+			'title' : '<span style="font-weight: bold">Suzanne Le Peletier de Saint –Fargeau, 1804. Jacques-Louis David (French, 1748–1825)</span><br><span>Oil on canvas, 83.2 x 73 cm (32 3/4 x 28 3/4 in.)</span><br><span>On view in Gallery S204</span>',
 			'description' : 'Both the sitter and the painter were strong supporters of Emperor Napoleon. David’s informal yet direct presentation of the sitter created a strikingly intimate portrait intended for her fiancée. ',
+			'imgUrl' : 'img/painting_4.jpg',
 			'frames' : [
 				{
 					'title' : 'Option 1',
@@ -133,6 +137,7 @@ $('#start-btn').on('click', function() {
 		$('.painting_position img').attr('src', 'img/painting_placeholder.png');
 		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
 		$('.left-guide').toggle();
+		$('.right-guide').hide();
 		$('#credit-btn').removeClass('show');
 		$('#description').removeClass('show');
 		$('#textMatch').removeClass('show');
@@ -145,8 +150,12 @@ $('#start-btn').on('click', function() {
 		$('#textMatch').removeClass('show');
 	}
 
-	var credit = function() {
-		$('#credit').toggle();
+	var credits = function() {
+		var credits = [];
+		for (var i = 0; i < data.length; i++ ) {
+			credits += "<div class='credit'><img src='" + data[i].imgUrl +  "' />" + "<p>" + data[i].title +"</p></div>";
+		}
+		$('#credit .text').html(credits);
 	}
 
 	$('#leftMenu').on('click', function() {
@@ -171,15 +180,19 @@ $('#start-btn').on('click', function() {
 	})
 
 	$('#credit-btn').on('click', function() {
-		credit();
+		credits();
+		$('#credit').toggle();
 	})
 
 	$('#credit .close').on('click', function() {
-		credit();
+		$('#credit').toggle();
 	})
 
 	// open the left menu first time app runs
 	$('#showroom').addClass('showLeft');
+	$('.right-guide').hide();
+
+
 
 
 	( function() {
@@ -220,7 +233,6 @@ $('#start-btn').on('click', function() {
 
 							$('.painting_position img').attr("src", src).css({ opacity: '1'});
 
-							$('#credit .text').html(data[index].title);
 							$('#description').html(data[index].description);
 							$('.right-guide').show();
 
