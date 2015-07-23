@@ -147,6 +147,8 @@ $('#start-btn').on('click', function() {
 	
 	$('.start-screen').fadeOut();
 
+	var leftMenuClicked;
+
 	var leftMenu = function() {
 		$(".navicon-button").toggleClass("open");
 		$('#leftMenu').toggle();
@@ -182,7 +184,8 @@ $('#start-btn').on('click', function() {
 		if ( painting.indexOf("placeholder") > -1 ) {
 			e.preventDefault();
 		} else {
-			leftMenu();	
+			clearTimeout(leftMenuClicked);
+			leftMenu();
 		}
 	})
 
@@ -192,7 +195,6 @@ $('#start-btn').on('click', function() {
 			frame = $('.frame_position img').attr('src');
 
 		if ( painting.indexOf("placeholder") > -1 ) {
-			// $('.nav-text-right').html('No Painting Selected').css('color', '#e74c3c');
 			e.preventDefault();
 		} else {
 			if (frame.indexOf("placeholder") > -1 ) {
@@ -252,20 +254,12 @@ $('#start-btn').on('click', function() {
 									height = data[index].height,
 									selectedImage = draggableEl;
 
-								$('#description').addClass('show');
-								$('#credit-btn').addClass('show');
 								$('.painting_position img').attr("src", src).css({ height: height, opacity: '1'});
 								$('#description').html(data[index].description);
-								
-								// if (false) {
-									
-								// } else {
-								// 	setTimeout(function(e) { 
-								// 		rightMenu();
-								// 	}, 1500);
-								// }
+								$('#description').addClass('show');
+								$('#credit-btn').addClass('show');
 
-								setTimeout(function(e) { 
+								leftMenuClicked = setTimeout(function() {
 									rightMenu();
 								}, 1500);
 								
