@@ -223,21 +223,25 @@
 		var src = draggableEl.getAttribute("src");
 
 		if( this.isDroppable( draggableEl ) ) {
-
+			// rollover effect for paintings
 			if (src.indexOf(".jpg") > -1 ) {
-				var rollover_src = src.replace(".jpg", "_rollover.jpg");
-				$('.painting_position img').attr('src', rollover_src).css({ opacity: '0.5'});
-				classie.add( this.el, 'highlight' );
+				var rollover_src = src.replace(".jpg", "_rollover.jpg"),
+					i = draggableEl.getAttribute("data-index"),
+					height = data[i].height;
 
+				$('.painting_position img').attr('src', rollover_src).css({ height: height, opacity: '0.5'});
+				classie.add( this.el, 'highlight' );
+			// rollover effect for frames	
 			} else {
 				if ( !(jQuery.isEmptyObject(data[index])) ) {
 					var rollover_src = src.replace("_corner.png", "_rollover.png"),
 						framesArr = data[index].frames,
 						i = draggableEl.getAttribute("data-index"),
 						margin_left = framesArr[i].margin_left,
-						margin_top = framesArr[i].margin_top;
+						margin_top = framesArr[i].margin_top,
+						height = framesArr[i].height;
 
-					$('.frame_position img').attr('src', rollover_src).css({ marginTop: margin_top, marginLeft: margin_left, opacity: '0.5'});;
+					$('.frame_position img').attr('src', rollover_src).css({ height: height, marginTop: margin_top, marginLeft: margin_left, opacity: '0.5'});
 				}
 			}
 		} else {

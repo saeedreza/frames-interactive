@@ -4,6 +4,7 @@ var data = [
 			'title' : '<span style="font-weight: bold">Vase of Flowers, 1722. Jan van Huysum (Dutch, 1682–1749)</span><br><span>Oil on panel, 99.1 x 81 (39 x 31 7/8 in.)</span><br><span>On view in gallery E203</span>',
 			'description' : 'Jan van Huysum’s exquisite bouquets of flowers from different seasons were prized for their loose, asymmetrical arrangements that reflect the period’s emerging taste for freer, graceful forms.',
 			'imgUrl' : 'img/painting_1.jpg',
+			'height' : '452.5px',
 			'frames' : [
 				{
 					'title' : 'Option 1',
@@ -12,7 +13,8 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_1_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_1_frame_1.png',
 					'margin_top' : '88px',
-					'margin_left' : '32px'
+					'margin_left' : '32px',
+					'height' : '598px'
 				}, {
 					'title' : 'Option 2',
 					'textMatch_header' : 'A very Dutch choice!',
@@ -20,7 +22,8 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_1_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_1_frame_2.png',
 					'margin_top' : '101px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '579.5px'
 				}, {
 					'title' : 'Option 3',
 					'textMatch_header' : 'Oh dear, too severe!',
@@ -28,13 +31,15 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_1_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_1_frame_3.png',
 					'margin_top' : '102px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '576px'
 				}
 			]
 		}, {
 			'title' : '<span style="font-weight: bold">Mars and Venus, Allegory of Peace, 1770. Louis-Jean François Lagrenée (French, 1725–1805)</span><br><span>Oil on canvas, 85.1 x 74.3 cm (33 1/2 x 29 1/4 in.)</span><br><span>On view in the exhibition</span>',
 			'description' : 'Lagrenée’s polished style and contrasts of rich color create a quiet and sensual portrayal of the god of war observing his sleeping lover, the goddess Venus. ',
 			'imgUrl' : 'img/painting_2.jpg',
+			'height' : '443px',
 			'frames' : [
 				{
 					'title' : 'Option 1',
@@ -43,7 +48,8 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_2_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_1.png',
 					'margin_top' : '84px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '613px'
 				}, {
 					'title' : 'Option 2',
 					'textMatch_header' : 'Over-the-top revival',
@@ -51,7 +57,8 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_2_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_2.png',
 					'margin_top' : '45px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '644.5px'
 				}, {
 					'title' : 'Option 3',
 					'textMatch_header' : 'Complementary classicism',
@@ -59,13 +66,15 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_2_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_2_frame_3.png',
 					'margin_top' : '85px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '612px'
 				}
 			]
 		}, {
 			'title' : '<span style="font-weight: bold">Spring (Jeanne Demarsy), 1881. Édouard Manet (French, 1832–1883)</span><br><span>Oil on canvas, 98.7 x 75.9 cm (38 7/8 x 29 7/8 in.)</span><br><span>On view in Gallery W204</span>',
 			'description' : 'Manet portrayed the young actress Jean Demarsy in a floral-patterned gown against a leafy backdrop as an allegory of Spring. His forthright technique and colorful palette give the painting immediacy and freshness.',
 			'imgUrl' : 'img/painting_3.jpg',
+			'height' : '450.5px',
 			'frames' : [
 				{
 					'title' : 'Option 1',
@@ -74,7 +83,8 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_3_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_3_frame_1.png',
 					'margin_top' : '74px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '629px'
 				}, {
 					'title' : 'Option 2',
 					'textMatch_header' : 'Showstopper',
@@ -82,7 +92,8 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_3_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_3_frame_2.png',
 					'margin_top' : '44px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '683px'
 				}, {
 					'title' : 'Option 3',
 					'textMatch_header' : 'Botanical overload',
@@ -90,13 +101,15 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_3_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_3_frame_3.png',
 					'margin_top' : '91px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '586.5px'
 				}
 			]
 		}, {
 			'title' : '<span style="font-weight: bold">Suzanne Le Peletier de Saint –Fargeau, 1804. Jacques-Louis David (French, 1748–1825)</span><br><span>Oil on canvas, 83.2 x 73 cm (32 3/4 x 28 3/4 in.)</span><br><span>On view in Gallery S204</span>',
 			'description' : 'Both the sitter and the painter were strong supporters of Emperor Napoleon. David’s informal yet direct presentation of the sitter created a strikingly intimate portrait intended for her fiancée. ',
 			'imgUrl' : 'img/painting_4.jpg',
+			'height' : '435px',
 			'frames' : [
 				{
 					'title' : 'Option 1',
@@ -104,8 +117,9 @@ var data = [
 					'textMatch_body' : 'You’ve chosen the current frame in the Empire style, carved and gilded in France during the early 19th century. The elegant scrolling-leaf band and palmette corners were common during the Napoleonic Empire and fit the status of both painter and sitter.',
 					'frame_corner_imgUrl' : 'img/painting_4_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_1.png',
-					'margin_top' : '70px',
-					'margin_left' : '-7px'
+					'margin_top' : '50px',
+					'margin_left' : '-31px',
+					'height' : '690px'
 				}, {
 					'title' : 'Option 2',
 					'textMatch_header' : 'Hmmm. It’s … a frame.',
@@ -113,7 +127,8 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_4_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_2.png',
 					'margin_top' : '85px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '607px'
 				}, {
 					'title' : 'Option 3',
 					'textMatch_header' : 'Too, too ...',
@@ -121,7 +136,8 @@ var data = [
 					'frame_corner_imgUrl' : 'img/painting_4_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_3.png',
 					'margin_top' : '1px',
-					'margin_left' : 'auto'
+					'margin_left' : 'auto',
+					'height' : '689px'
 				}
 			]
 		}
@@ -133,6 +149,7 @@ $('#start-btn').on('click', function() {
 
 	var leftMenu = function() {
 		$(".navicon-button").toggleClass("open");
+		$('#leftMenu').toggle();
 		$('.showroom').removeClass('showRight').toggleClass('showLeft');
 		$('.painting_position img').attr('src', 'img/painting_placeholder.png');
 		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
@@ -145,6 +162,7 @@ $('#start-btn').on('click', function() {
 
 	var rightMenu = function() {
 		$(".navicon-button").toggleClass("open");
+		$('.nav-text-right').html($('.nav-text-right').html() == 'Close Menu' ? 'Choose Frame' : 'Close Menu');
 		$('.showroom').removeClass('showLeft').toggleClass('showRight');
 		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
 		$('#textMatch').removeClass('show');
@@ -158,8 +176,14 @@ $('#start-btn').on('click', function() {
 		$('#credit .text').html(credits);
 	}
 
-	$('#leftMenu').on('click', function() {
-		leftMenu();
+	$('#leftMenu').on('click', function(e) {
+		var painting = $('.painting_position img').attr('src');
+
+		if ( painting.indexOf("placeholder") > -1 ) {
+			e.preventDefault();
+		} else {
+			leftMenu();	
+		}
 	})
 
 	$('#rightMenu').on('click', function(e) {
@@ -168,14 +192,13 @@ $('#start-btn').on('click', function() {
 			frame = $('.frame_position img').attr('src');
 
 		if ( painting.indexOf("placeholder") > -1 ) {
-			$('.nav-text-right').html('No Painting Selected').css('color', '#e74c3c');
+			// $('.nav-text-right').html('No Painting Selected').css('color', '#e74c3c');
 			e.preventDefault();
 		} else {
 			if (frame.indexOf("placeholder") > -1 ) {
 				$('.right-guide').toggle();
 			}
 			rightMenu();
-
 		}
 	})
 
@@ -189,11 +212,7 @@ $('#start-btn').on('click', function() {
 	})
 
 	// open the left menu first time app runs
-	$('#showroom').addClass('showLeft');
-	$('.right-guide').hide();
-
-
-
+	leftMenu();
 
 	( function() {
 
@@ -201,7 +220,9 @@ $('#start-btn').on('click', function() {
 			paintingSelection = document.getElementById( 'painting-menu' ),
 			frameSelection = document.getElementById( 'frame-menu' ),
 			droppablePainting = [],
-			droppableFrame = [];
+			droppableFrame = [],
+			draggablesPainting = [],
+			draggablesFrame = [];
 
 		// initialize droppable for paintings
 		var droppableEl = document.querySelector( '#showroom .wall .painting_position' );
@@ -209,88 +230,114 @@ $('#start-btn').on('click', function() {
 
 		// initialize draggable paintings
 		Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( draggableEl ) {
-			new Draggable( draggableEl, droppablePainting, {
-				
-				draggabilly : { containment: body },
-				onStart : function() {
-					// close the left menu
-					leftMenu();
-				},
-				onEnd : function( wasDropped ) {
-					var afterDropFn = function() {
-						// hide showroom
-						if (!wasDropped) {
-							leftMenu();
-						} else {
-							
-							$('.nav-text-right').html('Frame Menu').css('color', 'inherit');
-							$('#description').addClass('show');
-							$('#credit-btn').addClass('show');
-							
-							var src = draggableEl.getAttribute("src"),
-								index = draggableEl.getAttribute('data-index'),
-								selectedImage = draggableEl;
+			draggablesPainting.push(
+				new Draggable( draggableEl, droppablePainting, {
+					
+					draggabilly : { containment: body },
+					onStart : function() {
+						// close the left menu
+						leftMenu();
+						draggablesPainting.forEach( function( el2 ) {
+							el2.draggie.isEnabled = false;
+						});
+					},
+					onEnd : function( wasDropped ) {
+						var afterDropFn = function() {
+							// hide showroom
+							if (!wasDropped) {
+								leftMenu();
+							} else {
+								var src = draggableEl.getAttribute("src"),
+									index = draggableEl.getAttribute('data-index'),
+									height = data[index].height,
+									selectedImage = draggableEl;
 
-							$('.painting_position img').attr("src", src).css({ opacity: '1'});
+								$('#description').addClass('show');
+								$('#credit-btn').addClass('show');
+								$('.painting_position img').attr("src", src).css({ height: height, opacity: '1'});
+								$('#description').html(data[index].description);
+								
+								// if (false) {
+									
+								// } else {
+								// 	setTimeout(function(e) { 
+								// 		rightMenu();
+								// 	}, 1500);
+								// }
 
-							$('#description').html(data[index].description);
-							$('.right-guide').show();
+								setTimeout(function(e) { 
+									rightMenu();
+								}, 1500);
+								
 
-							var frame_data = data[index].frames;
+								var frame_data = data[index].frames;
 
-							var loadFrames = function(src, index) {
-								var frame = "";
-								for (var i = 0; i < frame_data.length; i++ ) {
-									frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" data-index="' + i + '" class="frame" /></div><div class="frame_info"><div class="frame_title">' + frame_data[i].title + '</div></div>';
-								};
-								$('#frames').html(frame);
+								var loadFrames = function(src, index) {
+									var frame = "";
+									for (var i = 0; i < frame_data.length; i++ ) {
+										frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" data-index="' + i + '" class="frame" /></div><div class="frame_info"><div class="frame_title">' + frame_data[i].title + '</div></div>';
+									};
+									$('#frames').html(frame);
 
-								// initialize droppableFrame
-								var droppableEl = document.querySelector( '#showroom .wall .frame_position' );
-								droppableFrame =  new Droppable( droppableEl , {});
+									// initialize droppableFrame
+									var droppableEl = document.querySelector( '#showroom .wall .frame_position' );
+									droppableFrame =  new Droppable( droppableEl , {});
 
-								// initialize draggable frames
-								[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( draggableEl ) {
-									new Draggable( draggableEl, droppableFrame, {
-										draggabilly : { containment: body },
-										onStart : function() {
-											rightMenu();
-										},
-										onDrag : function() {
-											droppableFrame.highlight(draggableEl, index);
-										},
-										onEnd : function( wasDropped ) {
-											var afterDropFn = function() {
-												// hide dropArea
-												if (!wasDropped) {
+									// initialize draggable frames
+									[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( draggableEl ) {
+										draggablesFrame.push(	
+											new Draggable( draggableEl, droppableFrame, {
+												draggabilly : { containment: body },
+												onStart : function() {
 													rightMenu();
-												} else {
-													var index = draggableEl.getAttribute('data-index'),
-														src = frame_data[index].frame_imgUrl,
-														margin_top = frame_data[index].margin_top,
-														margin_left = frame_data[index].margin_left;
+													draggablesFrame.forEach( function( el2 ) {
+														el2.draggie.isEnabled = false;
+													});
+												},
+												onDrag : function() {
+													droppableFrame.highlight(draggableEl, index);
+												},
+												onEnd : function( wasDropped ) {
+													var afterDropFn = function() {
+														// hide dropArea
+														if (!wasDropped) {
+															rightMenu();
+														} else {
+															var index = draggableEl.getAttribute('data-index'),
+																src = frame_data[index].frame_imgUrl,
+																margin_top = frame_data[index].margin_top,
+																margin_left = frame_data[index].margin_left,
+																height = frame_data[index].height;
 
-													$('.frame_position img').attr("src", src).css({ marginTop: margin_top, marginLeft: margin_left, opacity: '1'});
-													
-													// display the selection text
-													var textMatch_header = '<h2>' + frame_data[index].textMatch_header + '</h2>',
-														textMatch_body = frame_data[index].textMatch_body;
-													
-													$('#textMatch').html( textMatch_header + textMatch_body );
-													$('#textMatch').addClass('show');
-												}
-											}
-											afterDropFn(); // afterDropFn for frames
-										} // on End for frames
+															$('.frame_position img').attr("src", src).css({ height: height, marginTop: margin_top, marginLeft: margin_left, opacity: '1'});
+															
+															// display the selection text
+															var textMatch_header = '<h2>' + frame_data[index].textMatch_header + '</h2>',
+																textMatch_body = frame_data[index].textMatch_body;
+															
+															$('#textMatch').html( textMatch_header + textMatch_body );
+															$('#textMatch').addClass('show');
+														}
+														draggablesFrame.forEach( function( el2 ) {
+															el2.draggie.isEnabled = true;
+														});
+													}
+													afterDropFn(); // afterDropFn for frames
+												} // on End for frames
+											})
+										)
 									});
-								});
-							};
-							loadFrames(src, index); // load frames
+								};
+								loadFrames(src, index); // load frames
+							}
 						}
-					}
-				afterDropFn(); // afterDropFn for paintings
-				} // on End for paintings
-			});
+					afterDropFn(); // afterDropFn for paintings
+					draggablesPainting.forEach( function( el2 ) {
+						el2.draggie.isEnabled = true;
+					});
+					} // on End for paintings
+				})
+			)
 		}); // Draggable for paintings
 	})();
 })

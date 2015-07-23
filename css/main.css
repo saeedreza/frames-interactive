@@ -86,8 +86,9 @@ body {
 }
 
 #start-btn {
-	border: 1px solid #FFFFFF;
-	border-radius: 3px;
+	font-weight: bold;
+	border: 3px solid #FFFFFF;
+	border-radius: 5px;
   	max-width: 250px;
   	margin: 0 auto;
   	margin-top: 150px;
@@ -113,7 +114,7 @@ body {
 }
 
 #paintings {
-	margin-top: 50px;
+	margin-top: 30px;
 	text-align: center;
 }
 
@@ -176,6 +177,7 @@ body {
 
 .nav {
 	padding: 5px 10px;
+	position: relative;
 }
 
 .nav:after, .nav:before {
@@ -183,104 +185,96 @@ body {
 	content: " ";
 }
 
-#leftMenu {
-	float: left;
-	width: 120px;
-  	height: 50px;
-}
+#leftMenu {}
 
-#rightMenu {
-	float: right;
-	width: 120px;
-  	height: 50px;
-}
+#rightMenu {}
 
 /* *******************
 nav btn - todo
 ***************** */
 .navicon-button {
-  display: inline-block;
-  position: relative;
-  transition: 0.25s;
+	display: inline-block;
+	position: relative;
+	-webkit-transition: 0.25s;
 }
 
 .navicon-button .navicon:before,
 .navicon-button .navicon:after {
-  transition: 0.25s;
+	-webkit-transition: 0.25s;
 }
 
 .larr {
 	float: left;
-  	padding-top: 34px;
-  	padding-left: 14px;
+	padding-top: 34px;
+	padding-left: 14px;
 }
 
 .rarr {
 	float: right;
-  	padding-top: 34px;
-  	padding-right: 38px;
+	padding-top: 34px;
+	padding-right: 38px;
 }
+
 .navicon {
-   	position: relative;
-    -webkit-transition: 0.5s;
+	position: relative;
+	-webkit-transition: 0.5s;
 }
 
 .navicon:before,
 .navicon:after {
-  display: block;
-  content: "";
-  height: .3125rem;
-  width: 1.5rem;
-  background: #35434E;
-  position: absolute;
-  z-index: -1;
-  -webkit-transition: 0.5s 0.25s;
-  border-radius: 1rem;
-  
+	display: block;
+	content: "";
+	height: .3125rem;
+	width: 1.5rem;
+	background: #35434E;
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: 0.5s 0.25s;
+	border-radius: 1rem;
 }
 
 .larr .navicon:before {
-  top: .625rem;
-  -webkit-transform: translate3d(0, -0.65rem, 0) rotate(35deg) ;
-  -webkit-transform-origin: left top;
+	top: .625rem;
+	-webkit-transform: translate3d(0, -0.65rem, 0) rotate(35deg) ;
+	-webkit-transform-origin: left top;
 }
 
 .larr .navicon:after {
-  top: -.625rem;
-  -webkit-transform: translate3d(0, 0.65rem, 0) rotate(-35deg);
-  -webkit-transform-origin: left bottom;
+	top: -.625rem;
+	-webkit-transform: translate3d(0, 0.65rem, 0) rotate(-35deg);
+	-webkit-transform-origin: left bottom;
 }
 
 .rarr .navicon:before {
-  top: .625rem;
-  -webkit-transform: translate3d(0, -0.65rem, 0) rotate(-35deg) ;
-  -webkit-transform-origin: right top;
+	top: .625rem;
+	-webkit-transform: translate3d(0, -0.65rem, 0) rotate(-35deg) ;
+	-webkit-transform-origin: right top;
 }
 
 .rarr .navicon:after {
-  top: -.625rem;
-  -webkit-transform: translate3d(0, 0.65rem, 0) rotate(35deg);
-  -webkit-transform-origin: right bottom;
+	top: -.625rem;
+	-webkit-transform: translate3d(0, 0.65rem, 0) rotate(35deg);
+	-webkit-transform-origin: right bottom;
 }
 
 .open.larr .navicon:before {
-  width: 1.5rem;
-  -webkit-transform: translate3d(0, -0.05rem, 0) rotate(-45deg);
+	width: 1.5rem;
+	-webkit-transform: translate3d(0, -0.05rem, 0) rotate(-45deg);
 }
 
 .open.larr .navicon:after {
-  width: 1.5rem;
-  -webkit-transform: translate3d(0, 0.05rem, 0) rotate(45deg);
+	width: 1.5rem;
+	-webkit-transform: translate3d(0, 0.05rem, 0) rotate(45deg);
 }
 
 .open.rarr .navicon:before {
-  width: 1.5rem;
-  -webkit-transform: translate3d(0, -0.05rem, 0) rotate(45deg);
+	width: 1.5rem;
+	-webkit-transform: translate3d(0, -0.05rem, 0) rotate(45deg);
 }
 
 .open.rarr .navicon:after {
-  width: 1.5rem;
-  -webkit-transform: translate3d(0, 0.05rem, 0) rotate(-45deg);
+	width: 1.5rem;
+	-webkit-transform: translate3d(0, 0.05rem, 0) rotate(-45deg);
 }
 
 /* *******************
@@ -292,7 +286,7 @@ end of nav btn
   	top: 25px;
   	width: 80px;
   	line-height: 15px;
-  	font-size: 13px;
+  	font-size: 16px;
   	font-weight: bold;
 }
 
@@ -305,17 +299,20 @@ end of nav btn
 }
 
 .left-guide {
+	display: none;
 	font-family: 'Handwriting';
 	position: absolute;
-	top: 150px;
-	left: 20px;
+	top: 218px;
+	left: 50px;
+	width: 130px;
 	color: #444;
 }
 
 .left-guide img {
 	position: absolute;
-	left: 0;
-	height: 40px;
+	top: 50px;
+	left: -9px;
+	width: 150px;
 }
 
 .right-guide {
@@ -424,17 +421,19 @@ end of nav btn
 }
 
 #credit-btn {
-	position:absolute;
+	position: absolute;
 	top: -100px;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
-	background-color: #2a4b5a;
-	color: #EADEB4;
 	width: 100px;
-	padding: 7px 0;
+	color: #2a4b5a;
+	font-weight: bold;
+	border: 3px solid #2a4b5a;
+	border-top: none;
 	border-radius: 0 0 4px 4px;
-	box-shadow: 1px 1px 2px #1a2e37;
+	padding-top: 5px;
+	padding-bottom: 15px;
 	-webkit-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
 }
