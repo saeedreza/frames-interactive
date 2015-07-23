@@ -164,7 +164,11 @@ $('#start-btn').on('click', function() {
 
 	var rightMenu = function() {
 		$(".navicon-button").toggleClass("open");
-		$('.nav-text-right').html($('.nav-text-right').html() == 'Close Menu' ? 'Choose Frame' : 'Close Menu');
+		if ($('.nav-text-right').html() == 'Back') {
+			$('.nav-text-right').html('Choose Frame').css('top', '25px');
+		} else {
+			$('.nav-text-right').html('Back').css('top', '35px');
+		}
 		$('.showroom').removeClass('showLeft').toggleClass('showRight');
 		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
 		$('#textMatch').removeClass('show');
