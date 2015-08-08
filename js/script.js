@@ -7,7 +7,7 @@ var data = [
 			'height' : '452.5px',
 			'frames' : [
 				{
-					'title' : 'Option 1',
+					'title' : 'OPTION I',
 					'textMatch_header' : 'A perfect match!',
 					'textMatch_body': 'This gilded Régence frame currently surrounds Van Huysum’s Vase of Flowers. Its sculpted corners and curling tendrils complement the painting’s exuberance and would have been favored by eighteenth-century French and Dutch collectors.',
 					'frame_corner_imgUrl' : 'img/painting_1_frame_1_corner.png',
@@ -16,7 +16,7 @@ var data = [
 					'margin_left' : '32px',
 					'height' : '598px'
 				}, {
-					'title' : 'Option 2',
+					'title' : 'OPTION II',
 					'textMatch_header' : 'A very Dutch choice!',
 					'textMatch_body' : 'This 17th century Dutch frame in expensive polished fruitwood provides a plainer, darker border to the sumptuous bouquet. Preferred by some Getty curators for its simplicity, it has been used periodically to frame Van Huysum’s still life.',
 					'frame_corner_imgUrl' : 'img/painting_1_frame_2_corner.png',
@@ -25,7 +25,7 @@ var data = [
 					'margin_left' : 'auto',
 					'height' : '579.5px'
 				}, {
-					'title' : 'Option 3',
+					'title' : 'OPTION III',
 					'textMatch_header' : 'Oh dear, too severe!',
 					'textMatch_body' : 'The elegant simplicity of this Louis XVI scotia frame by Chérin provides a less sympathetic surrounding for the Vase of Flowers. The frame’s linearity constrains and detracts from the dynamism of Van Huysum’s botanical forms.',
 					'frame_corner_imgUrl' : 'img/painting_1_frame_3_corner.png',
@@ -42,7 +42,7 @@ var data = [
 			'height' : '443px',
 			'frames' : [
 				{
-					'title' : 'Option 1',
+					'title' : 'OPTION I',
 					'textMatch_header' : 'Oof! Overpowering!',
 					'textMatch_body' : 'As a leading exponent of restrained classicism, Lagrenée would have strongly opposed this showy Louis XV frame. Its curving edges compete with the contained composition of the central image. ',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_1_corner.png',
@@ -51,7 +51,7 @@ var data = [
 					'margin_left' : 'auto',
 					'height' : '613px'
 				}, {
-					'title' : 'Option 2',
+					'title' : 'OPTION II',
 					'textMatch_header' : 'Over-the-top revival',
 					'textMatch_body' : 'The painting arrived at the Getty in this gaudy Louis XVI revival frame that broadcasts the artist’s name at the top. Its heavy forms and brassy color clash with the subtlety of Lagrenée’s painting.',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_2_corner.png',
@@ -60,7 +60,7 @@ var data = [
 					'margin_left' : 'auto',
 					'height' : '644.5px'
 				}, {
-					'title' : 'Option 3',
+					'title' : 'OPTION III',
 					'textMatch_header' : 'Complementary classicism',
 					'textMatch_body' : 'You’ve selected the current Louis XVI frame, which is contemporary with the painting. The repeated pattern of the egg-and-dart motif provides a regularity that reinforces the calm mood of the scene.',
 					'frame_corner_imgUrl' : 'img/painting_2_frame_3_corner.png',
@@ -77,7 +77,7 @@ var data = [
 			'height' : '450.5px',
 			'frames' : [
 				{
-					'title' : 'Option 1',
+					'title' : 'OPTION I',
 					'textMatch_header' : 'Perfectly suited to the Salon',
 					'textMatch_body' : 'You’ve selected a French 19th century gilded "Salon" frame, named for the annual Paris exhibition where Spring was first shown in 1882. The plain sight edge creates a window onto the composition, while the ornamentation resonates with Manet’s lively brushwork. ',					
 					'frame_corner_imgUrl' : 'img/painting_3_frame_1_corner.png',
@@ -86,7 +86,7 @@ var data = [
 					'margin_left' : 'auto',
 					'height' : '629px'
 				}, {
-					'title' : 'Option 2',
+					'title' : 'OPTION II',
 					'textMatch_header' : 'Showstopper',
 					'textMatch_body' : 'Spring was in this Louis XV frame for many years—perhaps over a century. The boisterous curves and exuberant ornamentation call attention to the painting but also compete with its varied brushwork and bold color.',
 					'frame_corner_imgUrl' : 'img/painting_3_frame_2_corner.png',
@@ -95,7 +95,7 @@ var data = [
 					'margin_left' : 'auto',
 					'height' : '683px'
 				}, {
-					'title' : 'Option 3',
+					'title' : 'OPTION III',
 					'textMatch_header' : 'Botanical overload',
 					'textMatch_body' : 'The richly carved botanical motifs of the Louis XIII frame may seem to further embellish the painting, but the heavy Baroque forms of this garland are at odds with Manet’s bright palette and light, energetic brushwork.',
 					'frame_corner_imgUrl' : 'img/painting_3_frame_3_corner.png',
@@ -112,16 +112,16 @@ var data = [
 			'height' : '435px',
 			'frames' : [
 				{
-					'title' : 'Option 1',
+					'title' : 'OPTION I',
 					'textMatch_header' : 'Harmonious ensemble',
 					'textMatch_body' : 'You’ve chosen the current frame in the Empire style, carved and gilded in France during the early 19th century. The elegant scrolling-leaf band and palmette corners were common during the Napoleonic Empire and fit the status of both painter and sitter.',
 					'frame_corner_imgUrl' : 'img/painting_4_frame_1_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_1.png',
-					'margin_top' : '50px',
+					'margin_top' : '45px',
 					'margin_left' : '-31px',
 					'height' : '690px'
 				}, {
-					'title' : 'Option 2',
+					'title' : 'OPTION II',
 					'textMatch_header' : 'Hmmm. It’s … a frame.',
 					'textMatch_body' : 'This plain Neoclassical frame postdates the painting by several decades. The choice of a previous owner, its simple, austere style contrasts with David’s descriptive brushwork and restrains the relaxed immediacy of the portrait.',					
 					'frame_corner_imgUrl' : 'img/painting_4_frame_2_corner.png',
@@ -130,7 +130,7 @@ var data = [
 					'margin_left' : 'auto',
 					'height' : '607px'
 				}, {
-					'title' : 'Option 3',
+					'title' : 'OPTION III',
 					'textMatch_header' : 'Too, too ...',
 					'textMatch_body' : 'You’ve selected a Louis XVI frame suitable for a portrait; however, the ribbon and flower ornaments are too ornate and crowds the head of David’s robust likeness.',					
 					'frame_corner_imgUrl' : 'img/painting_4_frame_3_corner.png',
@@ -150,27 +150,18 @@ $('#start-btn').on('click', function() {
 	var leftMenuClicked;
 
 	var leftMenu = function() {
-		$(".navicon-button").toggleClass("open");
-		$('#leftMenu').toggle();
-		$('.showroom').removeClass('showRight').toggleClass('showLeft');
-		$('.painting_position img').attr('src', 'img/painting_placeholder.png');
-		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
-		$('.left-guide').toggle();
-		$('.right-guide').hide();
-		$('#credit-btn').removeClass('show');
+		$('#painting-menu').toggleClass('open');
+		$('#showroom').toggleClass('goRight');
+		$('.painting_position img').attr('src', 'img/placeholder_painting.png').css({'box-shadow':'none'});
+		$('.frame_position img').attr('src', 'img/placeholder_frame.png');
 		$('#description').removeClass('show');
 		$('#textMatch').removeClass('show');
 	}
 
 	var rightMenu = function() {
-		$(".navicon-button").toggleClass("open");
-		if ($('.nav-text-right').html() == 'Back') {
-			$('.nav-text-right').html('Choose Frame').css('top', '25px');
-		} else {
-			$('.nav-text-right').html('Back').css('top', '35px');
-		}
-		$('.showroom').removeClass('showLeft').toggleClass('showRight');
-		$('.frame_position img').attr('src', 'img/frame_placeholder.png');
+		$('#frame-menu').removeClass('open');
+		$('#showroom').removeClass('goLeft');
+		$('.frame_position img').attr('src', 'img/placeholder_frame.png');
 		$('#textMatch').removeClass('show');
 	}
 
@@ -201,9 +192,9 @@ $('#start-btn').on('click', function() {
 		if ( painting.indexOf("placeholder") > -1 ) {
 			e.preventDefault();
 		} else {
-			if (frame.indexOf("placeholder") > -1 ) {
-				$('.right-guide').toggle();
-			}
+			// if (frame.indexOf("placeholder") > -1 ) {
+			// 	$('.right-guide').toggle();
+			// }
 			rightMenu();
 		}
 	})
@@ -222,7 +213,7 @@ $('#start-btn').on('click', function() {
 
 	( function() {
 
-		var body = document.body,
+		var container = document.getElementById ( 'container' ),
 			paintingSelection = document.getElementById( 'painting-menu' ),
 			frameSelection = document.getElementById( 'frame-menu' ),
 			droppablePainting = [],
@@ -239,10 +230,9 @@ $('#start-btn').on('click', function() {
 			draggablesPainting.push(
 				new Draggable( draggableEl, droppablePainting, {
 					
-					draggabilly : { containment: body },
+					draggabilly : { containment: container },
 					onStart : function() {
-						// close the left menu
-						leftMenu();
+						//
 						draggablesPainting.forEach( function( el2 ) {
 							el2.draggie.isEnabled = false;
 						});
@@ -251,20 +241,24 @@ $('#start-btn').on('click', function() {
 						var afterDropFn = function() {
 							// hide showroom
 							if (!wasDropped) {
-								leftMenu();
+								//
 							} else {
+								// close the left menu
+								leftMenu();
+
 								var src = draggableEl.getAttribute("src"),
 									index = draggableEl.getAttribute('data-index'),
 									height = data[index].height,
 									selectedImage = draggableEl;
 
-								$('.painting_position img').attr("src", src).css({ height: height, opacity: '1'});
+								$('.painting_position img').attr("src", src).css({ height: height, opacity: '1', 'box-shadow': '0px 4px 4px #444'});
 								$('#description').html(data[index].description);
 								$('#description').addClass('show');
-								$('#credit-btn').addClass('show');
 
 								leftMenuClicked = setTimeout(function() {
 									rightMenu();
+									// $('#showroom').addClass('goLeft')
+									// $('#frame-menu').addClass('open');
 								}, 1500);
 								
 
@@ -273,7 +267,7 @@ $('#start-btn').on('click', function() {
 								var loadFrames = function(src, index) {
 									var frame = "";
 									for (var i = 0; i < frame_data.length; i++ ) {
-										frame += '<div><img src="' + frame_data[i].frame_corner_imgUrl + '" data-index="' + i + '" class="frame" /></div><div class="frame_info"><div class="frame_title">' + frame_data[i].title + '</div></div>';
+										frame += '<div class="frame_info"><div class="frame_title">' + frame_data[i].title + '</div></div><div class="frame"><img src="' + frame_data[i].frame_corner_imgUrl + '" data-index="' + i + '" class="frame" /></div>';
 									};
 									$('#frames').html(frame);
 
@@ -285,9 +279,8 @@ $('#start-btn').on('click', function() {
 									[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( draggableEl ) {
 										draggablesFrame.push(	
 											new Draggable( draggableEl, droppableFrame, {
-												draggabilly : { containment: body },
+												draggabilly : { containment: container },
 												onStart : function() {
-													rightMenu();
 													draggablesFrame.forEach( function( el2 ) {
 														el2.draggie.isEnabled = false;
 													});
@@ -299,8 +292,11 @@ $('#start-btn').on('click', function() {
 													var afterDropFn = function() {
 														// hide dropArea
 														if (!wasDropped) {
-															rightMenu();
 														} else {
+															// closes the right menu
+															rightMenu();
+															
+
 															var index = draggableEl.getAttribute('data-index'),
 																src = frame_data[index].frame_imgUrl,
 																margin_top = frame_data[index].margin_top,

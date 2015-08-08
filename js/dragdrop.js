@@ -247,11 +247,11 @@
 		} else {
 
 			if (src.indexOf(".jpg") > -1 ) {
-				$('.painting_position img').attr('src', 'img/painting_placeholder.png');
+				$('.painting_position img').attr('src', 'img/placeholder_painting.png');
 				classie.remove( this.el, 'highlight' );
 
 			} else {
-				$('.frame_position img').attr('src', 'img/frame_placeholder.png');
+				$('.frame_position img').attr('src', 'img/placeholder_frame.png');
 
 			}
 		}

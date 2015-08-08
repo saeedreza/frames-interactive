@@ -13,14 +13,14 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 	</head>
 	<body>
-		<div class="container">
+		<div id="container">
 			<div class="start-screen">
 				<h1>Will You Marry Me?</h1>
 				<div class="title"><span>Pair</span><br>Paintings<br><span>with their ideal</span><br>Frames</div>
 				<div id="start-btn">Touch to Start</div>
 			</div>
 			<div id="credit">
-				<div class="close"><img src="img/close.png"></div>
+				<div class="close"><img src="img/button_close.png"></div>
 				<div class="text"></div>
 			</div>
 			<!-- Painting menu -->
@@ -51,7 +51,7 @@
 						<img src="img/painting_3.jpg" data-index="2" class="painting" />
 					</div>
 					<div class="painting_info">
-						<div class="painting_title">Spring (Jeanne Demarsy)</div>
+						<div class="painting_title">Spring <br>(Jeanne Demarsy)</div>
 						<div class="painting_artist">Édouard Manet</div>
 					</div>
 				</div>
@@ -59,32 +59,33 @@
 
 			<!-- Showroom -->
 			<div id="showroom" class="showroom">
-				<div class="left-guide">
+				<!-- <div class="left-guide">
 					<div class="">Drag a painting to the right!</div>
 					<img src="img/arrow.png">
 				</div>
 				<div class="right-guide">
 					<img src="img/right_arrow.png">
 					<div class="">Go to the frame menu to pick the right match!</div>
-				</div>
+				</div> -->
 				<div class="nav">
 					<div id="leftMenu" >
-						<div class="navicon-button larr"><div class="navicon"></div></div>
-						<div class="nav-text nav-text-left">Choose Painting</div>
+						<div class="nav-btn"><img src="img/button_left.png"></div>
+						<div class="nav-icon"><img src="img/arrow_left.png"></div>
+						<div class="nav-text"><span>Choose<br>Painting</span></div>
 					</div>
-					<div id="credit-btn">Credits</div>
-					<div id="rightMenu">
-						<div class="navicon-button rarr"><div class="navicon"></div></div>
-						<div class="nav-text nav-text-right">Choose Frame</div>	
+					<div id="rightMenu" >
+						<div class="nav-btn"><img src="img/button_right.png"></div>
+						<div class="nav-icon"><img src="img/arrow_right.png"></div>
+						<div class="nav-text"><span>Choose<br>Frame</span></div>
 					</div>
 				</div>
 
 				<div class="wall">
 					<div class="painting_position">
-						<img src="img/painting_placeholder.png" />
+						<img src="img/placeholder_painting.png" style="opacity: 0.5"/>
 					</div>
 					<div class="frame_position">
-						<img src="img/frame_placeholder.png" />
+						<img src="img/placeholder_frame.png" />
 					</div>
 				</div>
 				<!-- painting description -->
@@ -95,11 +96,8 @@
 
 			<!-- Frame menu -->
 			<div id="frame-menu" class="frame-menu">
-				<div class="frame-menu-guide">
-					<div>Drag a frame to the left!</div>
-					<img src="img/left_arrow_white.png">
-				</div>
 				<div id="frames"></div>
+				<div id="credit-btn">Credits</div>
 			</div>
 		</div>
 		
