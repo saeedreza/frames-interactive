@@ -152,15 +152,15 @@ $('#start-btn').on('click', function() {
 	var leftMenu = function() {
 		$('#painting-menu').toggleClass('open');
 		$('#showroom').toggleClass('goRight');
-		$('.painting_position img').attr('src', 'img/placeholder_painting.png').css({'box-shadow':'none'});
+		$('.painting_position img').attr('src', 'img/placeholder_painting.png').css({'box-shadow':'none', opacity: '0.5'});
 		$('.frame_position img').attr('src', 'img/placeholder_frame.png');
 		$('#description').removeClass('show');
 		$('#textMatch').removeClass('show');
 	}
 
 	var rightMenu = function() {
-		$('#frame-menu').removeClass('open');
-		$('#showroom').removeClass('goLeft');
+		$('#frame-menu').toggleClass('open');
+		$('#showroom').toggleClass('goLeft');
 		$('.frame_position img').attr('src', 'img/placeholder_frame.png');
 		$('#textMatch').removeClass('show');
 	}
@@ -185,18 +185,18 @@ $('#start-btn').on('click', function() {
 	})
 
 	$('#rightMenu').on('click', function(e) {
-		
-		var painting = $('.painting_position img').attr('src'),
-			frame = $('.frame_position img').attr('src');
+		rightMenu();
+		// var painting = $('.painting_position img').attr('src'),
+		// 	frame = $('.frame_position img').attr('src');
 
-		if ( painting.indexOf("placeholder") > -1 ) {
-			e.preventDefault();
-		} else {
-			// if (frame.indexOf("placeholder") > -1 ) {
-			// 	$('.right-guide').toggle();
-			// }
-			rightMenu();
-		}
+		// if ( painting.indexOf("placeholder") > -1 ) {
+		// 	e.preventDefault();
+		// } else {
+		// 	// if (frame.indexOf("placeholder") > -1 ) {
+		// 	// 	$('.right-guide').toggle();
+		// 	// }
+		// 	rightMenu();
+		// }
 	})
 
 	$('#credit-btn').on('click', function() {
