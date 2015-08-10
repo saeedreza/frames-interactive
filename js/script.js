@@ -145,6 +145,7 @@ var data = [
 
 $('#start-btn').on('click', function() {
 	
+	// remove start screen
 	$('.start-screen').fadeOut();
 
 	var leftMenuClicked;
@@ -174,29 +175,12 @@ $('#start-btn').on('click', function() {
 	}
 
 	$('#leftMenu').on('click', function(e) {
-		var painting = $('.painting_position img').attr('src');
-
-		if ( painting.indexOf("placeholder") > -1 ) {
-			e.preventDefault();
-		} else {
-			clearTimeout(leftMenuClicked);
-			leftMenu();
-		}
+		clearTimeout(leftMenuClicked);
+		leftMenu();
 	})
 
 	$('#rightMenu').on('click', function(e) {
 		rightMenu();
-		// var painting = $('.painting_position img').attr('src'),
-		// 	frame = $('.frame_position img').attr('src');
-
-		// if ( painting.indexOf("placeholder") > -1 ) {
-		// 	e.preventDefault();
-		// } else {
-		// 	// if (frame.indexOf("placeholder") > -1 ) {
-		// 	// 	$('.right-guide').toggle();
-		// 	// }
-		// 	rightMenu();
-		// }
 	})
 
 	$('#credit-btn').on('click', function() {
@@ -210,6 +194,8 @@ $('#start-btn').on('click', function() {
 
 	// open the left menu first time app runs
 	leftMenu();
+	$('.guide .left_arrow').fadeIn();
+	$('.guide .guide_text').html('Choose a Painting').fadeIn();
 
 	( function() {
 
@@ -229,39 +215,48 @@ $('#start-btn').on('click', function() {
 		Array.prototype.slice.call(document.querySelectorAll( '#painting-menu .painting' )).forEach( function( draggableEl ) {
 			draggablesPainting.push(
 				new Draggable( draggableEl, droppablePainting, {
-					
+					// draggable area
 					draggabilly : { containment: container },
 					onStart : function() {
-						//
+						// to disable other draggables 
 						draggablesPainting.forEach( function( el2 ) {
 							el2.draggie.isEnabled = false;
 						});
+						$('.guide .left_arrow').fadeOut();
+						$('.guide .guide_text').fadeOut();
 					},
 					onEnd : function( wasDropped ) {
 						var afterDropFn = function() {
 							// hide showroom
 							if (!wasDropped) {
 								//
+								$('.guide .left_arrow').fadeIn();
+								$('.guide .guide_text').fadeIn();
 							} else {
 								// close the left menu
 								leftMenu();
 
+								// display dropped painting
 								var src = draggableEl.getAttribute("src"),
 									index = draggableEl.getAttribute('data-index'),
 									height = data[index].height,
 									selectedImage = draggableEl;
 
 								$('.painting_position img').attr("src", src).css({ height: height, opacity: '1', 'box-shadow': '0px 4px 4px #444'});
-								$('#description').html(data[index].description);
-								$('#description').addClass('show');
+								
+								// display painting description
+								var description = data[index].description;
 
+								$('#description').html(description).addClass('show');
+								
+								// open the right menu after 1.5s
 								leftMenuClicked = setTimeout(function() {
 									rightMenu();
-									// $('#showroom').addClass('goLeft')
-									// $('#frame-menu').addClass('open');
+									$('.guide .right_arrow').fadeIn();
+									$('.guide .guide_text').html('Choose a Frame').fadeIn();
 								}, 1500);
-								
 
+								// load selected painting's frames
 								var frame_data = data[index].frames;
 
 								var loadFrames = function(src, index) {
@@ -269,6 +264,7 @@ $('#start-btn').on('click', function() {
 									for (var i = 0; i < frame_data.length; i++ ) {
 										frame += '<div class="frame_info"><div class="frame_title">' + frame_data[i].title + '</div></div><div class="frame"><img src="' + frame_data[i].frame_corner_imgUrl + '" data-index="' + i + '" class="frame" /></div>';
 									};
+									// display frames
 									$('#frames').html(frame);
 
 									// initialize droppableFrame
@@ -277,13 +273,16 @@ $('#start-btn').on('click', function() {
 
 									// initialize draggable frames
 									[].slice.call(document.querySelectorAll( '#frames .frame' )).forEach( function( draggableEl ) {
-										draggablesFrame.push(	
+										draggablesFrame.push(
 											new Draggable( draggableEl, droppableFrame, {
 												draggabilly : { containment: container },
 												onStart : function() {
+													// to disable other draggables
 													draggablesFrame.forEach( function( el2 ) {
 														el2.draggie.isEnabled = false;
 													});
+													$('.guide .right_arrow').fadeOut();
+													$('.guide .guide_text').fadeOut();
 												},
 												onDrag : function() {
 													droppableFrame.highlight(draggableEl, index);
@@ -292,11 +291,13 @@ $('#start-btn').on('click', function() {
 													var afterDropFn = function() {
 														// hide dropArea
 														if (!wasDropped) {
+															$('.guide .right_arrow').fadeIn();
+															$('.guide .guide_text').html('Choose a Frame').fadeIn();
 														} else {
 															// closes the right menu
 															rightMenu();
-															
 
+															// display dropped frame
 															var index = draggableEl.getAttribute('data-index'),
 																src = frame_data[index].frame_imgUrl,
 																margin_top = frame_data[index].margin_top,
@@ -309,9 +310,9 @@ $('#start-btn').on('click', function() {
 															var textMatch_header = '<h2>' + frame_data[index].textMatch_header + '</h2>',
 																textMatch_body = frame_data[index].textMatch_body;
 															
-															$('#textMatch').html( textMatch_header + textMatch_body );
-															$('#textMatch').addClass('show');
+															$('#textMatch').html( textMatch_header + textMatch_body ).addClass('show');
 														}
+														// to enable all draggables (for frames) again
 														draggablesFrame.forEach( function( el2 ) {
 															el2.draggie.isEnabled = true;
 														});
@@ -326,6 +327,7 @@ $('#start-btn').on('click', function() {
 							}
 						}
 					afterDropFn(); // afterDropFn for paintings
+					// to enable all draggables (for paintings) again
 					draggablesPainting.forEach( function( el2 ) {
 						el2.draggie.isEnabled = true;
 					});
