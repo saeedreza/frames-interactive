@@ -106,7 +106,7 @@ var data = [
 				}
 			]
 		}, {
-			'title' : '<span style="font-weight: bold">Suzanne Le Peletier de Saint –Fargeau, 1804. Jacques-Louis David (French, 1748–1825)</span><br><span>Oil on canvas, 83.2 x 73 cm (32 3/4 x 28 3/4 in.)</span><br><span>On view in Gallery S204</span>',
+			'title' : '<span style="font-weight: bold">Suzanne Le Peletier de Saint–Fargeau, 1804. Jacques-Louis David (French, 1748–1825)</span><br><span>Oil on canvas, 83.2 x 73 cm (32 3/4 x 28 3/4 in.)</span><br><span>On view in Gallery S204</span>',
 			'description' : 'Both the sitter and the painter were strong supporters of Emperor Napoleon. David’s informal yet direct presentation of the sitter created a strikingly intimate portrait intended for her fiancée. ',
 			'imgUrl' : 'img/painting_4.jpg',
 			'height' : '435px',
@@ -132,7 +132,7 @@ var data = [
 				}, {
 					'title' : 'OPTION III',
 					'textMatch_header' : 'Too, too ...',
-					'textMatch_body' : 'You’ve selected a Louis XVI frame suitable for a portrait; however, the ribbon and flower ornaments are too ornate and crowds the head of David’s robust likeness.',					
+					'textMatch_body' : 'You’ve selected a Louis XVI frame suitable for a portrait; however, the ribbon and flower ornaments are too ornate and crowd the head of David’s robust sitter.',					
 					'frame_corner_imgUrl' : 'img/painting_4_frame_3_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_3.png',
 					'margin_top' : '1px',
@@ -143,27 +143,57 @@ var data = [
 		}
 	];
 
-$('#start-btn').on('click', function() {
+$('#start-btn').on('touchstart click', function() {
 	
 	// remove start screen
 	$('.start-screen').fadeOut();
 
-	var leftMenuClicked;
+	var leftMenuClicked,
+		rightMenuIsOpen = false,
+		rightMenuOpenAuto = false,
+		app_runtime_counter = 0;
 
-	var leftMenu = function() {
-		$('#painting-menu').toggleClass('open');
-		$('#showroom').toggleClass('goRight');
-		$('.painting_position img').attr('src', 'img/placeholder_painting.png').css({'box-shadow':'none', opacity: '0.5'});
+	var leftMenuOpen = function() {
+		$('#painting-menu').addClass('open');
+		$('#showroom').addClass('goRight');
+		$('.painting_position img').attr('src', 'img/placeholder_painting.png').css({'box-shadow':'none', opacity: '0.75'});
+		
+		$('#frame-menu').removeClass('open');
+		$('#showroom').removeClass('goLeft');
 		$('.frame_position img').attr('src', 'img/placeholder_frame.png');
+		
 		$('#description').removeClass('show');
 		$('#textMatch').removeClass('show');
+		$('#credit-btn').addClass('show');
 	}
 
-	var rightMenu = function() {
-		$('#frame-menu').toggleClass('open');
-		$('#showroom').toggleClass('goLeft');
-		$('.frame_position img').attr('src', 'img/placeholder_frame.png');
-		$('#textMatch').removeClass('show');
+	var leftMenuClose = function() {
+		$('#painting-menu').removeClass('open');
+		$('#showroom').removeClass('goRight');
+	}
+
+	var rightMenuOpen = function() {
+		var painting_selected = $('.painting_position img').attr('src');
+		if ( painting_selected.indexOf(".jpg") > -1 ) {
+			$('#frame-menu').addClass('open');
+			$('#showroom').addClass('goLeft');
+			$('.frame_position img').attr('src', 'img/placeholder_frame.png');
+			$('#textMatch').removeClass('show');
+			app_runtime_counter += 1;
+			rightMenuIsOpen = true;
+			console.log(rightMenuIsOpen);
+			console.log(app_runtime_counter);
+			return rightMenuIsOpen;
+		} else {
+			e.preventDefault();
+		}
+	}
+
+	var rightMenuClose = function() {
+		$('#frame-menu').removeClass('open');
+		$('#showroom').removeClass('goLeft');
+		rightMenuIsOpen = false;
+		return rightMenuIsOpen;
 	}
 
 	var credits = function() {
@@ -174,31 +204,34 @@ $('#start-btn').on('click', function() {
 		$('#credit .text').html(credits);
 	}
 
-	$('#leftMenu').on('click', function(e) {
+	$('#leftMenu').on('touchstart click', function() {
 		clearTimeout(leftMenuClicked);
-		leftMenu();
+		leftMenuOpen();
 	})
 
-	$('#rightMenu').on('click', function(e) {
-		rightMenu();
+	$('#rightMenu').on('touchstart click', function(e) {
+		if ( rightMenuIsOpen ) {
+			e.preventDefault();
+		} else {
+			rightMenuOpen();
+		}
 	})
 
-	$('#credit-btn').on('click', function() {
+	$('#credit-btn').on('touchstart click', function() {
 		credits();
-		$('#credit').toggle();
+		$('#credit').show();
 	})
 
-	$('#credit .close').on('click', function() {
-		$('#credit').toggle();
+	$('#credit .close').on('touchstart click', function() {
+		$('#credit').hide();
 	})
 
 	// open the left menu first time app runs
-	leftMenu();
-	$('.guide .left_arrow').fadeIn();
-	$('.guide .guide_text').html('Choose a Painting').fadeIn();
+	leftMenuOpen();
+	$('#guide_paintings').fadeIn();
+
 
 	( function() {
-
 		var container = document.getElementById ( 'container' ),
 			paintingSelection = document.getElementById( 'painting-menu' ),
 			frameSelection = document.getElementById( 'frame-menu' ),
@@ -222,19 +255,16 @@ $('#start-btn').on('click', function() {
 						draggablesPainting.forEach( function( el2 ) {
 							el2.draggie.isEnabled = false;
 						});
-						$('.guide .left_arrow').fadeOut();
-						$('.guide .guide_text').fadeOut();
+						$('#guide_paintings').fadeOut();
 					},
 					onEnd : function( wasDropped ) {
 						var afterDropFn = function() {
 							// hide showroom
 							if (!wasDropped) {
 								//
-								$('.guide .left_arrow').fadeIn();
-								$('.guide .guide_text').fadeIn();
 							} else {
 								// close the left menu
-								leftMenu();
+								leftMenuClose();
 
 								// display dropped painting
 								var src = draggableEl.getAttribute("src"),
@@ -247,14 +277,18 @@ $('#start-btn').on('click', function() {
 								// display painting description
 								var description = data[index].description;
 
+								$('#credit-btn').removeClass('show');
 								$('#description').html(description).addClass('show');
+
 								
-								// open the right menu after 1.5s
+								// open the right menu after 2s
 								leftMenuClicked = setTimeout(function() {
-									rightMenu();
-									$('.guide .right_arrow').fadeIn();
-									$('.guide .guide_text').html('Choose a Frame').fadeIn();
-								}, 1500);
+									rightMenuOpen();
+									rightMenuOpenAuto = true;
+									if (rightMenuIsOpen && rightMenuOpenAuto && app_runtime_counter === 1) {
+										$('#guide_frames').fadeIn();
+									}
+								}, 2000);
 
 								// load selected painting's frames
 								var frame_data = data[index].frames;
@@ -281,8 +315,7 @@ $('#start-btn').on('click', function() {
 													draggablesFrame.forEach( function( el2 ) {
 														el2.draggie.isEnabled = false;
 													});
-													$('.guide .right_arrow').fadeOut();
-													$('.guide .guide_text').fadeOut();
+													$('#guide_frames').fadeOut();
 												},
 												onDrag : function() {
 													droppableFrame.highlight(draggableEl, index);
@@ -291,11 +324,10 @@ $('#start-btn').on('click', function() {
 													var afterDropFn = function() {
 														// hide dropArea
 														if (!wasDropped) {
-															$('.guide .right_arrow').fadeIn();
-															$('.guide .guide_text').html('Choose a Frame').fadeIn();
+															//
 														} else {
 															// closes the right menu
-															rightMenu();
+															rightMenuClose();
 
 															// display dropped frame
 															var index = draggableEl.getAttribute('data-index'),

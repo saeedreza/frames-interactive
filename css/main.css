@@ -80,7 +80,7 @@ body {
 }
 
 .start-screen .title span {
-	font-size: 20px;
+	font-size: 30px;
 	font-weight: 300;
 	font-style: italic;
 }
@@ -237,8 +237,10 @@ body {
 .nav-text {
 	position: absolute;
 	top: 446px;
-	font-size: 14px;
+	font-size: 12px;
+	font-weight: bold;
 	line-height: 14px;
+	text-transform: uppercase;
 }
 
 #leftMenu .nav-text {
@@ -250,37 +252,53 @@ body {
 }
 
 .guide {
-	position: absolute;
-	top: 90px;
-	right: 0;
-	left: 0;
-	margin: auto;
-	width: 400px;
-	color: #625a4b;
-	text-transform: uppercase;
-	font-size: 32px;
-}
-
-.guide .guide_text {
 	display: none;
 	position: absolute;
-	left: 0;
-	right: 0;
+	width: 768px;
+	height: 1024px;
+	z-index: 10;
+	background: -webkit-radial-gradient(center,ellipse cover,rgba(0,0,0,0.5) 0,rgba(0,0,0,0.9) 100%);
 }
 
-.guide img {
+.guide_text {
 	position: absolute;
-	height: 40px;
+	min-width: 200px;
+	max-width: 300px;
+	padding: 10px;
+	background-color: #FFFFFF;
+	color: #444;
+	text-align: center;
+	border-radius: 3px;
+	box-shadow: 0 1px 10px rgba(0,0,0,.4);
 }
 
-.guide .left_arrow {
-	display: none;
-	left: 0;
+.arrow {
+	border: 5px solid white;
+	content: '';
+	position: absolute;
+	border-color: transparent;
 }
 
-.guide .right_arrow {
-	display: none;
-	right: 0;
+#guide_paintings .guide_text {
+	top: 200px;
+	left: 220px;
+}
+
+#guide_paintings .arrow {
+	left: 210px;
+	top: 215px;
+	border-right-color: #FFFFFF;
+}
+
+#guide_frames .guide_text {
+	top: 100px;
+	right: 220px;
+}
+
+#guide_frames .arrow {
+	right: 210px;
+	top: 115px;
+	border-left-color: #FFFFFF;
 }
 
 #showroom {
@@ -357,18 +375,37 @@ body {
 
 #credit-btn {
 	position: absolute;
+	bottom: -150px;
+	right: 0;
+	left: 0;
+	margin: auto;
+	opacity: 0.5;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+#credit-btn.show {
+	-webkit-transform: translate3d(0,-150px,0);
+	transform: translate3d(0,-150px,0);
+}
+
+#credit-btn img {
+	position: absolute;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	width: 160px;
 	margin: auto;
-	background-color: #233d49;
-	border-radius: 10px 10px 0 0;
-	padding: 20px 0 30px;
-	color: #f1f1f1;
-	font-size: 18px;
-	font-weight: 300;
-	text-align: center;
+	height: 75px;
+}
+
+#credit-btn .credit-btn-text {
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: auto;
+	bottom: 20px;
+	color: #625a4b;
+	font-size: 20px;
 	text-transform: uppercase;
 }
 
@@ -434,8 +471,8 @@ body {
 	width: 380px;
 	height: 230px;
 	margin: auto;
-	background-color: #F8F8F8;
-	color: #35434E;
+	background-color: rgba(248,248,248,0.75);
+	color: #444444;
 	font-size: 18px;
 	font-weight: 300;
 	text-align: left;
@@ -481,7 +518,7 @@ body {
 	font-size: 32px;
 	font-weight: normal;
 	text-transform: uppercase;
-	color: #FFFFFF;
+	color: #f1f1f1;
 }
 
 .animate {

@@ -14,11 +14,23 @@
 	</head>
 	<body>
 		<div id="container">
+			<!-- Start Screen Page-->
 			<div class="start-screen">
 				<h1>Will You Marry Me?</h1>
 				<div class="title"><span>Pair</span><br>Paintings<br><span>with their ideal</span><br>Frames</div>
 				<div id="start-btn">Touch to Start</div>
 			</div>
+			<!-- Itnro Guide for Paintings -->
+			<div id="guide_paintings" class="guide">
+				<div class="guide_text">Grab a painting<br>and drag it to the center</div>
+				<div class="arrow"></div>
+			</div>
+			<!-- Itnro Guide for Frames -->
+			<div id="guide_frames" class="guide">
+				<div class="guide_text">Grab a frame<br>and drag it to the center</div>
+				<div class="arrow"></div>
+			</div>
+			<!-- Credits Page -->
 			<div id="credit">
 				<div class="close"><img src="img/button_close.png"></div>
 				<div class="text"></div>
@@ -44,7 +56,7 @@
 						<img src="img/painting_4.jpg" data-index="3" class="painting" />
 					</div>
 					<div class="painting_info">
-						<div class="painting_title">Suzanne Le Peletier de Saint –Fargeau</div>
+						<div class="painting_title">Suzanne Le Peletier de Saint–Fargeau</div>
 						<div class="painting_artist">Jacques-Louis David</div>
 					</div>
 					<div>
@@ -59,11 +71,6 @@
 
 			<!-- Showroom -->
 			<div id="showroom" class="showroom">
-				<div class="guide">
-					<img class="left_arrow" src="img/arrow_left.png" />
-					<div class="guide_text"></div>
-					<img class="right_arrow" src="img/arrow_right.png" />
-				</div>
 				<div class="nav">
 					<div id="leftMenu" >
 						<div class="nav-btn"><img src="img/button_left.png"></div>
@@ -85,6 +92,11 @@
 						<img src="img/placeholder_frame.png" />
 					</div>
 				</div>
+				<!-- Credit Button -->
+				<div id="credit-btn">
+					<img src="img/button_credits.png">
+					<div class="credit-btn-text">Credits</div>
+				</div>
 				<!-- painting description -->
 				<div id="description"></div>
 				<!-- matching text container -->
@@ -94,7 +106,6 @@
 			<!-- Frame menu -->
 			<div id="frame-menu" class="frame-menu">
 				<div id="frames"></div>
-				<div id="credit-btn">Credits</div>
 			</div>
 		</div>
 		
