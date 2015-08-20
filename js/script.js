@@ -123,7 +123,7 @@ var data = [
 				}, {
 					'title' : 'OPTION II',
 					'textMatch_header' : 'Hmmm. It’s … a frame.',
-					'textMatch_body' : 'This plain Neoclassical frame postdates the painting by several decades. The choice of a previous owner, its simple, austere style contrasts with David’s descriptive brushwork and restrains the relaxed immediacy of the portrait.',					
+					'textMatch_body' : 'This plain Neoclassical frame predates the painting by several decades. The choice of a previous owner, its simple, austere style contrasts with David’s descriptive brushwork and restrains the relaxed immediacy of the portrait.',					
 					'frame_corner_imgUrl' : 'img/painting_4_frame_2_corner.png',
 					'frame_imgUrl' : 'img/painting_4_frame_2.png',
 					'margin_top' : '85px',
@@ -181,8 +181,6 @@ $('#start-btn').on('touchstart click', function() {
 			$('#textMatch').removeClass('show');
 			app_runtime_counter += 1;
 			rightMenuIsOpen = true;
-			console.log(rightMenuIsOpen);
-			console.log(app_runtime_counter);
 			return rightMenuIsOpen;
 		} else {
 			e.preventDefault();
@@ -288,7 +286,7 @@ $('#start-btn').on('touchstart click', function() {
 									if (rightMenuIsOpen && rightMenuOpenAuto && app_runtime_counter === 1) {
 										$('#guide_frames').fadeIn();
 									}
-								}, 2000);
+								}, 1500);
 
 								// load selected painting's frames
 								var frame_data = data[index].frames;
@@ -345,9 +343,11 @@ $('#start-btn').on('touchstart click', function() {
 															$('#textMatch').html( textMatch_header + textMatch_body ).addClass('show');
 														}
 														// to enable all draggables (for frames) again
-														draggablesFrame.forEach( function( el2 ) {
-															el2.draggie.isEnabled = true;
-														});
+														setTimeout(function() {
+															draggablesFrame.forEach( function( el2 ) {
+																el2.draggie.isEnabled = true;
+															});
+														}, 1000);
 													}
 													afterDropFn(); // afterDropFn for frames
 												} // on End for frames
@@ -360,9 +360,11 @@ $('#start-btn').on('touchstart click', function() {
 						}
 					afterDropFn(); // afterDropFn for paintings
 					// to enable all draggables (for paintings) again
-					draggablesPainting.forEach( function( el2 ) {
-						el2.draggie.isEnabled = true;
-					});
+					setTimeout(function() {
+						draggablesPainting.forEach( function( el2 ) {
+							el2.draggie.isEnabled = true;
+						});
+					}, 1000); 
 					} // on End for paintings
 				})
 			)

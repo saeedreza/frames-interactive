@@ -352,8 +352,8 @@ body {
 	margin: 0 auto;
 	width: 370px;
 	height: 450px;
-	-webkit-transition: all 0.4s;
-	transition: all 0.4s;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
 }
 
 .painting_position.highlight {
@@ -522,8 +522,8 @@ body {
 }
 
 .animate {
-	-webkit-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
 }
 
 .is-active {
