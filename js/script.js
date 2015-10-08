@@ -143,10 +143,10 @@ var data = [
 		}
 	];
 
-$('#start-btn').on('touchstart click', function() {
+// $('#start-btn').on('touchstart click', function() {
 	
 	// remove start screen
-	$('.start-screen').fadeOut();
+	// $('.start-screen').fadeOut();
 
 	var leftMenuClicked,
 		rightMenuIsOpen = false,
@@ -226,7 +226,7 @@ $('#start-btn').on('touchstart click', function() {
 
 	// open the left menu first time app runs
 	leftMenuOpen();
-	$('#guide_paintings').fadeIn();
+	$('#guide_paintings').show();
 
 
 	( function() {
@@ -370,4 +370,4 @@ $('#start-btn').on('touchstart click', function() {
 			)
 		}); // Draggable for paintings
 	})();
-})
+// })
